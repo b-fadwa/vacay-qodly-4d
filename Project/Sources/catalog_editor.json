@@ -8,12 +8,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 440,
-				"top": 287,
-				"width": 120,
-				"height": 167.33203125
+				"left": 1008,
+				"top": 514,
+				"width": 201,
+				"height": 162.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 5
 		},
 		"LeaveTypes": {
 			"color": {
@@ -23,10 +23,10 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 240,
-				"top": 287,
-				"width": 120,
-				"height": 167.33203125
+				"left": 349,
+				"top": 64,
+				"width": 213,
+				"height": 184.33203125
 			},
 			"displayable_fields_count": 6
 		},
@@ -38,12 +38,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 40,
-				"top": 287,
-				"width": 120,
-				"height": 167.33203125
+				"left": 0,
+				"top": 284,
+				"width": 240,
+				"height": 235.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 9
 		},
 		"LeaveNotifications": {
 			"color": {
@@ -53,12 +53,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 1240,
-				"top": 40,
-				"width": 120,
-				"height": 167.33203125
+				"left": 1156,
+				"top": 0,
+				"width": 208,
+				"height": 194.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 7
 		},
 		"LeaveHistory": {
 			"color": {
@@ -68,12 +68,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 1040,
-				"top": 40,
-				"width": 120,
-				"height": 167.33203125
+				"left": 1257,
+				"top": 222,
+				"width": 352,
+				"height": 287.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 11
 		},
 		"LeaveBalances": {
 			"color": {
@@ -83,10 +83,10 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 840,
-				"top": 40,
-				"width": 120,
-				"height": 167.33203125
+				"left": 243,
+				"top": 664,
+				"width": 169,
+				"height": 171.33203125
 			},
 			"displayable_fields_count": 6
 		},
@@ -98,12 +98,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 640,
-				"top": 40,
-				"width": 120,
-				"height": 167.33203125
+				"left": 834,
+				"top": 13,
+				"width": 247,
+				"height": 234.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 9
 		},
 		"Holidays": {
 			"color": {
@@ -113,8 +113,8 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 440,
-				"top": 40,
+				"left": 541,
+				"top": 268,
 				"width": 120,
 				"height": 167.33203125
 			},
@@ -128,12 +128,12 @@
 				"alpha": 0
 			},
 			"coordinates": {
-				"left": 240,
-				"top": 40,
-				"width": 120,
-				"height": 167.33203125
+				"left": 451,
+				"top": 464,
+				"width": 164,
+				"height": 229.33203125
 			},
-			"displayable_fields_count": 6
+			"displayable_fields_count": 8
 		},
 		"Comments": {
 			"color": {
@@ -149,6 +149,104 @@
 				"height": 167.33203125
 			},
 			"displayable_fields_count": 6
+		}
+	},
+	"relations": {
+		"36889B3A4D2E9F41A8FC221FF626E41A": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"561B0223868FF84DA48CBF1C0AF28509": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"D0C5F03160D994429BD0D5C2D296353C": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"EBDD4F9617A1854CBD38170404BB29AC": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"C62B4833131E744DBC98678C3EDF3950": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"A048FC0CC03B3745AB3244A6F28B92EE": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"C4530FF0D6400845BAD638A321DA8B65": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"3772EFD4E65235438BFB9FB69CDAD316": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"45CF50A065BC6A4FAC4A69D95253D10D": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"E94F88BD5F18934B94585D18CD392C25": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"73E62F3969C9C34A9996B803DB1B164B": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
+		},
+		"B5ED53B766DA194393E86A8389E748F2": {
+			"color": {
+				"red": 240,
+				"green": 240,
+				"blue": 240,
+				"alpha": 0
+			}
 		}
 	}
 }
