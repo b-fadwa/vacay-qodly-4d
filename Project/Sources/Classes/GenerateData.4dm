@@ -125,25 +125,25 @@ Function generateLeaves()
 	var $LeaveTypes : cs:C1710.LeaveTypesSelection:=ds:C1482.LeaveTypes.all()
 	var $leave : cs:C1710.LeavesEntity
 	
-	for Each($user; $users)
-	$leave:=ds:C1482.Leaves.new()
-	$leave.employee:=$user
-	$leave.requestDate:=current Date()
-	$leave.startDate:=current Date()+10
-	$leave.endDate:=current Date()+13
-	$leave.isAbsence:=False:C215
-	$leave.status:="to be approved"
-	$leave.leaveType:=$LeaveTypes.at(Random:C100%$LeaveTypes.length)
-	$leave.rangeLength:=$leave.endDate-leave.startDate
-	$leave.save()
-	end for each
+	For each ($user; $users)
+		$leave:=ds:C1482.Leaves.new()
+		$leave.employee:=$user
+		$leave.requestDate:=Current date:C33()
+		$leave.startDate:=Current date:C33()+10
+		$leave.endDate:=Current date:C33()+13
+		$leave.isAbsence:=False:C215
+		$leave.status:="to be approved"
+		$leave.leaveType:=$LeaveTypes.at(Random:C100%$LeaveTypes.length)
+		$leave.rangeLength:=$leave.endDate-leave.startDate
+		$leave.save()
+	End for each 
 	
 	
 Function linkToTeam()
 	var $employees : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
 	var $teams : cs:C1710.TeamsSelection:=ds:C1482.Teams.all()
 	var $employee : cs:C1710.EmployeesEntity
-	for Each($employee; $employees)
-	$employee.team:=$teams.at(Random:C100%($teams.length))
-	$employee.save()
-	end for each
+	For each ($employee; $employees)
+		$employee.team:=$teams.at(Random:C100%($teams.length))
+		$employee.save()
+	End for each 

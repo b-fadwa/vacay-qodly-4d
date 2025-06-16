@@ -1,14 +1,14 @@
 Class extends DataClass
 
-Function createDateArray($startdate : date; $enddate : Date)->$arrayDate : Collection
+Function createDateArray($startdate : Date; $enddate : Date)->$arrayDate : Collection
 	var indate : Date
-	$arrayDate:=new Collection()
+	$arrayDate:=New collection:C1472()
 	While ($enddate>=$startdate)
 		$indate:=$startdate
 		$arrayDate.push($indate)
 		$startdate+=1
-		end while
-		
+	End while 
+	
 exposed Function decrementBalance($leave : cs:C1710.LeavesEntity)
 	var $leaveBalance : cs:C1710.LeaveBalancesEntity
 	var $counter : Integer:=0
@@ -19,27 +19,27 @@ exposed Function decrementBalance($leave : cs:C1710.LeavesEntity)
 	If ($leaveBalance.balance#0)
 		$leaveBalance.balance-=$leave.rangeLength
 		$isSaved:=$leaveBalance.save()
-		end if 
-		If ($isSaved.success)
-			web Form.setMessage("Leave balance saved successfully!")
-			end if
-			
-			
+	End if 
+	If ($isSaved.success)
+		Web Form:C1735.setMessage("Leave balance saved successfully!")
+	End if 
+	
+	
 exposed Function newYearBalance()
 	var $employees : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
 	var $employee : cs:C1710.EmployeesEntity
 	var $congeAnnuel : cs:C1710.LeaveBalancesEntity
-	If (current Date()=Date:C102("01/01/"+String:C10(year Of(current Date()))))
-		for Each($employee; $employees)
-		$congeAnnuel:=This:C1470.query("leaveType.name=:1 and employee.ID=:2 ";"Annual paid leave"; employee.ID).first()
-		If ($congeAnnuel.balance+18>=32)
-			$congeAnnuel.balance:=32
-			$congeAnnuel.save()
-		Else 
-			$congeAnnuel.balance+=18
-			$congeAnnuel.save()
-			end if
+	If (Current date:C33()=Date:C102("01/01/"+String:C10(Year of:C25(Current date:C33()))))
+		For each ($employee; $employees)
+			$congeAnnuel:=This:C1470.query("leaveType.name=:1 and employee.ID=:2 "; "Annual paid leave"; $employee.ID).first()
+			If ($congeAnnuel.balance+18>=32)
+				$congeAnnuel.balance:=32
+				$congeAnnuel.save()
+			Else 
+				$congeAnnuel.balance+=18
+				$congeAnnuel.save()
+			End if 
 			
-			end for each
-			end if
-			
+		End for each 
+	End if 
+	

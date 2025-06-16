@@ -8,6 +8,7 @@
 		<field name="creationHour" uuid="66E5B3BB8A029F4F9BF252E38932AAF4" type="9" id="3"/>
 		<field name="content" uuid="8C504579AE7D8B4AB3E1F95C41DA8A15" type="10" id="4"/>
 		<field name="by_ID" uuid="830768FDA1A5E245BFA740B194219E00" type="4" unique="true" id="5"/>
+		<field name="leave_ID" uuid="C1CCAC6FA04FBE499CBE652147A5E6BB" type="4" unique="true" id="6"/>
 		<primary_key field_name="ID" field_uuid="222B388921D8FD4090BD91AF3D61C7D7"/>
 	</table>
 	<table name="Employees" uuid="13BAA42C6AB8A143A85906442B87F411" id="2">
@@ -37,6 +38,7 @@
 		<field name="employee_ID" uuid="5B01529A5D25AA4A90B4A020BA5F2ACA" type="4" unique="true" id="7"/>
 		<field name="message" uuid="817BA48D46683943944C47E542C396D4" type="10" limiting_length="255" id="8"/>
 		<field name="time" uuid="ACE2CE2B7C50D941AE4A84B6BEB898B1" type="9" id="9"/>
+		<field name="leave_ID" uuid="8C139CBA6967B64B90E489C43561AC8C" type="4" unique="true" id="10"/>
 		<primary_key field_name="ID" field_uuid="B37C9743E9648F47A89C8AFE8C65DE82"/>
 	</table>
 	<table name="LeaveBalances" uuid="136ED94A56BB93428A0F2D49E259F958" id="5">
@@ -99,6 +101,7 @@
 		<field name="leaveType" uuid="7F928F331F2FDA4A93269E726DCDE7DB" type="4" id="6"/>
 		<field name="status" uuid="46A209DEEC13214BB0DF386A7E184DA0" type="10" limiting_length="255" id="7"/>
 		<field name="rangeLength" uuid="314365E0B60D4F48A561E87B9A17BCF8" type="4" id="8"/>
+		<field name="isAbsence" uuid="2B29EF456AE0074EADD5FEDCE3AB73D5" type="1" id="9"/>
 		<primary_key field_name="ID" field_uuid="3A4CC8DF69EB954EBEFF315D90E69D85"/>
 	</table>
 	<table name="LeaveTypes" uuid="37A6C3561BB34D48A47BBBD06061524F" id="9">
@@ -179,7 +182,7 @@
 			</field_ref>
 		</related_field>
 	</relation>
-	<relation uuid="C4530FF0D6400845BAD638A321DA8B65" name_Nto1="employee" name_1toN="leaveActions" state="1">
+	<relation uuid="C4530FF0D6400845BAD638A321DA8B65" name_Nto1="by" name_1toN="leaveActions" state="1">
 		<related_field kind="source">
 			<field_ref uuid="5B01529A5D25AA4A90B4A020BA5F2ACA" name="employee_ID">
 				<table_ref uuid="AF74B82F21D17C4B89E1F446466FE847" name="LeaveActions"/>
@@ -227,7 +230,7 @@
 			</field_ref>
 		</related_field>
 	</relation>
-	<relation uuid="D0C5F03160D994429BD0D5C2D296353C" name_Nto1="employee" name_1toN="comments" state="1">
+	<relation uuid="D0C5F03160D994429BD0D5C2D296353C" name_Nto1="by" name_1toN="comments" state="1">
 		<related_field kind="source">
 			<field_ref uuid="830768FDA1A5E245BFA740B194219E00" name="by_ID">
 				<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
@@ -260,6 +263,30 @@
 		<related_field kind="destination">
 			<field_ref uuid="2AAA28729BA452438EB9B9A5175249E0" name="ID">
 				<table_ref uuid="37A6C3561BB34D48A47BBBD06061524F" name="LeaveTypes"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="872A64D1722B7C498DBA783411EAA582" name_Nto1="leave" name_1toN="comments" state="1">
+		<related_field kind="source">
+			<field_ref uuid="C1CCAC6FA04FBE499CBE652147A5E6BB" name="leave_ID">
+				<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="3A4CC8DF69EB954EBEFF315D90E69D85" name="ID">
+				<table_ref uuid="EA6B7F39FA61F94490AF6266A22AC124" name="Leaves"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="5E8478301637F848902C221B44D6BF35" name_Nto1="leave" name_1toN="leaveActions" state="1">
+		<related_field kind="source">
+			<field_ref uuid="8C139CBA6967B64B90E489C43561AC8C" name="leave_ID">
+				<table_ref uuid="AF74B82F21D17C4B89E1F446466FE847" name="LeaveActions"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="3A4CC8DF69EB954EBEFF315D90E69D85" name="ID">
+				<table_ref uuid="EA6B7F39FA61F94490AF6266A22AC124" name="Leaves"/>
 			</field_ref>
 		</related_field>
 	</relation>
