@@ -1,0 +1,146 @@
+{
+	"Sources/Classes/DataStore.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:01:48.534Z"
+	},
+	"Sources/Classes/CommentsEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:54:13.385Z"
+	},
+	"Sources/Classes/Employees.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:05:45.322Z"
+	},
+	"Sources/Classes/EmployeesEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:15:04.150Z"
+	},
+	"Sources/Classes/Holidays.4dm": {
+		"startSelection": 47,
+		"endSelection": 47,
+		"firstSelectedLine": 4,
+		"lastSelectedLine": 4,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:24:41.853Z"
+	},
+	"Sources/Classes/HolidaysEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:26:08.612Z"
+	},
+	"Sources/Classes/LeaveActions.4dm": {
+		"startSelection": 25,
+		"endSelection": 25,
+		"firstSelectedLine": 7,
+		"lastSelectedLine": 7,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:27:11.039Z"
+	},
+	"Sources/Classes/LeaveBalances.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:31:36.639Z"
+	},
+	"Sources/Classes/Leaves.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:36:56.623Z"
+	},
+	"Sources/Classes/LeavesEntity.4dm": {
+		"startSelection": 11,
+		"endSelection": 11,
+		"firstSelectedLine": 57,
+		"lastSelectedLine": 57,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:49:55.416Z"
+	},
+	"Sources/Classes/LeavesSelection.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 17,
+		"lastSelectedLine": 17,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:50:13.219Z"
+	},
+	"Sources/Classes/LeaveTypes.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 9,
+		"lastSelectedLine": 9,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:50:43.390Z"
+	},
+	"Sources/Classes/LeaveTypesEntity.4dm": {
+		"startSelection": 3,
+		"endSelection": 3,
+		"firstSelectedLine": 26,
+		"lastSelectedLine": 26,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:51:08.020Z"
+	},
+	"Sources/Classes/TeamsEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 16,
+		"lastSelectedLine": 16,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:52:05.008Z"
+	},
+	"Sources/Classes/GenerateData.4dm": {
+		"startSelection": 24,
+		"endSelection": 24,
+		"firstSelectedLine": 142,
+		"lastSelectedLine": 142,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T10:23:52.273Z"
+	},
+	"Sources/Classes/Mailing.4dm": {
+		"startSelection": 3,
+		"endSelection": 3,
+		"firstSelectedLine": 29,
+		"lastSelectedLine": 29,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-16T09:52:41.971Z"
+	}
+}

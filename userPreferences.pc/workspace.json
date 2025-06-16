@@ -1,0 +1,55 @@
+{
+	"editors": [
+		{
+			"type": "structure"
+		},
+		{
+			"type": "explorer"
+		},
+		{
+			"type": "method",
+			"id": 2147483598,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "Leaves",
+				"methodPath": "/SOURCES/Classes/Leaves.4dm"
+			}
+		},
+		{
+			"type": "method",
+			"id": 2147483626,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "EmployeesEntity",
+				"methodPath": "/SOURCES/Classes/EmployeesEntity.4dm"
+			}
+		},
+		{
+			"type": "method",
+			"id": 2147483647,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "DataStore",
+				"methodPath": "/SOURCES/Classes/DataStore.4dm"
+			}
+		},
+		{
+			"type": "method",
+			"id": 2147483566,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "Mailing",
+				"methodPath": "/SOURCES/Classes/Mailing.4dm"
+			}
+		},
+		{
+			"type": "method",
+			"id": 2147483578,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "TeamsEntity",
+				"methodPath": "/SOURCES/Classes/TeamsEntity.4dm"
+			}
+		}
+	]
+}
