@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "v": "1.0",
+    "datasources": [],
+    "styles": []
+  },
+  "components": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "isCanvas": true,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "airyMode": false,
+        "className": "bg-white h-full w-full px-6",
+        "style": {
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center"
+        }
+      },
+      "displayName": "Page",
+      "custom": {},
+      "parent": "",
+      "hidden": false,
+      "nodes": [
+        "H7W463ZxVp"
+      ],
+      "linkedNodes": {}
+    },
+    "H7W463ZxVp": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "alignItems": "center"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "H9leYlHFO-",
+        "MKTd-D4qmA",
+        "qh_jQBjBE2",
+        "RyYM-VPIe-"
+      ],
+      "linkedNodes": {}
+    },
+    "H9leYlHFO-": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "404",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "textAlign": "center",
+          "fontSize": "80px",
+          "fontWeight": "700"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "H7W463ZxVp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "qh_jQBjBE2": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Look like you're lost",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "textAlign": "center",
+          "fontSize": "30px",
+          "fontWeight": "500"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "H7W463ZxVp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "RyYM-VPIe-": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "the page you are looking for is not available!",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "textAlign": "center"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "H7W463ZxVp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "MKTd-D4qmA": {
+      "type": {
+        "resolvedName": "Image"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "style": {
+          "width": "auto",
+          "height": "400px"
+        },
+        "imgSrc": "https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
+      },
+      "displayName": "Image",
+      "custom": {},
+      "parent": "H7W463ZxVp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    }
+  }
+}

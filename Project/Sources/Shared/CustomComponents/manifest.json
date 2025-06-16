@@ -1,0 +1,67 @@
+[
+	{
+		"name": "timeline",
+		"version": "0.2.0",
+		"scope": "qodly_064baed7a010e6deba40",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_064baed7a010e6deba40/"
+	},
+	{
+		"name": "qodly-calendar",
+		"version": "0.5.8",
+		"scope": "qodly_37629285cf887b8497da",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_37629285cf887b8497da/"
+	},
+	{
+		"name": "qodly_chartjs",
+		"version": "0.2.4",
+		"scope": "qodly_431f853d4e15946ba36f",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_431f853d4e15946ba36f/"
+	},
+	{
+		"name": "qodly-stylishbox",
+		"version": "0.1.2",
+		"scope": "qodly_4b73e4fdf8fb53606fa0",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_4b73e4fdf8fb53606fa0/"
+	},
+	{
+		"name": "qodly_datepicker",
+		"version": "0.1.2",
+		"scope": "qodly_8bff58004fb5e4e0207f",
+		"author": {
+			"name": "Qodly Team",
+			"email": "contact@qodly.com",
+			"url": "https://qodly.com"
+		},
+		"module": "components",
+		"remoteEntryFileName": "components.js",
+		"url": "/$shared/CustomComponents/qodly_8bff58004fb5e4e0207f/"
+	}
+]

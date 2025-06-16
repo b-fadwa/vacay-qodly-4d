@@ -1,0 +1,16 @@
+{
+	"classes": [
+		{
+			"name": "flexGrow1",
+			"content": "self {\n\tflex-grow: 1;\n}",
+			"parentId": null,
+			"id": "st22CZapOo3Z9RyeAb2Fx"
+		},
+		{
+			"name": "matrixCss",
+			"content": "self .FdVirtualGrid > div .selected { \n\tbackground-color: transparent;\n}\nself .FdVirtualGrid > div :hover{\n\tbackground: transparent;\n}",
+			"parentId": null,
+			"id": "8Uz5n976AeqWNLcHV7nVD"
+		}
+	]
+}

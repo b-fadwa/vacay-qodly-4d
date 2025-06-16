@@ -105,6 +105,11 @@
 		<field name="manager" uuid="A0D44644D5F5BC429C890FD0579DC13C" type="4" id="3"/>
 		<primary_key field_name="ID" field_uuid="F9CC8D9CAEAF3D4D8E57BEBCCAB847FA"/>
 	</table>
+	<index kind="regular" unique_keys="true" uuid="016FE2D964B5304B929FCF08742E8C60" type="1">
+		<field_ref uuid="81778D73D67F2748A0B3EF8F5675F347" name="team">
+			<table_ref uuid="13BAA42C6AB8A143A85906442B87F411" name="Employees"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="2BC4D07CE69430469817569DF1F7D52F" type="7">
 		<field_ref uuid="3A4CC8DF69EB954EBEFF315D90E69D85" name="ID">
 			<table_ref uuid="EA6B7F39FA61F94490AF6266A22AC124" name="Leaves"/>
@@ -113,6 +118,11 @@
 	<index kind="regular" unique_keys="true" uuid="5438F035124A64498C7338D739DCDA9E" type="7">
 		<field_ref uuid="3413BAC319D8B7428E1F2398F47378C3" name="ID">
 			<table_ref uuid="13BAA42C6AB8A143A85906442B87F411" name="Employees"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="56626A867D68C74BB2673AAD389E2E3D" type="1">
+		<field_ref uuid="830768FDA1A5E245BFA740B194219E00" name="by">
+			<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="600DC88330F35549B30863BC39B92770" type="7">

@@ -1,0 +1,2277 @@
+{
+  "metadata": {
+    "v": "1.0",
+    "datasources": [
+      {
+        "id": "teams",
+        "type": "entitysel",
+        "dataclass": "Teams",
+        "initialValue": "all",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "selectedTeam",
+        "type": "entity",
+        "dataclass": "Teams",
+        "from": "teams",
+        "namespace": "",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "newTeam",
+        "type": "entity",
+        "dataclass": "Teams",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "managers",
+        "type": "entitysel",
+        "dataclass": "Employees",
+        "initialValue": "",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "label",
+        "type": "scalar",
+        "namespace": "",
+        "dataType": "string",
+        "initialValue": ""
+      },
+      {
+        "id": "manager",
+        "type": "entity",
+        "dataclass": "Employees",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "selectedEmployee",
+        "type": "entity",
+        "dataclass": "Employees",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "employees",
+        "type": "entitysel",
+        "dataclass": "Employees",
+        "initialValue": "",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "teamlessEmployee",
+        "type": "entity",
+        "dataclass": "Employees",
+        "from": "employees",
+        "namespace": "",
+        "initialValue": "",
+        "depth": null
+      }
+    ],
+    "styles": []
+  },
+  "components": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "isCanvas": true,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onload"
+            ],
+            "id": "86ehUC2aprkR4V5Xyy6fBb",
+            "method": "ds.displayToRole",
+            "params": [
+              {
+                "name": "currentUser",
+                "type": "cs.EmployeesEntity",
+                "datasource": "Shared:currentUser",
+                "id": "d9myxRJ5TDWTqb77Bt4pUj"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "simple-action",
+            "id": "5XECyZJVztaLxqoF6F5wZG",
+            "events": [
+              "oninit"
+            ],
+            "action": "query",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "managers",
+              "type": "entitysel",
+              "from": "",
+              "namespace": ""
+            },
+            "query": {
+              "query": "role = 'Manager'"
+            },
+            "feedback": {
+              "enabled": false
+            }
+          }
+        ],
+        "airyMode": false,
+        "className": "bg-white h-full w-full px-6",
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "flexDirection": "column",
+          "backgroundColor": "transparent",
+          "overflow": "hidden"
+        }
+      },
+      "displayName": "Page",
+      "custom": {},
+      "parent": "",
+      "hidden": false,
+      "nodes": [
+        "U3a0oO41hw",
+        "ytZKoPDgjr",
+        "s7n2ys8xwl",
+        "tHNb3TqiWy",
+        "JUT1BoWQ2x"
+      ],
+      "linkedNodes": {}
+    },
+    "U3a0oO41hw": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "qTZm4k-x6w",
+        "YGPtDbI0px"
+      ],
+      "linkedNodes": {}
+    },
+    "qTZm4k-x6w": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Teams",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "fontSize": "1.95vw",
+          "fontWeight": "500",
+          "width": "fit-content",
+          "color": "#2D3748"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "U3a0oO41hw",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "ytZKoPDgjr": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "classNames": [
+          "flexGrow1"
+        ],
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingRight": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "kBCJmf4260"
+      ],
+      "linkedNodes": {}
+    },
+    "kBCJmf4260": {
+      "type": {
+        "resolvedName": "Matrix"
+      },
+      "isCanvas": false,
+      "props": {
+        "orientation": "vertical",
+        "iterable": true,
+        "classNames": [
+          "flexGrow1",
+          "matrixCss"
+        ],
+        "events": [],
+        "style": {
+          "borderStyle": "none"
+        },
+        "datasource": "teams",
+        "gridProps": {
+          "styleboxWidth": 1,
+          "styleboxHeight": 150,
+          "styleboxPercentWidth": "33.3%",
+          "enableMosaic": true
+        },
+        "currentElement": "selectedTeam"
+      },
+      "displayName": "Matrix",
+      "custom": {},
+      "parent": "ytZKoPDgjr",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "beECLgLshp"
+      }
+    },
+    "beECLgLshp": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "alignItems": "center",
+          "width": "33.3%",
+          "height": "150px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "kBCJmf4260",
+      "hidden": false,
+      "nodes": [
+        "yW66ZJaw6H"
+      ],
+      "linkedNodes": {}
+    },
+    "yW66ZJaw6H": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "height": "100%",
+          "borderRadius": "6px",
+          "borderWidth": "2px",
+          "backgroundColor": "#ffffffff",
+          "display": "flex"
+        },
+        "classNames": [
+          "shadow"
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "beECLgLshp",
+      "hidden": false,
+      "nodes": [
+        "PmXEih_dem",
+        "6Z6q5Du6sX"
+      ],
+      "linkedNodes": {}
+    },
+    "gENkRzj2zZ": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [
+          {
+            "type": "dialog",
+            "id": "5RZumh8guucKkuBbWQnutu",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "open",
+            "targetDialog": "teamDetails",
+            "disabled": false
+          }
+        ],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.name",
+                "children": [
+                  {
+                    "text": "Label",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.name",
+        "style": {
+          "fontSize": "18px",
+          "cursor": "pointer",
+          "width": "fit-content",
+          "fontWeight": "500"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "ViN0WWII_6",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "ZT2yYVQp9t": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Employees total: "
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.employees.length",
+                "children": [
+                  {
+                    "text": "x"
+                  }
+                ],
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.employees.length",
+        "style": {},
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "6Z6q5Du6sX",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "hsJo-rcCaB": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.manager.fullName",
+                "children": [
+                  {
+                    "text": "Manager",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.manager.fullName",
+        "style": {
+          "fontSize": "17px",
+          "width": "fit-content"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "ViN0WWII_6",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "ViN0WWII_6": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "space-between",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "width": "100%"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "6Z6q5Du6sX",
+      "hidden": false,
+      "nodes": [
+        "gENkRzj2zZ",
+        "hsJo-rcCaB",
+        "MJ6B2T2dN5"
+      ],
+      "linkedNodes": {}
+    },
+    "s7n2ys8xwl": {
+      "type": {
+        "resolvedName": "Dialog"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "2docP7g9Au2KjDtiyZYFCc",
+            "events": [
+              "oninit"
+            ],
+            "action": "clear",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "manager",
+              "type": "entity",
+              "namespace": ""
+            }
+          },
+          {
+            "type": "simple-action",
+            "id": "fqKU9ByjzhBtXyA2i4QWX4",
+            "events": [
+              "oninit"
+            ],
+            "action": "clear",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "label",
+              "from": "",
+              "type": "scalar",
+              "namespace": "",
+              "dataType": "string"
+            }
+          },
+          {
+            "type": "simple-action",
+            "id": "6dFReDXTSRTPu2W6DXk6S3",
+            "events": [
+              "oninit"
+            ],
+            "action": "create",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "newTeam",
+              "type": "entity",
+              "namespace": ""
+            }
+          }
+        ],
+        "overlay": true,
+        "serverSideRef": "addTeam",
+        "style": {
+          "borderRadius": "6px"
+        },
+        "closable": true
+      },
+      "displayName": "Dialog",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "Dialog": "UTXUSZBorK",
+        "close": "lF22tvL8eg"
+      }
+    },
+    "UTXUSZBorK": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "h-full",
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "12px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "s7n2ys8xwl",
+      "hidden": false,
+      "nodes": [
+        "rmPc_3N9NY",
+        "dpwbvKjXjJ",
+        "9N4w9S84ho"
+      ],
+      "linkedNodes": {}
+    },
+    "FdTSDwp7z5": {
+      "type": {
+        "resolvedName": "TextInput"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "placeholder": "placeholder",
+        "label": "label",
+        "labelPosition": "hidden",
+        "style": {
+          "borderRadius": "6px",
+          "borderColor": "rgb(204,204,204)",
+          "borderWidth": "0.8px"
+        },
+        "serverSideRef": "teamLabel",
+        "iterableChild": true
+      },
+      "displayName": "Text Input",
+      "custom": {},
+      "parent": "dpwbvKjXjJ",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "label": "iJBPip8YQF",
+        "input": "Ah3atU3aQK"
+      }
+    },
+    "iJBPip8YQF": {
+      "type": {
+        "resolvedName": "Label"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "moveable": false,
+        "style": {
+          "display": "none"
+        },
+        "deletable": true,
+        "text": "Label"
+      },
+      "displayName": "Label",
+      "custom": {},
+      "parent": "FdTSDwp7z5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Ah3atU3aQK": {
+      "type": {
+        "resolvedName": "Input"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "deletable": false,
+        "className": "fd-input w-full bg-transparent",
+        "type": "text",
+        "style": {
+          "height": "42px",
+          "paddingLeft": "5px"
+        },
+        "placeholder": "Label",
+        "datasource": "label",
+        "moveable": false,
+        "readonly": false,
+        "serverSideRef": "teamLabel",
+        "dataType": "string",
+        "revealPassword": true,
+        "eyePosition": "right"
+      },
+      "displayName": "Input",
+      "custom": {},
+      "parent": "FdTSDwp7z5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "s1Cx5gnA7I": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Add",
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "TeamsEntity",
+            "events": [
+              "onclick"
+            ],
+            "id": "5Rd7HpLkArb9HEPU7EKvwU",
+            "method": "newTeam.addTeam",
+            "params": [
+              {
+                "name": "name",
+                "type": "string",
+                "datasource": "label",
+                "id": "16v7CP9JDKQsy5Ex8i3vWf"
+              },
+              {
+                "name": "manager",
+                "type": "cs.EmployeesEntity",
+                "datasource": "manager",
+                "id": "bwuNFaHPEeDcYoA18KXDL6"
+              }
+            ],
+            "namespace": "",
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            },
+            "feedback": true
+          },
+          {
+            "type": "simple-action",
+            "id": "fGaBsGAtGLvPUBYwNV4DZf",
+            "events": [
+              "onclick"
+            ],
+            "action": "all",
+            "datasource": {
+              "name": "teams",
+              "from": "",
+              "type": "entitysel",
+              "namespace": ""
+            },
+            "actionType": "datasource"
+          },
+          {
+            "type": "dialog",
+            "id": "5Hja48TKWtkKdfGpk9t9yH",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "addTeam"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "backgroundColor": "#30BCAF",
+          "height": "42px"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "9N4w9S84ho",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "r2U2TVEDyD"
+      }
+    },
+    "r2U2TVEDyD": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "s1Cx5gnA7I",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "9N4w9S84ho": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "UTXUSZBorK",
+      "hidden": false,
+      "nodes": [
+        "s1Cx5gnA7I"
+      ],
+      "linkedNodes": {}
+    },
+    "dpwbvKjXjJ": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "10px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "UTXUSZBorK",
+      "hidden": false,
+      "nodes": [
+        "FdTSDwp7z5",
+        "GAWImujNen"
+      ],
+      "linkedNodes": {}
+    },
+    "GAWImujNen": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "managers",
+        "currentElement": "manager",
+        "style": {
+          "height": "42px"
+        },
+        "placeholder": "Select a manager"
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "dpwbvKjXjJ",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "vPagLQffzr"
+      }
+    },
+    "vPagLQffzr": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 40
+      },
+      "parent": "GAWImujNen",
+      "hidden": false,
+      "nodes": [
+        "29q9r48dNk"
+      ],
+      "linkedNodes": {}
+    },
+    "29q9r48dNk": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.fullName",
+                "children": [
+                  {
+                    "text": "fullName",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.fullName",
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "vPagLQffzr",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "lF22tvL8eg": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-times"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "s7n2ys8xwl",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "tHNb3TqiWy": {
+      "type": {
+        "resolvedName": "Dialog"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "epqcYGJvndpzFJN7MHsoh4",
+            "events": [
+              "oninit"
+            ],
+            "action": "query",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "employees",
+              "type": "entitysel",
+              "from": "",
+              "namespace": ""
+            },
+            "query": {
+              "query": "team == null"
+            },
+            "disabled": true
+          }
+        ],
+        "overlay": true,
+        "serverSideRef": "teamDetails",
+        "closable": true,
+        "style": {
+          "borderRadius": "6px"
+        }
+      },
+      "displayName": "Dialog",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "Dialog": "7QYsUphHGB",
+        "close": "VY_grulkfm"
+      }
+    },
+    "7QYsUphHGB": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "h-full",
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "10px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "tHNb3TqiWy",
+      "hidden": false,
+      "nodes": [
+        "KDa3KPFP0w",
+        "PUfLAvfewu",
+        "vuI5NOT8Gf",
+        "w2sF1723-D"
+      ],
+      "linkedNodes": {}
+    },
+    "vuI5NOT8Gf": {
+      "type": {
+        "resolvedName": "Matrix"
+      },
+      "isCanvas": false,
+      "props": {
+        "orientation": "vertical",
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "style": {
+          "minHeight": "300px",
+          "borderStyle": "none"
+        },
+        "datasource": "selectedTeam.employees",
+        "gridProps": {
+          "styleboxWidth": 1,
+          "styleboxHeight": 47,
+          "styleboxPercentWidth": "100%",
+          "enableMosaic": false
+        },
+        "currentElement": "selectedEmployee"
+      },
+      "displayName": "Matrix",
+      "custom": {},
+      "parent": "7QYsUphHGB",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "KbJ7gSPtUO"
+      }
+    },
+    "KbJ7gSPtUO": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "minHeight": "40px",
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "20px",
+          "justifyContent": "space-between"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "vuI5NOT8Gf",
+      "hidden": false,
+      "nodes": [
+        "hAJgKkaFet",
+        "zHYzKmjpjT"
+      ],
+      "linkedNodes": {}
+    },
+    "KDa3KPFP0w": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "space-around",
+          "alignItems": "center",
+          "gap": "5px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "7QYsUphHGB",
+      "hidden": false,
+      "nodes": [
+        "nCxTz5_xdh",
+        "ucPHfM94iB"
+      ],
+      "linkedNodes": {}
+    },
+    "hAJgKkaFet": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.fullName",
+                "children": [
+                  {
+                    "text": "employeeName",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.fullName",
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "KbJ7gSPtUO",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "VY_grulkfm": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-times"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "tHNb3TqiWy",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "muoAfbfsjp": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Add a team",
+        "classNames": [],
+        "events": [
+          {
+            "type": "dialog",
+            "id": "xvryyrzVjZKtGJeUaoYwvP",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "open",
+            "targetDialog": "addTeam"
+          }
+        ],
+        "iconPosition": "left",
+        "style": {
+          "display": "flex",
+          "backgroundColor": "#30BCAF",
+          "height": "42px"
+        },
+        "serverSideRef": "addTeamButton"
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "YGPtDbI0px",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "_QryAnj228"
+      }
+    },
+    "_QryAnj228": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-solid fa-plus"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "muoAfbfsjp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "YGPtDbI0px": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "flex-end",
+          "gap": "5px",
+          "width": "fit-content",
+          "paddingRight": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "U3a0oO41hw",
+      "hidden": false,
+      "nodes": [
+        "muoAfbfsjp"
+      ],
+      "linkedNodes": {}
+    },
+    "6Z6q5Du6sX": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "width": "90%",
+          "height": "100%",
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingTop": "0px",
+          "minWidth": "90%"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "yW66ZJaw6H",
+      "hidden": false,
+      "nodes": [
+        "ViN0WWII_6",
+        "ZT2yYVQp9t"
+      ],
+      "linkedNodes": {}
+    },
+    "PmXEih_dem": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "alignItems": "start",
+          "justifyContent": "flex-start",
+          "width": "10%",
+          "minWidth": "10%"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "yW66ZJaw6H",
+      "hidden": false,
+      "nodes": [
+        "EW69Dq90Xt"
+      ],
+      "linkedNodes": {}
+    },
+    "EW69Dq90Xt": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-solid fa-people-group",
+        "style": {
+          "color": "#FFF",
+          "backgroundColor": "#E2E8F0",
+          "width": "37px",
+          "height": "37px",
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "borderRadius": "10px",
+          "paddingRight": "10px",
+          "paddingBottom": "10px",
+          "paddingTop": "10px",
+          "paddingLeft": "10px"
+        }
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "PmXEih_dem",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "MJ6B2T2dN5": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "width": "fit-content",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "justifyContent": "space-between"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ViN0WWII_6",
+      "hidden": false,
+      "nodes": [
+        "iiaKI5-Hxb"
+      ],
+      "linkedNodes": {}
+    },
+    "iiaKI5-Hxb": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "dialog",
+            "id": "gNDMPVcqtCibh6D7XepNoh",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "open",
+            "targetDialog": "deleteTeam"
+          }
+        ],
+        "icon": "fa-solid fa-trash",
+        "style": {
+          "cursor": "pointer"
+        },
+        "serverSideRef": "deleteTeamButton"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "MJ6B2T2dN5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "JUT1BoWQ2x": {
+      "type": {
+        "resolvedName": "Dialog"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "overlay": true,
+        "serverSideRef": "deleteTeam",
+        "closable": true,
+        "animated": true,
+        "style": {
+          "borderRadius": "6px"
+        }
+      },
+      "displayName": "Dialog",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "Dialog": "15nOK3xvHz",
+        "close": "Oe4-7bBgu5"
+      }
+    },
+    "15nOK3xvHz": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "h-full",
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "12px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "JUT1BoWQ2x",
+      "hidden": false,
+      "nodes": [
+        "-fN0m01o79",
+        "ktqAg1r1kp"
+      ],
+      "linkedNodes": {}
+    },
+    "-fN0m01o79": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Are you sure you want to delete the team ",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              },
+              {
+                "type": "datasource",
+                "datasource": "selectedTeam.name",
+                "children": [
+                  {
+                    "bold": true,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false,
+                    "text": "team"
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": " ?"
+              }
+            ]
+          }
+        ],
+        "datasource": "selectedTeam.name",
+        "style": {
+          "textAlign": "center",
+          "fontSize": "18px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "15nOK3xvHz",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "ktqAg1r1kp": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "gap": "20px",
+          "justifyContent": "center"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "15nOK3xvHz",
+      "hidden": false,
+      "nodes": [
+        "ihm78IvKtA",
+        "oBTV-ACInu"
+      ],
+      "linkedNodes": {}
+    },
+    "oBTV-ACInu": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "No",
+        "classNames": [],
+        "events": [
+          {
+            "type": "dialog",
+            "id": "uZVnUayxyqaqVSERBrFZK4",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "deleteTeam"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "width": "75px",
+          "color": "#30BCAF",
+          "backgroundColor": "#ffffffff",
+          "borderWidth": "2px",
+          "borderColor": "#30BCAF"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "ktqAg1r1kp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "aomYL5B8Pj"
+      }
+    },
+    "aomYL5B8Pj": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "oBTV-ACInu",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "ihm78IvKtA": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Yes",
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "bV3tYhTgSiLMRhMz4PebeA",
+            "events": [
+              "onclick"
+            ],
+            "action": "remove",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "selectedTeam",
+              "from": "teams",
+              "type": "entity",
+              "namespace": ""
+            },
+            "feedback": {
+              "enabled": true,
+              "messages": {
+                "onSuccess": "Team deleted successfully !",
+                "onFail": "Deletion Failed !1"
+              }
+            }
+          },
+          {
+            "type": "simple-action",
+            "id": "aYGMuLVnB3cqCsc18zLQWw",
+            "events": [
+              "onclick"
+            ],
+            "action": "all",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "teams",
+              "from": "",
+              "type": "entitysel",
+              "namespace": ""
+            }
+          },
+          {
+            "type": "dialog",
+            "id": "p6aD1tXXhYUgoMQpTVW3Lj",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "deleteTeam"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "width": "75px",
+          "backgroundColor": "#30BCAF"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "ktqAg1r1kp",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "20vstxTrQu"
+      }
+    },
+    "20vstxTrQu": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "ihm78IvKtA",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Oe4-7bBgu5": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-times"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "JUT1BoWQ2x",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "rmPc_3N9NY": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Create a team: ",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "textAlign": "start",
+          "fontSize": "18px",
+          "fontWeight": "500"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "UTXUSZBorK",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "nCxTz5_xdh": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "iterableChild": true,
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        }
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "KDa3KPFP0w",
+      "hidden": false,
+      "nodes": [
+        "zWrEtN5COk"
+      ],
+      "linkedNodes": {}
+    },
+    "ucPHfM94iB": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "iterableChild": true,
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        }
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "KDa3KPFP0w",
+      "hidden": false,
+      "nodes": [
+        "LSK0GWtNHo"
+      ],
+      "linkedNodes": {}
+    },
+    "zWrEtN5COk": {
+      "type": {
+        "resolvedName": "TextInput"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "placeholder": "placeholder",
+        "label": "label",
+        "labelPosition": "hidden",
+        "iterableChild": true,
+        "style": {
+          "height": "46px",
+          "borderRadius": "3px"
+        }
+      },
+      "displayName": "Text Input",
+      "custom": {},
+      "parent": "nCxTz5_xdh",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "label": "fsZlinUuYC",
+        "input": "hrDFF7nLqX"
+      }
+    },
+    "fsZlinUuYC": {
+      "type": {
+        "resolvedName": "Label"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "moveable": false,
+        "text": "Team",
+        "deletable": true
+      },
+      "displayName": "Label",
+      "custom": {},
+      "parent": "zWrEtN5COk",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "hrDFF7nLqX": {
+      "type": {
+        "resolvedName": "Input"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "deletable": false,
+        "className": "w-full bg-transparent",
+        "type": "text",
+        "datasource": "selectedTeam.name",
+        "style": {
+          "height": "46px",
+          "paddingLeft": "12px"
+        },
+        "moveable": false,
+        "placeholder": "",
+        "revealPassword": true,
+        "eyePosition": "right"
+      },
+      "displayName": "Input",
+      "custom": {},
+      "parent": "zWrEtN5COk",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "LSK0GWtNHo": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "managers",
+        "currentElement": "selectedTeam.manager",
+        "placeholder": "Select a manager"
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "ucPHfM94iB",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "BIxasadGcP"
+      }
+    },
+    "BIxasadGcP": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 47
+      },
+      "parent": "LSK0GWtNHo",
+      "hidden": false,
+      "nodes": [
+        "1dOmigMzSq"
+      ],
+      "linkedNodes": {}
+    },
+    "1dOmigMzSq": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "id": "text",
+        "datasource": "$This.fullName",
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "datasource",
+                "dsType": "string",
+                "datasource": "$This.fullName",
+                "children": [
+                  {
+                    "text": "$This.fullName"
+                  }
+                ]
+              },
+              {
+                "text": " "
+              }
+            ]
+          }
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "BIxasadGcP",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Aq3IlleLhV": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Save",
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "tMy3arxHww37b6v6ZzQk78",
+            "events": [
+              "onclick"
+            ],
+            "action": "save",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "selectedTeam",
+              "type": "entity",
+              "from": "teams",
+              "namespace": ""
+            },
+            "feedback": {
+              "enabled": true,
+              "messages": {
+                "onSuccess": "This team was updated successfully",
+                "onFail": "Error"
+              }
+            }
+          },
+          {
+            "type": "dialog",
+            "id": "hhSKEoYCRMsFUWpzqaYTie",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "teamDetails"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "height": "42px",
+          "backgroundColor": "#30BCAF"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "w2sF1723-D",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "e4lPcYSTnI"
+      }
+    },
+    "e4lPcYSTnI": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "Aq3IlleLhV",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "w2sF1723-D": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "iterableChild": true,
+        "style": {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "alignItems": "center",
+          "gap": "10px"
+        }
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "7QYsUphHGB",
+      "hidden": false,
+      "nodes": [
+        "6OhNdeVcw1",
+        "Aq3IlleLhV"
+      ],
+      "linkedNodes": {}
+    },
+    "6OhNdeVcw1": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Cancel",
+        "classNames": [],
+        "events": [
+          {
+            "type": "dialog",
+            "id": "fTmfpCY3fWMNF44f2nmV5Q",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "teamDetails"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "color": "#30BCAF",
+          "backgroundColor": "#FFFFFF",
+          "height": "42px",
+          "borderColor": "#30BCAF",
+          "borderWidth": "2px"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "w2sF1723-D",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "gH5rlkPM5b"
+      }
+    },
+    "gH5rlkPM5b": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "6OhNdeVcw1",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "zHYzKmjpjT": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "t5D5v2ZQToC2Ti4y5QRUzt",
+            "events": [
+              "onclick"
+            ],
+            "action": "refresh",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "selectedTeam",
+              "type": "entity",
+              "from": "teams",
+              "namespace": ""
+            },
+            "feedback": {
+              "enabled": true,
+              "messages": {
+                "onSuccess": "team reload ok"
+              }
+            }
+          }
+        ],
+        "icon": "fa-solid fa-circle-minus",
+        "style": {
+          "cursor": "pointer"
+        }
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "KbJ7gSPtUO",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "PUfLAvfewu": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "7QYsUphHGB",
+      "hidden": false,
+      "nodes": [
+        "q3gTGvrMsu"
+      ],
+      "linkedNodes": {}
+    },
+    "q3gTGvrMsu": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "ujoxDoHFMWWJs4YVnhVHhu",
+            "events": [
+              "onclick"
+            ],
+            "action": "query",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "employees",
+              "type": "entitysel",
+              "from": "",
+              "namespace": ""
+            },
+            "query": {
+              "query": "team == null"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "EmployeesEntity",
+            "events": [
+              "onselect"
+            ],
+            "id": "d3udp3y8t3rG2YeaGrt4vS",
+            "method": "teamlessEmployee.setTeam",
+            "params": [
+              {
+                "name": "selectedTeam",
+                "type": "cs.TeamsEntity",
+                "datasource": "selectedTeam",
+                "id": "kskWqXQpraj9oHvEmogmkt"
+              }
+            ],
+            "namespace": "",
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            },
+            "feedback": true
+          },
+          {
+            "type": "simple-action",
+            "id": "xbiYQ2XzQrqEUakvZZxYEC",
+            "events": [
+              "onselect"
+            ],
+            "action": "refresh",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "selectedTeam",
+              "type": "entity",
+              "from": "teams",
+              "namespace": ""
+            },
+            "feedback": {
+              "enabled": true
+            }
+          }
+        ],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "employees",
+        "placeholder": "Add an employee to your team",
+        "currentElement": "teamlessEmployee"
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "PUfLAvfewu",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "zyFad0lAtN"
+      }
+    },
+    "zyFad0lAtN": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 47
+      },
+      "parent": "q3gTGvrMsu",
+      "hidden": false,
+      "nodes": [
+        "wUfw3FiB5X"
+      ],
+      "linkedNodes": {}
+    },
+    "wUfw3FiB5X": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "id": "text",
+        "datasource": "$This.fullName",
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "datasource",
+                "dsType": "string",
+                "datasource": "$This.fullName",
+                "children": [
+                  {
+                    "text": "$This.fullName"
+                  }
+                ]
+              },
+              {
+                "text": " "
+              }
+            ]
+          }
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "zyFad0lAtN",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    }
+  }
+}
