@@ -1,0 +1,12 @@
+{
+  "name": "timeline",
+  "version": "0.2.0",
+  "scope": "qodly_064baed7a010e6deba40",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

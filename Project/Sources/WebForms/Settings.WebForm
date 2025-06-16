@@ -1,0 +1,596 @@
+{
+  "metadata": {
+    "v": "1.0",
+    "datasources": [],
+    "styles": [
+      {
+        "name": "activeButtonCss",
+        "content": "self {\n\tbackground-color: #30BCAF !important;\n\tcolor: #FFFFFF !important;\n\tborder: 1px solid #FFFFFF !important;\n\tbox-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;\n}",
+        "parentId": null,
+        "scope": "local",
+        "id": "7GqlX75zXbatJ5ExlpggO"
+      }
+    ]
+  },
+  "components": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "isCanvas": true,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "airyMode": false,
+        "className": "bg-white h-full w-full px-6",
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "height": "100%",
+          "width": "100%",
+          "flexDirection": "row",
+          "backgroundColor": "transparent"
+        }
+      },
+      "displayName": "Page",
+      "custom": {},
+      "parent": "",
+      "hidden": false,
+      "nodes": [
+        "uH4LcBSdua"
+      ],
+      "linkedNodes": {}
+    },
+    "uH4LcBSdua": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        },
+        "classNames": [
+          "flexGrow1"
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "6bAMZNLlEL",
+        "PUSmT2bcwo"
+      ],
+      "linkedNodes": {}
+    },
+    "6bAMZNLlEL": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "gap": "20px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "uH4LcBSdua",
+      "hidden": false,
+      "nodes": [
+        "piPDdUoQJm",
+        "1-UojJzXHu",
+        "VuNlrwKPg3"
+      ],
+      "linkedNodes": {}
+    },
+    "piPDdUoQJm": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Public holidays",
+        "classNames": [
+          "activeButtonCss"
+        ],
+        "events": [
+          {
+            "type": "navigation",
+            "id": "5stbhLrcAio1r8fbWoALCC",
+            "events": [
+              "onclick"
+            ],
+            "externalLink": false,
+            "loader": "PUSmT2bcwo",
+            "parent": "webform-loader",
+            "target": "HolidaysPage"
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "rz4Zb9zi4zimJPwKijLFWh",
+            "method": "ds.setCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "9bmii95hFQSnYNkAXfaZBX",
+                "isHardCoded": true,
+                "hardCodedValue": "holidayButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "gi362iRmaa3T5vsHv9k213",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "pEdSDYSQupg6SUH8ohPRTX",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "holidayButton",
+                "id": "sKY2cqyxPKuukYxnhRNQrn",
+                "isHardCoded": true,
+                "hardCodedValue": "leaveTypeButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "e5ooWYgruuK9sznFVLHfBe",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "9cJqSbgmYobRFksk1qQxej",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "sQisd5cDnB1sewkvX7FBTC",
+                "isHardCoded": true,
+                "hardCodedValue": "teamButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "8kN8vmUYU1VeqM4bHvcqZf",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "height": "42px",
+          "backgroundColor": "#FFFFFF",
+          "width": "20%",
+          "borderWidth": "2px",
+          "borderColor": "#30BCAF",
+          "color": "#30BCAF"
+        },
+        "serverSideRef": "holidayButton"
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "6bAMZNLlEL",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "M94qd77T-Q"
+      }
+    },
+    "M94qd77T-Q": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "piPDdUoQJm",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "1-UojJzXHu": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Leave type",
+        "classNames": [],
+        "events": [
+          {
+            "type": "navigation",
+            "id": "1NbPdZCBWKERykVDBo4cEc",
+            "events": [
+              "onclick"
+            ],
+            "externalLink": false,
+            "loader": "PUSmT2bcwo",
+            "parent": "webform-loader",
+            "isHardCoded": true,
+            "target": "LeaveTypesPage"
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "gygY6SfeFtdGTdPa3KpLDq",
+            "method": "ds.setCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "irmGY8eVhC69BDLZkuHHP3",
+                "isHardCoded": true,
+                "hardCodedValue": "leaveTypeButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "aBYYT51eBDcTDyChpkAqMS",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "tTc6VMdiSimQA7Z75CbugF",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "m9A4xHSfnoxrZeu53YtmJM",
+                "isHardCoded": true,
+                "hardCodedValue": "holidayButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "qDXsivg4tBApTpBzu7TqUi",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "p5jfLF3LzuPhTNaFxqupTA",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "teamButton",
+                "id": "1MvZsv6VxwNNpmP2eJpTch",
+                "isHardCoded": true,
+                "hardCodedValue": "teamButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "activeButtonCss",
+                "id": "2SYyxAksM7TRsLsoUs93ag",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "height": "42px",
+          "backgroundColor": "#FFFFFF",
+          "width": "20%",
+          "color": "#30BCAF",
+          "borderWidth": "2px",
+          "borderColor": "#30BCAF"
+        },
+        "serverSideRef": "leaveTypeButton"
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "6bAMZNLlEL",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "wFX62bKUEC"
+      }
+    },
+    "wFX62bKUEC": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "1-UojJzXHu",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "PUSmT2bcwo": {
+      "type": {
+        "resolvedName": "WebformLoader"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "classNames": [
+          "flexGrow1"
+        ],
+        "webform": "HolidaysPage",
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px"
+        }
+      },
+      "displayName": "Page Loader",
+      "custom": {},
+      "parent": "uH4LcBSdua",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "VuNlrwKPg3": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Teams",
+        "classNames": [],
+        "events": [
+          {
+            "type": "navigation",
+            "id": "1NbPdZCBWKERykVDBo4cEc",
+            "events": [
+              "onclick"
+            ],
+            "externalLink": false,
+            "loader": "PUSmT2bcwo",
+            "parent": "webform-loader",
+            "target": "teams"
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "vGQK8Jx2tJqqJQApXmTnaP",
+            "method": "ds.setCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "mk4Ped5soTJroYGx8FE3rC",
+                "isHardCoded": true,
+                "hardCodedValue": "teamButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "pbK5KHBZQ6a3iZfkBt5dzr",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "uLYA9cdTzZtmBdrgL7LEYz",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "gkVqagL37Ho1Bcee48qTEi",
+                "isHardCoded": true,
+                "hardCodedValue": "holidayButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "https:activeButtonCss",
+                "id": "mg1s66Vhmg9QBqDfuScAXT",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onclick"
+            ],
+            "id": "s1D5GUPD6DbGmtniK5uij9",
+            "method": "ds.removeCss",
+            "params": [
+              {
+                "name": "serverRef",
+                "type": "string",
+                "datasource": "",
+                "id": "uap44Q1Aw6Uto7qkXhPjcH",
+                "isHardCoded": true,
+                "hardCodedValue": "leaveTypeButton"
+              },
+              {
+                "name": "cssClass",
+                "type": "string",
+                "datasource": "",
+                "id": "itf1kSpwFvCHUwQBqSuk39",
+                "isHardCoded": true,
+                "hardCodedValue": "activeButtonCss"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "height": "42px",
+          "backgroundColor": "#FFFFFF",
+          "width": "20%",
+          "color": "#30BCAF",
+          "borderWidth": "2px",
+          "borderColor": "#30BCAF"
+        },
+        "serverSideRef": "teamButton"
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "6bAMZNLlEL",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "_Ov9ZtUZua"
+      }
+    },
+    "_Ov9ZtUZua": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "VuNlrwKPg3",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    }
+  }
+}

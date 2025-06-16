@@ -1,0 +1,12 @@
+{
+  "name": "qodly-stylishbox",
+  "version": "0.1.2",
+  "scope": "qodly_4b73e4fdf8fb53606fa0",
+  "author": {
+    "name": "Qodly Team",
+    "email": "contact@qodly.com",
+    "url": "https://qodly.com"
+  },
+  "module": "components",
+  "remoteEntryFileName": "components.js"
+}

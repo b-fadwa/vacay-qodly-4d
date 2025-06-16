@@ -1,0 +1,1976 @@
+{
+  "metadata": {
+    "v": "1.0",
+    "datasources": [
+      {
+        "id": "search",
+        "type": "scalar",
+        "namespace": "",
+        "dataType": "string",
+        "initialValue": ""
+      },
+      {
+        "id": "employees",
+        "type": "entitysel",
+        "dataclass": "Employees",
+        "initialValue": "",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "teams",
+        "type": "entitysel",
+        "dataclass": "Teams",
+        "initialValue": "all",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "selectedTeam",
+        "type": "entity",
+        "dataclass": "Teams",
+        "from": "teams",
+        "namespace": "",
+        "initialValue": "",
+        "depth": null,
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "Employees",
+            "events": [
+              "onChange"
+            ],
+            "id": "ktoNfqa7qa2gHgcKR3ijY5",
+            "method": "ds.Employees.filterEmployees",
+            "params": [
+              {
+                "name": "team",
+                "type": "cs.TeamsEntity",
+                "datasource": "selectedTeam",
+                "id": "vzGNaLZHhLHqUtDrHjc5T9"
+              },
+              {
+                "name": "userName",
+                "type": "string",
+                "datasource": "search",
+                "id": "ksJrAep7BBEEdJeGj55qME"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "cs.EmployeesSelection",
+              "datasource": "employees"
+            }
+          }
+        ]
+      },
+      {
+        "id": "selectedEmployee",
+        "type": "entity",
+        "dataclass": "Employees",
+        "from": "employees",
+        "namespace": "",
+        "initialValue": "first",
+        "depth": null
+      },
+      {
+        "id": "team",
+        "type": "entity",
+        "dataclass": "Teams",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "newLeaveBalance",
+        "type": "entity",
+        "dataclass": "LeaveBalances",
+        "initialValue": "",
+        "depth": null
+      },
+      {
+        "id": "leaveTypes",
+        "type": "entitysel",
+        "dataclass": "LeaveTypes",
+        "initialValue": "all",
+        "depth": null,
+        "pageSize": 100
+      },
+      {
+        "id": "selectedLeaveType",
+        "type": "entity",
+        "dataclass": "LeaveTypes",
+        "from": "leaveTypes",
+        "namespace": "",
+        "initialValue": "",
+        "depth": null,
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "EmployeesEntity",
+            "events": [
+              "onChange"
+            ],
+            "id": "8amts67PHBY1xRq8KDp2t6",
+            "method": "selectedEmployee.getBalance",
+            "params": [
+              {
+                "name": "leaveType",
+                "type": "cs.LeaveTypesEntity",
+                "datasource": "selectedLeaveType",
+                "id": "pgWhP1KkdafCRohyRiRHja"
+              }
+            ],
+            "namespace": "",
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "cs.LeaveBalancesEntity",
+              "datasource": "newLeaveBalance"
+            },
+            "feedback": true
+          }
+        ]
+      }
+    ],
+    "styles": [
+      {
+        "name": "noTeamCss",
+        "content": "self:has(span[title=\"\"]) {\n\tcolor: red !important\n}",
+        "parentId": null,
+        "id": "ZIDdazoCRhWwfxFEpuwdd"
+      }
+    ]
+  },
+  "components": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "isCanvas": true,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onload"
+            ],
+            "id": "jJVwpNpZtjebKms6qXz5UG",
+            "method": "ds.displayToRole",
+            "params": [
+              {
+                "name": "currentUser",
+                "type": "cs.EmployeesEntity",
+                "datasource": "Shared:currentUser",
+                "id": "syURD6dWLB6wa7sFPZhUk5"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            }
+          },
+          {
+            "type": "method",
+            "dataclass": "Employees",
+            "events": [
+              "onload"
+            ],
+            "id": "dEa73HSLNAGkS6W11xxUQf",
+            "method": "ds.Employees.getSBEmployees",
+            "params": [
+              {
+                "name": "currentUser",
+                "type": "cs.EmployeesEntity",
+                "datasource": "Shared:currentUser",
+                "id": "nLExZJuAEr6GKErGDwqt4u"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "cs.EmployeesSelection",
+              "datasource": "employees"
+            }
+          }
+        ],
+        "airyMode": false,
+        "className": "bg-white h-full w-full px-6",
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "backgroundColor": "transparent",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "overflow": "hidden"
+        }
+      },
+      "displayName": "Page",
+      "custom": {},
+      "parent": "",
+      "hidden": false,
+      "nodes": [
+        "t4enuMHp7F",
+        "0bqYCfOK1P",
+        "zHX908P0zj",
+        "yk1i8Pwx1C"
+      ],
+      "linkedNodes": {}
+    },
+    "t4enuMHp7F": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "space-between"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "wiz-7E3mtv",
+        "Tplf43IGZZ"
+      ],
+      "linkedNodes": {}
+    },
+    "0bqYCfOK1P": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "classNames": [
+          "flexGrow1"
+        ],
+        "style": {
+          "display": "flex",
+          "paddingRight": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [
+        "eWnsUeQAwI"
+      ],
+      "linkedNodes": {}
+    },
+    "kEVORRM3y-": {
+      "type": {
+        "resolvedName": "TextInput"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "placeholder": "placeholder",
+        "label": "label",
+        "labelPosition": "hidden",
+        "style": {
+          "justifyContent": "flex-end",
+          "flexDirection": "row",
+          "backgroundColor": "#FFFFFF",
+          "width": "240px",
+          "height": "42px",
+          "borderRadius": "6px"
+        },
+        "classNames": [],
+        "iterableChild": true
+      },
+      "displayName": "Text Input",
+      "custom": {},
+      "parent": "Tplf43IGZZ",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "label": "M5p2K1_TAH",
+        "input": "5LCyDM9ifw"
+      }
+    },
+    "M5p2K1_TAH": {
+      "type": {
+        "resolvedName": "Label"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "moveable": false,
+        "deletable": true,
+        "text": "Label"
+      },
+      "displayName": "Label",
+      "custom": {},
+      "parent": "kEVORRM3y-",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "5LCyDM9ifw": {
+      "type": {
+        "resolvedName": "Input"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "Employees",
+            "events": [
+              "onchange"
+            ],
+            "id": "jquHHxpUKmsZVYMVfnnpYm",
+            "method": "ds.Employees.filterEmployees",
+            "params": [
+              {
+                "name": "team",
+                "type": "cs.TeamsEntity",
+                "datasource": "selectedTeam",
+                "id": "k36GH7UEQzB8AGyKpJXcV9"
+              },
+              {
+                "name": "userName",
+                "type": "string",
+                "datasource": "search",
+                "id": "sfT5426GKUNzS1w46HZE2t"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "cs.EmployeesSelection",
+              "datasource": "employees"
+            }
+          }
+        ],
+        "deletable": false,
+        "className": "fd-input w-full bg-transparent",
+        "type": "text",
+        "style": {
+          "paddingLeft": "12px",
+          "paddingRight": "12px",
+          "paddingBottom": "12px",
+          "paddingTop": "12px",
+          "textAlign": "start",
+          "borderRadius": "6px",
+          "borderWidth": "0.8px",
+          "borderColor": "rgb(204,204,204)",
+          "height": "42px"
+        },
+        "datasource": "search",
+        "dataType": "string",
+        "placeholder": "Search ",
+        "moveable": false,
+        "readonly": false,
+        "revealPassword": true,
+        "eyePosition": "right"
+      },
+      "displayName": "Input",
+      "custom": {},
+      "parent": "kEVORRM3y-",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "eWnsUeQAwI": {
+      "type": {
+        "resolvedName": "Matrix"
+      },
+      "isCanvas": false,
+      "props": {
+        "orientation": "vertical",
+        "iterable": true,
+        "classNames": [
+          "matrixCss"
+        ],
+        "events": [],
+        "style": {
+          "height": "100%",
+          "borderStyle": "none",
+          "backgroundColor": "transparent"
+        },
+        "datasource": "employees",
+        "gridProps": {
+          "styleboxWidth": 1,
+          "styleboxHeight": 160,
+          "styleboxPercentWidth": "33.3%",
+          "enableMosaic": true
+        },
+        "currentElement": "selectedEmployee"
+      },
+      "displayName": "Matrix",
+      "custom": {},
+      "parent": "0bqYCfOK1P",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "1CyIpIqKxw"
+      }
+    },
+    "1CyIpIqKxw": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "alignItems": "start",
+          "width": "33.3%",
+          "height": "160px",
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "paddingLeft": "4px",
+          "paddingRight": "4px",
+          "paddingBottom": "4px",
+          "paddingTop": "4px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "eWnsUeQAwI",
+      "hidden": false,
+      "nodes": [
+        "zf6HlMnsQr"
+      ],
+      "linkedNodes": {}
+    },
+    "010NcGxXw7": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Balance : ",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.balance",
+                "children": [
+                  {
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false,
+                    "text": "balance"
+                  }
+                ],
+                "dsType": "number",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.balance",
+        "style": {
+          "color": "#9e9e9e",
+          "cursor": "auto"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "Ke0TORY3t5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "CcmSRAlJq7": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.fullName",
+                "children": [
+                  {
+                    "text": "username",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.fullName",
+        "style": {
+          "fontSize": "18px",
+          "fontWeight": "500",
+          "textTransform": "capitalize",
+          "cursor": "auto"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "Tel1Npl6e1",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "h-IyWJjeUX": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.email",
+                "children": [
+                  {
+                    "text": "Email",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.email",
+        "style": {},
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "Tel1Npl6e1",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "p8ftEa5iMC": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.role",
+                "children": [
+                  {
+                    "text": "Role",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.role",
+        "style": {
+          "color": "#444",
+          "backgroundColor": "#E2E8F0",
+          "minWidth": "auto",
+          "borderRadius": "10px",
+          "paddingRight": "5px",
+          "paddingBottom": "2px",
+          "paddingTop": "2px",
+          "paddingLeft": "5px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "LRlkxJ4Ij4",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "zf6HlMnsQr": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "xn9u7LnMsQ5ndptreHCBCu",
+            "events": [
+              "onclick"
+            ],
+            "action": "copy",
+            "datasource": {
+              "name": "$This",
+              "from": "",
+              "type": "entity",
+              "namespace": "",
+              "target": "selectedEmployee",
+              "targetNamespace": "",
+              "targetType": "entity"
+            },
+            "actionType": "datasource"
+          }
+        ],
+        "style": {
+          "width": "100%",
+          "height": "100%",
+          "borderRadius": "10px",
+          "borderWidth": "1px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "alignItems": "start",
+          "backgroundColor": "#FFFFFF",
+          "paddingRight": "5%",
+          "paddingBottom": "5%",
+          "paddingTop": "5%",
+          "paddingLeft": "5%",
+          "gap": "5px",
+          "cursor": "auto"
+        },
+        "classNames": [
+          "shadow"
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "1CyIpIqKxw",
+      "hidden": false,
+      "nodes": [
+        "dZdPHua-Q9",
+        "Tel1Npl6e1",
+        "LRlkxJ4Ij4"
+      ],
+      "linkedNodes": {}
+    },
+    "wiz-7E3mtv": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Employees",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "fontSize": "25px",
+          "fontWeight": "500",
+          "color": "#2D3748"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "t4enuMHp7F",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Tel1Npl6e1": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingTop": "0px",
+          "width": "50%",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "flex-start",
+          "alignItems": "start",
+          "height": "100%"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "zf6HlMnsQr",
+      "hidden": false,
+      "nodes": [
+        "CcmSRAlJq7",
+        "h-IyWJjeUX",
+        "Ke0TORY3t5",
+        "U6i81HQ-Gq"
+      ],
+      "linkedNodes": {}
+    },
+    "qER2bhOoDB": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-solid fa-user-large",
+        "style": {
+          "color": "#FFF",
+          "backgroundColor": "#E2E8F0",
+          "width": "37px",
+          "height": "37px",
+          "display": "flex",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "borderRadius": "10px",
+          "paddingRight": "10px",
+          "paddingBottom": "10px",
+          "paddingTop": "10px",
+          "paddingLeft": "10px"
+        }
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "dZdPHua-Q9",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "dZdPHua-Q9": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "flex-start",
+          "width": "fit-content"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "zf6HlMnsQr",
+      "hidden": false,
+      "nodes": [
+        "qER2bhOoDB"
+      ],
+      "linkedNodes": {}
+    },
+    "LRlkxJ4Ij4": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "width": "fit-content",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "flex-end"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "zf6HlMnsQr",
+      "hidden": false,
+      "nodes": [
+        "p8ftEa5iMC"
+      ],
+      "linkedNodes": {}
+    },
+    "Tplf43IGZZ": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "flex-end",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "width": "fit-content",
+          "gap": "6px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "t4enuMHp7F",
+      "hidden": false,
+      "nodes": [
+        "ZpWyOHEsnI",
+        "kEVORRM3y-"
+      ],
+      "linkedNodes": {}
+    },
+    "ZpWyOHEsnI": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "teams",
+        "style": {
+          "width": "240px",
+          "height": "42px",
+          "backgroundColor": "#ffffffff"
+        },
+        "placeholder": "Choose a team",
+        "currentElement": "selectedTeam",
+        "serverSideRef": "teamSB"
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "Tplf43IGZZ",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "jPsoOGkHFL"
+      }
+    },
+    "jPsoOGkHFL": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 39
+      },
+      "parent": "ZpWyOHEsnI",
+      "hidden": false,
+      "nodes": [
+        "VGHtcnplOF"
+      ],
+      "linkedNodes": {}
+    },
+    "VGHtcnplOF": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.name",
+                "children": [
+                  {
+                    "text": "name",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.name",
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "jPsoOGkHFL",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "dQs1nAVlO0": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Team: "
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.team.name",
+                "children": [
+                  {
+                    "text": "team"
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.team.name",
+        "style": {
+          "color": "#9e9e9e"
+        },
+        "classNames": [
+          "noTeamCss"
+        ],
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "U6i81HQ-Gq",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "zHX908P0zj": {
+      "type": {
+        "resolvedName": "Dialog"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "overlay": true,
+        "serverSideRef": "editEmployee",
+        "closable": true,
+        "style": {
+          "borderRadius": "6px"
+        }
+      },
+      "displayName": "Dialog",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "Dialog": "Hh5ukdirvk",
+        "close": "5cMMeN1CK7"
+      }
+    },
+    "Hh5ukdirvk": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "h-full",
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "zHX908P0zj",
+      "hidden": false,
+      "nodes": [
+        "sRCzjNOTWF",
+        "fSEsEiLkAB"
+      ],
+      "linkedNodes": {}
+    },
+    "LDKw6kdB8r": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Assign "
+              },
+              {
+                "type": "datasource",
+                "datasource": "selectedEmployee.firstName",
+                "children": [
+                  {
+                    "text": "x"
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": " to a new team:"
+              }
+            ]
+          }
+        ],
+        "datasource": "selectedEmployee.firstName",
+        "style": {
+          "fontWeight": "500",
+          "textDecorationLine": " underline"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "sRCzjNOTWF",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Bxcu9cRQi8": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "teams",
+        "currentElement": "team",
+        "placeholder": "Select a team",
+        "style": {}
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "sRCzjNOTWF",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "swzfnhD7Vy"
+      }
+    },
+    "swzfnhD7Vy": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 39
+      },
+      "parent": "Bxcu9cRQi8",
+      "hidden": false,
+      "nodes": [
+        "vVroKa3zUB"
+      ],
+      "linkedNodes": {}
+    },
+    "vVroKa3zUB": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Label : ",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.name",
+                "children": [
+                  {
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false,
+                    "text": "x"
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false,
+                "text": " - Manager : "
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.manager.fullName",
+                "children": [
+                  {
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false,
+                    "text": "x"
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.name,$This.manager.fullName",
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "swzfnhD7Vy",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "fSEsEiLkAB": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "paddingRight": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "Hh5ukdirvk",
+      "hidden": false,
+      "nodes": [
+        "34lvAXM8SZ"
+      ],
+      "linkedNodes": {}
+    },
+    "34lvAXM8SZ": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Save",
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "EmployeesEntity",
+            "events": [
+              "onclick"
+            ],
+            "id": "5Hnz5roTtPUBqNWDCNK4M8",
+            "method": "selectedEmployee.addBalanceToNew",
+            "params": [
+              {
+                "name": "team",
+                "type": "cs.TeamsEntity",
+                "datasource": "team",
+                "id": "1QNzS162D3F34eDPgYTvRX"
+              }
+            ],
+            "namespace": "",
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            },
+            "feedback": true
+          },
+          {
+            "type": "simple-action",
+            "id": "aHR7ro6ssQc7Tg2fBnQpkK",
+            "events": [
+              "onclick"
+            ],
+            "action": "refresh",
+            "datasource": {
+              "name": "employees",
+              "from": "",
+              "type": "entitysel",
+              "namespace": ""
+            },
+            "disabled": false,
+            "actionType": "datasource"
+          },
+          {
+            "type": "dialog",
+            "id": "kxQEaAbEBH7w2Vd1wRNtAL",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "editEmployee"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "backgroundColor": "#30BCAF",
+          "height": "42px"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "fSEsEiLkAB",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "b960e6_z14"
+      }
+    },
+    "b960e6_z14": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "34lvAXM8SZ",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "sRCzjNOTWF": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "10px",
+          "paddingRight": "0px",
+          "paddingLeft": "0px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "Hh5ukdirvk",
+      "hidden": false,
+      "nodes": [
+        "LDKw6kdB8r",
+        "Bxcu9cRQi8"
+      ],
+      "linkedNodes": {}
+    },
+    "5cMMeN1CK7": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-times"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "zHX908P0zj",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Ke0TORY3t5": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "flex-start",
+          "gap": "5px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "Tel1Npl6e1",
+      "hidden": false,
+      "nodes": [
+        "010NcGxXw7",
+        "C1qIttTWQV"
+      ],
+      "linkedNodes": {}
+    },
+    "C1qIttTWQV": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "dialog",
+            "id": "jjHx1AnpYuTxjem3VPk8j4",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "open",
+            "targetDialog": "editBalance"
+          }
+        ],
+        "icon": "fa-regular fa-eye",
+        "style": {
+          "cursor": "pointer",
+          "color": "#9e9e9e",
+          "fontSize": "11px"
+        }
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "Ke0TORY3t5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "Mdj08gW2L6": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "3xbwxXtZsqKNQVm2YVKSvg",
+            "events": [
+              "onclick"
+            ],
+            "action": "reset",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "team",
+              "type": "entity",
+              "namespace": ""
+            }
+          },
+          {
+            "type": "dialog",
+            "id": "jjHx1AnpYuTxjem3VPk8j4",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "open",
+            "targetDialog": "editEmployee"
+          }
+        ],
+        "icon": "fa-solid fa-pen",
+        "style": {
+          "cursor": "pointer",
+          "color": "#9e9e9e",
+          "fontSize": "11px"
+        }
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "U6i81HQ-Gq",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "U6i81HQ-Gq": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "gap": "5px",
+          "alignItems": "center"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "Tel1Npl6e1",
+      "hidden": false,
+      "nodes": [
+        "dQs1nAVlO0",
+        "Mdj08gW2L6"
+      ],
+      "linkedNodes": {}
+    },
+    "yk1i8Pwx1C": {
+      "type": {
+        "resolvedName": "Dialog"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "simple-action",
+            "id": "ncmypyhtwg85XwnougrDbF",
+            "events": [
+              "oninit"
+            ],
+            "action": "create",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "newLeaveBalance",
+              "type": "entity",
+              "namespace": ""
+            }
+          },
+          {
+            "type": "simple-action",
+            "id": "kGyum2XeVNd7ujy1eFk6co",
+            "events": [
+              "oninit"
+            ],
+            "action": "reset",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "selectedLeaveType",
+              "type": "entity",
+              "from": "leaveTypes",
+              "namespace": ""
+            }
+          }
+        ],
+        "overlay": true,
+        "serverSideRef": "editBalance",
+        "closable": true,
+        "style": {
+          "borderRadius": "10px"
+        }
+      },
+      "displayName": "Dialog",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "Dialog": "FlB9bhL2Q8",
+        "close": "J-_LXN_8o_"
+      }
+    },
+    "FlB9bhL2Q8": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "h-full",
+        "style": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "start",
+          "gap": "10px"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "yk1i8Pwx1C",
+      "hidden": false,
+      "nodes": [
+        "8Z_5uComRJ",
+        "vc4Bwe3UW9",
+        "0rMVH-VpJV",
+        "2sBqlt9aH5"
+      ],
+      "linkedNodes": {}
+    },
+    "vc4Bwe3UW9": {
+      "type": {
+        "resolvedName": "SelectBox"
+      },
+      "isCanvas": false,
+      "props": {
+        "iterable": true,
+        "classNames": [],
+        "events": [],
+        "template": "{{ length }} items",
+        "rowsNumber": 5,
+        "datasource": "leaveTypes",
+        "currentElement": "selectedLeaveType",
+        "style": {
+          "display": "flex"
+        },
+        "enableSearch": true
+      },
+      "displayName": "Select Box",
+      "custom": {},
+      "parent": "FlB9bhL2Q8",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "container": "XiSTIA84Gv"
+      }
+    },
+    "0rMVH-VpJV": {
+      "type": {
+        "resolvedName": "TextInput"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "placeholder": "placeholder",
+        "label": "label",
+        "labelPosition": "left",
+        "style": {
+          "width": "100%"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text Input",
+      "custom": {},
+      "parent": "FlB9bhL2Q8",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "label": "zWYySuh0uw",
+        "input": "I6w-s-uLsc"
+      }
+    },
+    "zWYySuh0uw": {
+      "type": {
+        "resolvedName": "Label"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "moveable": false,
+        "style": {
+          "display": "none"
+        },
+        "deletable": true,
+        "text": "Label"
+      },
+      "displayName": "Label",
+      "custom": {},
+      "parent": "0rMVH-VpJV",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "I6w-s-uLsc": {
+      "type": {
+        "resolvedName": "Input"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "deletable": false,
+        "className": "fd-input w-full bg-transparent",
+        "type": "number",
+        "datasource": "newLeaveBalance.balance",
+        "style": {
+          "height": "40px",
+          "borderRadius": "6px",
+          "paddingLeft": "10px"
+        },
+        "placeholder": "balance",
+        "moveable": false,
+        "readonly": false,
+        "format": "#,##0",
+        "dataType": "number",
+        "revealPassword": true,
+        "eyePosition": "right"
+      },
+      "displayName": "Input",
+      "custom": {},
+      "parent": "0rMVH-VpJV",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "kkllBikswu": {
+      "type": {
+        "resolvedName": "Button"
+      },
+      "isCanvas": false,
+      "props": {
+        "text": "Save",
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "EmployeesEntity",
+            "events": [
+              "onclick"
+            ],
+            "id": "wRbEB5vrFHzPhjRGFivMhG",
+            "method": "selectedEmployee.editBalance",
+            "params": [
+              {
+                "name": "leaveType",
+                "type": "cs.LeaveTypesEntity",
+                "datasource": "selectedLeaveType",
+                "id": "oSzQddqvPZzekRNFSuvMwn"
+              },
+              {
+                "name": "balance",
+                "type": "number",
+                "datasource": "newLeaveBalance.balance",
+                "id": "8XDgytfpZs8GhGtr62jthc"
+              }
+            ],
+            "namespace": "",
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "Variable"
+            },
+            "feedback": true
+          },
+          {
+            "type": "simple-action",
+            "id": "dbubNpY9steZEU3RSqgyzX",
+            "events": [
+              "onclick"
+            ],
+            "action": "all",
+            "actionType": "datasource",
+            "datasource": {
+              "name": "employees",
+              "from": "",
+              "namespace": "",
+              "type": "entitysel"
+            }
+          },
+          {
+            "type": "dialog",
+            "id": "kErM6JxqRpkCYJY9P5SuqQ",
+            "events": [
+              "onclick"
+            ],
+            "actionType": "close",
+            "targetDialog": "editBalance"
+          }
+        ],
+        "iconPosition": "hidden",
+        "style": {
+          "display": "flex",
+          "height": "40px",
+          "backgroundColor": "#30BCAF"
+        }
+      },
+      "displayName": "Button",
+      "custom": {},
+      "parent": "2sBqlt9aH5",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {
+        "icon": "klppgIe8Ja"
+      }
+    },
+    "klppgIe8Ja": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-regular fa-star"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "kkllBikswu",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "XiSTIA84Gv": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "className": "fd-selectbox__container",
+        "isFixedWidth": true,
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {
+        "contentHeight": 39
+      },
+      "parent": "vc4Bwe3UW9",
+      "hidden": false,
+      "nodes": [
+        "iZrh6BXlO_"
+      ],
+      "linkedNodes": {}
+    },
+    "iZrh6BXlO_": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              },
+              {
+                "type": "datasource",
+                "datasource": "$This.name",
+                "children": [
+                  {
+                    "text": "name",
+                    "bold": false,
+                    "italic": false,
+                    "underlined": false,
+                    "strikethrough": false
+                  }
+                ],
+                "dsType": "string",
+                "format": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ],
+        "datasource": "$This.name",
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "XiSTIA84Gv",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "J-_LXN_8o_": {
+      "type": {
+        "resolvedName": "Icon"
+      },
+      "isCanvas": false,
+      "props": {
+        "classNames": [],
+        "events": [],
+        "icon": "fa-times"
+      },
+      "displayName": "Icon",
+      "custom": {},
+      "parent": "yk1i8Pwx1C",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "8Z_5uComRJ": {
+      "type": {
+        "resolvedName": "Text"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "doc": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Leave balances by type:",
+                "bold": false,
+                "italic": false,
+                "underlined": false,
+                "strikethrough": false
+              }
+            ]
+          }
+        ],
+        "datasource": "",
+        "style": {
+          "fontWeight": "500",
+          "textDecorationLine": " underline"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Text",
+      "custom": {},
+      "parent": "FlB9bhL2Q8",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    },
+    "2sBqlt9aH5": {
+      "type": {
+        "resolvedName": "StyleBox"
+      },
+      "isCanvas": true,
+      "props": {
+        "events": [],
+        "style": {
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "alignItems": "end",
+          "justifyContent": "flex-end"
+        },
+        "iterableChild": true
+      },
+      "displayName": "Stylebox",
+      "custom": {},
+      "parent": "FlB9bhL2Q8",
+      "hidden": false,
+      "nodes": [
+        "kkllBikswu"
+      ],
+      "linkedNodes": {}
+    }
+  }
+}

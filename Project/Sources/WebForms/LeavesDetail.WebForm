@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "v": "1.0",
+    "datasources": [],
+    "styles": []
+  },
+  "components": {
+    "ROOT": {
+      "type": {
+        "resolvedName": "Container"
+      },
+      "isCanvas": true,
+      "props": {
+        "classNames": [],
+        "events": [
+          {
+            "type": "method",
+            "dataclass": "DataStore",
+            "events": [
+              "onload"
+            ],
+            "id": "hnMyFqfrWs59TEWrhhnq8n",
+            "method": "ds.landingDetailPage",
+            "params": [
+              {
+                "name": "currentUser",
+                "type": "cs.EmployeesEntity",
+                "datasource": "Shared:currentUser",
+                "id": "58goMBVkxU3JP7inJbn61D"
+              }
+            ],
+            "datasource": "",
+            "returns": {
+              "name": "result",
+              "type": "string",
+              "datasource": "UI:detailLeave"
+            },
+            "disabled": false
+          }
+        ],
+        "airyMode": false,
+        "className": "bg-white h-full w-full px-6",
+        "style": {
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "display": "flex",
+          "flexDirection": "column",
+          "height": "100%",
+          "backgroundColor": "transparent",
+          "overflow": "visible"
+        }
+      },
+      "displayName": "Page",
+      "custom": {},
+      "parent": "",
+      "hidden": false,
+      "nodes": [
+        "YuQCXrq45j"
+      ],
+      "linkedNodes": {}
+    },
+    "YuQCXrq45j": {
+      "type": {
+        "resolvedName": "WebformLoader"
+      },
+      "isCanvas": false,
+      "props": {
+        "events": [],
+        "datasource": "UI:detailLeave",
+        "style": {
+          "height": "100%",
+          "width": "100%",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "0px",
+          "paddingLeft": "0px",
+          "backgroundColor": "transparent",
+          "overflow": "auto"
+        },
+        "classNames": [
+          "flexGrow1"
+        ]
+      },
+      "displayName": "Page Loader",
+      "custom": {},
+      "parent": "ROOT",
+      "hidden": false,
+      "nodes": [],
+      "linkedNodes": {}
+    }
+  }
+}

@@ -273,6 +273,11 @@
 			<table_ref uuid="13BAA42C6AB8A143A85906442B87F411" name="Employees"/>
 		</field_ref>
 	</index>
+	<index kind="regular" unique_keys="true" uuid="56626A867D68C74BB2673AAD389E2E3D" type="1">
+		<field_ref uuid="830768FDA1A5E245BFA740B194219E00" name="by">
+			<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="600DC88330F35549B30863BC39B92770" type="7">
 		<field_ref uuid="59267319D67C0E4B81C2F64573E2837C" name="ID">
 			<table_ref uuid="136ED94A56BB93428A0F2D49E259F958" name="LeaveBalances"/>
