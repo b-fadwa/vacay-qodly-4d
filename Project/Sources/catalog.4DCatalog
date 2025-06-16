@@ -315,6 +315,11 @@
 			<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
 		</field_ref>
 	</index>
+	<index kind="regular" unique_keys="true" uuid="78BD348B36EDAD47BB1162534EAA7EDA" type="1">
+		<field_ref uuid="9FF858ADF8F104498618FA137A0B4D43" name="leaveHistory_ID">
+			<table_ref uuid="37A6C3561BB34D48A47BBBD06061524F" name="LeaveTypes"/>
+		</field_ref>
+	</index>
 	<index kind="regular" unique_keys="true" uuid="7AE5376A1B3E7F4FA50694F8C97E2C5A" type="7">
 		<field_ref uuid="B37C9743E9648F47A89C8AFE8C65DE82" name="ID">
 			<table_ref uuid="AF74B82F21D17C4B89E1F446466FE847" name="LeaveActions"/>
@@ -323,6 +328,16 @@
 	<index kind="regular" unique_keys="true" uuid="7C4F7F95826FE34D93DBAAD54624FF50" type="7">
 		<field_ref uuid="2AAA28729BA452438EB9B9A5175249E0" name="ID">
 			<table_ref uuid="37A6C3561BB34D48A47BBBD06061524F" name="LeaveTypes"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="97A83BEE3340C149A2BB175B556E67E2" type="1">
+		<field_ref uuid="C1CCAC6FA04FBE499CBE652147A5E6BB" name="leave_ID">
+			<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="97C9BE197E0B4741AD4E1F1CBEAFA51D" type="1">
+		<field_ref uuid="BA6B55D4ED2597439F9637D2A01524F9" name="employee_ID">
+			<table_ref uuid="8251143B37621346B5CF91759C1FD9C6" name="LeaveHistory"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="9AAD757D2F5F7648AD6ACF15EDA07E4C" type="7">
@@ -335,9 +350,29 @@
 			<table_ref uuid="467C06305C3FDE41A2E3AB854FF57480" name="Holidays"/>
 		</field_ref>
 	</index>
+	<index kind="regular" unique_keys="true" uuid="A1FE201F03C20044985D676E2EF956CD" type="1">
+		<field_ref uuid="5B01529A5D25AA4A90B4A020BA5F2ACA" name="employee_ID">
+			<table_ref uuid="AF74B82F21D17C4B89E1F446466FE847" name="LeaveActions"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="A271EC780EC3114192CD7627A5FADC6E" type="1">
+		<field_ref uuid="81778D73D67F2748A0B3EF8F5675F347" name="team_ID">
+			<table_ref uuid="13BAA42C6AB8A143A85906442B87F411" name="Employees"/>
+		</field_ref>
+	</index>
 	<index kind="regular" uuid="B161C08CB33F72418EB2075CCD6D73DA" type="7">
 		<field_ref uuid="E7B809658A90054AA078C7FB46628E19" name="employee">
 			<table_ref uuid="8251143B37621346B5CF91759C1FD9C6" name="LeaveHistory"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B5478E4821981341B725C55B1D0E0D4D" type="1">
+		<field_ref uuid="8C139CBA6967B64B90E489C43561AC8C" name="leave_ID">
+			<table_ref uuid="AF74B82F21D17C4B89E1F446466FE847" name="LeaveActions"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="C29F1019E80B0F48B2B2EA45D906D038" type="1">
+		<field_ref uuid="830768FDA1A5E245BFA740B194219E00" name="by_ID">
+			<table_ref uuid="6A0923A473DFF04D86640A87E9BCC34D" name="Comments"/>
 		</field_ref>
 	</index>
 	<index kind="regular" unique_keys="true" uuid="F4EBFFCE6D22074CB478A5F8040E45FC" type="7">
