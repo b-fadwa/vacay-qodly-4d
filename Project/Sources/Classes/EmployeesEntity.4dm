@@ -91,7 +91,7 @@ exposed Function editBalance($leaveType : cs:C1710.LeaveTypesEntity; $balance : 
 	var $leaveBalance : cs:C1710.LeaveBalancesEntity
 	If ($leaveT#Null:C1517)
 		$leaveBalance:=$leaveT.leaveBalances.query("employee.ID = :1"; This:C1470.ID).first()
-		$leaveBalance.balance=$balance
+		$leaveBalance.balance:=$balance
 		$leaveBalance.save()
 	Else 
 		$leaveBalance:=ds:C1482.LeaveBalances.new()
@@ -105,7 +105,7 @@ exposed Function editBalance($leaveType : cs:C1710.LeaveTypesEntity; $balance : 
 	
 exposed Function removeTeam()
 	var $saved : Object
-	This:C1470.team=Null:C1517
+	This:C1470.team:=Null:C1517
 	$saved:=This:C1470.save()
 	If ($saved.success)
 		Web Form:C1735.setMessage("Team removed!")
@@ -115,7 +115,7 @@ exposed Function removeTeam()
 	
 exposed Function setTeam($selectedTeam : cs:C1710.TeamsEntity)
 	var $saved : Object
-	This:C1470.team=$selectedTeam
+	This:C1470.team:=$selectedTeam
 	$saved:=This:C1470.save()
 	If ($saved.success)
 		Web Form:C1735.setMessage("Team added!")
