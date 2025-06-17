@@ -1,7 +1,7 @@
 Class extends DataClass
 
 exposed Function searchByName($search : Text) : cs:C1710.HolidaysSelection
-	If ($search !="")
+	If ($search#"")
 		return This:C1470.query("name = :1"; "@"+$search+"@")
 	Else 
 		return This:C1470.all()

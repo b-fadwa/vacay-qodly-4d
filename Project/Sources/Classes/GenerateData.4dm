@@ -45,7 +45,7 @@ Function generateLeavesTypes()
 	var $types : Collection
 	var $item : Object
 	var $LeaveType : cs:C1710.LeaveTypesEntity
-	$types=[\
+	$types:=[\
 		{name: "Annual paid leave"; color: "#30BCAF"; descritpion: "Annual paid leave is a period of time granted to an employee by his or her employer;during which the employee is authorized not to work while receiving remuneration. This type of leave is generally provided for by law or company policy;and is design"+"ed to enable employees to take regular breaks to rest;recharge and enjoy their free time."}; \
 		{name: "Recovery"; color: "#7B61FF"; descritpion: "Recuperation is a type of leave granted to an employee to compensate for overtime or days worked beyond regular hours. It is common practice in many organizations to recognize and reward employees' extra efforts."}; \
 		{name: "Medical leave"; color: "#E25618"; descritpion: "Medical leave is a period of leave granted to an employee due to his or her own illness or injury. It may be provided for under company leave policies or government regulations to enable employees to recover fully before returning to work."}; \
@@ -58,9 +58,9 @@ Function generateLeavesTypes()
 	
 	For each ($item; $types)
 		$LeaveType:=ds:C1482.LeaveTypes.new()
-		$LeaveType.name:=item.name
-		$LeaveType.description:=item.descritpion
-		$LeaveType.color:=item.color
+		$LeaveType.name:=$item.name
+		$LeaveType.description:=$item.descritpion
+		$LeaveType.color:=$item.color
 		$LeaveType.save()
 	End for each 
 	
@@ -68,7 +68,7 @@ Function generateHolidays()
 	var $holidays : Collection
 	var $item : Object
 	var $holiday : cs:C1710.HolidaysEntity
-	$holidays=[\
+	$holidays:=[\
 		{name: "New year"; startDate: "01/01/2024"}; \
 		{name: "Labor day"; startDate: "05/01/2024"}; \
 		{name: "Feast of the Throne"; startDate: "07/30/2024"}; \
@@ -92,7 +92,7 @@ Function generateTeams()
 	var $teams : Collection
 	var $item : Text
 	var $team : cs:C1710.TeamsEntity
-	$teams=["4D Product-QA"; "4D Product Customer Support"; "SI 4D"; "PS 4D"; "Administration service"; "4D Product RD - Web Studio"; "Cloud"]
+	$teams:=["4D Product-QA"; "4D Product Customer Support"; "SI 4D"; "PS 4D"; "Administration service"; "4D Product RD - Web Studio"; "Cloud"]
 	var $managers : cs:C1710.EmployeesSelection:=ds:C1482.Employees.query("role == 'Manager'")
 	$managers:=managers.length#0 ? $managers : ds:C1482.Employees.query("role = 'Admin")
 	For each ($item; $teams)

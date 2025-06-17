@@ -1,7 +1,7 @@
 Class extends DataClass
 
 Function createDateArray($startdate : Date; $enddate : Date)->$arrayDate : Collection
-	var indate : Date
+	var $indate : Date
 	$arrayDate:=New collection:C1472()
 	While ($enddate>=$startdate)
 		$indate:=$startdate

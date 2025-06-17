@@ -12,7 +12,7 @@ exposed Function leavesCollections()->$leavesCollection : Collection
 		$item.employee:=$leave.employee.fullName
 		$item.title:=$leave.leaveType.name
 		$item.color:=$leave.leaveType.color
-		$leavesCollection.push(item)
+		$leavesCollection.push($item)
 	End for each 
 	
 	

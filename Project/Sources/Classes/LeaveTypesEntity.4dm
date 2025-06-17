@@ -15,8 +15,8 @@ exposed Function deleteLeaveType()
 	var $result : Object
 	$leavesStatus:=This:C1470.leaves.drop()
 	$balanceStatus:=This:C1470.leaveBalances.drop()
-	If ($leavesStatus.length=0 && balanceStatus.length=0)
-		$result=This:C1470.drop()
+	If ($leavesStatus.length=0 && $balanceStatus.length=0)
+		$result:=This:C1470.drop()
 		If ($result.success)
 			Web Form:C1735.setMessage("Leave Type was removed successfully!")
 		Else 

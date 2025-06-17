@@ -2,13 +2,13 @@ Class extends DataStoreImplementation
 
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
-	$component=Web Form:C1735[$serverRef]
+	$component:=Web Form:C1735[$serverRef]
 	$component.addCSSClass($cssClass)
 	
 exposed Function noDATA($serverRef : Text; $cssClass : Text; $selectedLength : Variant)
 	var $component : 4D:C1709.WebFormItem
-	$component=Web Form:C1735[$serverRef]
-	If (selectedLength=0)
+	$component:=Web Form:C1735[$serverRef]
+	If ($selectedLength=0)
 		$component.addCSSClass($cssClass)
 	Else 
 		$component.removeCSSClass($cssClass)
@@ -16,7 +16,7 @@ exposed Function noDATA($serverRef : Text; $cssClass : Text; $selectedLength : V
 	
 exposed Function removeCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
-	$component=Web Form:C1735[$serverRef]
+	$component:=Web Form:C1735[$serverRef]
 	$component.removeCSSClass($cssClass)
 	
 exposed Function Login() : Text
@@ -24,13 +24,13 @@ exposed Function Login() : Text
 	var $page : Text
 	Case of 
 		: ($user.role="Admin")
-			$page="AdminVue"
+			$page:="AdminVue"
 		: ($user.role="Employee")
-			$page="EmployeeVue"
+			$page:="EmployeeVue"
 		: ($user.role="Manager")
-			$page="ManagerVue"
+			$page:="ManagerVue"
 		Else 
-			$page="NotFound"
+			$page:="NotFound"
 	End case 
 	return $page
 	
