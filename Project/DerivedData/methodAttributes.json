@@ -1,3 +1,7 @@
 {
-	"methods": {}
+	"methods": {
+		"Method1": {
+			"timeStamp": "2025-06-17T10:16:39Z"
+		}
+	}
 }

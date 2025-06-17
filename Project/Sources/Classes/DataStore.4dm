@@ -1,5 +1,31 @@
 Class extends DataStoreImplementation
 
+
+exposed Function authentify($email : Text; $password : Text) : Boolean
+	$employee:=ds:C1482.Employees.query("email = :1"; $email).first()
+	If ($employee#Null:C1517)
+		If (Verify password hash:C1534($password; $employee.password))
+			Use (Session:C1714.storage)
+				Session:C1714.storage.payLoad:=New shared object:C1526("UUID"; $employee.ID; "login"; $employee.email)
+			End use 
+			Case of 
+				: ($employee.role="Admin")
+					return Session:C1714.setPrivileges("administrate")
+				: ($employee.role="Manager")
+					return Session:C1714.setPrivileges("manage")
+				: ($employee.role="Employee")
+					return Session:C1714.setPrivileges("employ")
+			End case 
+			Web Form:C1735.setMessage("Authentication successful")
+			
+		Else 
+			Web Form:C1735.setError("Authentication failed")
+		End if 
+	Else 
+		Web Form:C1735.setError("Authentication failed")
+	End if 
+	
+	
 exposed Function setCss($serverRef : Text; $cssClass : Text)
 	var $component : 4D:C1709.WebFormItem
 	$component:=Web Form:C1735[$serverRef]

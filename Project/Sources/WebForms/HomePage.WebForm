@@ -1,88 +1,88 @@
-v{
-  "metadata": {
-    "v": "1.0",
-    "datasources": [],
-    "styles": []
-  },
-  "components": {
-    "ROOT": {
-      "type": {
-        "resolvedName": "Container"
-      },
-      "isCanvas": true,
-      "props": {
-        "classNames": [],
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "DataStore",
-            "events": [
-              "onload"
-            ],
-            "id": "9picCGtuMwZCq43wQJHkYy",
-            "method": "ds.Login",
-            "params": [],
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "string",
-              "datasource": "UI:page"
-            },
-            "feedback": true
-          },
-          {
-            "type": "method",
-            "dataclass": "LeaveBalances",
-            "events": [
-              "onload"
-            ],
-            "id": "eSEuZAkdR1MiBNbMER8ETo",
-            "method": "ds.LeaveBalances.newYearBalance",
-            "params": [],
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "Variable"
-            }
-          }
-        ],
-        "airyMode": true,
-        "className": "bg-white h-full w-full px-6",
-        "style": {
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingBottom": "0px",
-          "paddingTop": "0px",
-          "backgroundColor": "whitesmoke"
-        }
-      },
-      "displayName": "Page",
-      "custom": {},
-      "parent": "",
-      "hidden": false,
-      "nodes": [
-        "S46aUoCWl8"
-      ],
-      "linkedNodes": {}
-    },
-    "S46aUoCWl8": {
-      "type": {
-        "resolvedName": "WebformLoader"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "datasource": "UI:page",
-        "style": {
-          "height": "100%"
-        }
-      },
-      "displayName": "Page Loader",
-      "custom": {},
-      "parent": "ROOT",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    }
-  }
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"onload"
+						],
+						"id": "9picCGtuMwZCq43wQJHkYy",
+						"method": "ds.Login",
+						"params": [],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "string",
+							"datasource": "UI:page"
+						},
+						"feedback": true
+					},
+					{
+						"type": "method",
+						"dataclass": "LeaveBalances",
+						"events": [
+							"onload"
+						],
+						"id": "eSEuZAkdR1MiBNbMER8ETo",
+						"method": "ds.LeaveBalances.newYearBalance",
+						"params": [],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					}
+				],
+				"airyMode": true,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"backgroundColor": "whitesmoke"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"S46aUoCWl8"
+			],
+			"linkedNodes": {}
+		},
+		"S46aUoCWl8": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"datasource": "UI:page",
+				"style": {
+					"height": "100%"
+				}
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
 }

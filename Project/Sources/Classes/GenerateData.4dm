@@ -1,7 +1,7 @@
 Class constructor
-	This:C1470.sentences=[]
+	//This.sentences=[]
 	
-	This:C1470.words=[]
+	//This.words=[]
 	
 Function dropData()
 	var $trash : Object
@@ -28,18 +28,48 @@ Function createData()
 	This:C1470.generateLeaveBalances()
 	This:C1470.generateLeaves()
 	
+	
+	
 Function generateUsers()
-	//var $userClass : cs.Qodly.Users
-	//var $cloudUsers : Collection
-	//var $oneUser; $info : Object
-	//var $newUser : cs.EmployeesEntity
-	//$userClass:=cs.Qodly.Users.me
-	//$cloudUsers:=userClass.allUsers()
-	//For each ($oneUser;$cloudUsers)
-	//$newUser:=ds.Employees.new()
-	//$newUser.email:=oneUser.email
-	//$info=$newUser.save()
-	//End for each 
+	
+	var $newUser : cs:C1710.EmployeesEntity
+	
+	var $users : Collection:=[\
+		{firstName: "John"; lastName: "Smith"; password: "a1b2c3"; email: "john.smith@example.com"; role: "Admin"}; \
+		{firstName: "Alice"; lastName: "Johnson"; password: "d4e5f6"; email: "alice.johnson@example.com"; role: "Manager"}; \
+		{firstName: "Robert"; lastName: "Brown"; password: "g7h8i9"; email: "robert.brown@example.com"; role: "Employee"}; \
+		{firstName: "Emily"; lastName: "Davis"; password: "j0k1l2"; email: "emily.davis@example.com"; role: "Employee"}; \
+		{firstName: "Michael"; lastName: "Miller"; password: "m3n4o5"; email: "michael.miller@example.com"; role: "Employee"}; \
+		{firstName: "Sarah"; lastName: "Wilson"; password: "p6q7r8"; email: "sarah.wilson@example.com"; role: "Employee"}; \
+		{firstName: "David"; lastName: "Moore"; password: "s9t0u1"; email: "david.moore@example.com"; role: "Employee"}; \
+		{firstName: "Laura"; lastName: "Taylor"; password: "v2w3x4"; email: "laura.taylor@example.com"; role: "Admin"}; \
+		{firstName: "Daniel"; lastName: "Anderson"; password: "y5z6a7"; email: "daniel.anderson@example.com"; role: "Admin"}; \
+		{firstName: "Jessica"; lastName: "Thomas"; password: "b8c9d0"; email: "jessica.thomas@example.com"; role: "Admin"}; \
+		{firstName: "Matthew"; lastName: "Jackson"; password: "e1f2g3"; email: "matthew.jackson@example.com"; role: "Admin"}; \
+		{firstName: "Olivia"; lastName: "White"; password: "h4i5j6"; email: "olivia.white@example.com"; role: "Admin"}; \
+		{firstName: "Andrew"; lastName: "Harris"; password: "k7l8m9"; email: "andrew.harris@example.com"; role: "Manager"}; \
+		{firstName: "Sophia"; lastName: "Martin"; password: "n0o1p2"; email: "sophia.martin@example.com"; role: "Manager"}; \
+		{firstName: "Christopher"; lastName: "Thompson"; password: "q3r4s5"; email: "christopher.thompson@example.com"; role: "Employee"}; \
+		{firstName: "Emma"; lastName: "Garcia"; password: "t6u7v8"; email: "emma.garcia@example.com"; role: "Employee"}; \
+		{firstName: "Anthony"; lastName: "Martinez"; password: "w9x0y1"; email: "anthony.martinez@example.com"; role: "Employee"}; \
+		{firstName: "Isabella"; lastName: "Robinson"; password: "z2a3b4"; email: "isabella.robinson@example.com"; role: "Employee"}; \
+		{firstName: "Joshua"; lastName: "Clark"; password: "c5d6e7"; email: "joshua.clark@example.com"; role: "Employee"}; \
+		{firstName: "Mia"; lastName: "Rodriguez"; password: "f8g9h0"; email: "mia.rodriguez@example.com"; role: "Employee"}\
+		]
+	
+	var $user : Object
+	
+	For each ($user; $users)
+		$employee:=ds:C1482.Employees.new()
+		$employee.firstName:=$user.firstName
+		$employee.lastName:=$user.lastName
+		$employee.password:=Generate password hash:C1533($user.password)
+		$employee.email:=$user.email
+		$employee.role:=$user.role
+		$employee.save()
+		
+	End for each 
+	
 	
 Function generateLeavesTypes()
 	var $types : Collection
@@ -80,7 +110,7 @@ Function generateHolidays()
 		{name: "Annunciation feast"; startDate: "03/25/2024"}; \
 		{name: "Anniversary of the revolution of the king and the people"; startDate: "08/20/2024"}]
 	
-	For each ($item; holidays)
+	For each ($item; $holidays)
 		$holiday:=ds:C1482.Holidays.new()
 		$holiday.name:=$item.name
 		$holiday.startDate:=Date:C102($item.startDate)
@@ -97,7 +127,7 @@ Function generateTeams()
 	$managers:=managers.length#0 ? $managers : ds:C1482.Employees.query("role = 'Admin")
 	For each ($item; $teams)
 		$team:=ds:C1482.Teams.new()
-		$team.name:=item
+		$team.name:=$item
 		$team.manager:=$managers.at(Random:C100%$managers.length)
 		$team.save()
 	End for each 
@@ -134,7 +164,7 @@ Function generateLeaves()
 		$leave.isAbsence:=False:C215
 		$leave.status:="to be approved"
 		$leave.leaveType:=$LeaveTypes.at(Random:C100%$LeaveTypes.length)
-		$leave.rangeLength:=$leave.endDate-leave.startDate
+		$leave.rangeLength:=$leave.endDate-$leave.startDate
 		$leave.save()
 	End for each 
 	

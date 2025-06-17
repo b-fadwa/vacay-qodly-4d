@@ -1,0 +1,32 @@
+{
+	"Sources/Classes/GenerateData.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1280,
+		"height": 571
+	},
+	"Sources/Classes/DataStore.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1280,
+		"height": 571
+	},
+	"Sources/Methods/Method1.4dm": {
+		"left": 7,
+		"top": 108,
+		"width": 1283,
+		"height": 700
+	},
+	"Sources/Classes/Employees.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1280,
+		"height": 571
+	},
+	"Sources/Classes/EmployeesEntity.4dm": {
+		"left": -22293,
+		"top": -21284,
+		"width": 1280,
+		"height": 571
+	}
+}

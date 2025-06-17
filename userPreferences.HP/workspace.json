@@ -1,7 +1,19 @@
 {
 	"editors": [
 		{
+			"type": "method",
+			"id": 2147483624,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "EmployeesEntity",
+				"methodPath": "/SOURCES/Classes/EmployeesEntity.4dm"
+			}
+		},
+		{
 			"type": "explorer"
+		},
+		{
+			"type": "structure"
 		}
 	]
 }

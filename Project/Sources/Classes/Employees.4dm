@@ -2,28 +2,7 @@ Class extends DataClass
 
 
 exposed Function getCurrentUser() : cs:C1710.EmployeesEntity
-	return Null:C1517
-	// 	var $userCS : cs.Qodly.Users
-	// 	var userCloud : Object
-	// 	If (Session.storage.currentUser==Null)
-	// 		$userCS=cs.Qodly.Users.me
-	
-	// 		userCloud=$userCS.currentUser()
-	// 		If (userCloud !=Null)
-	// 			user=This.query("email = :1"; userCloud.email).first()
-	// 			If (user==Null)
-	// 				user=ds.Employees.new()
-	// 				user.email=userCloud.email
-	// 				user.save()
-	// 				end
-	// 				Use (Session.storage)
-	// 					Session.storage.currentUser=newSharedObject("ID"; user.email)
-	// 					Session.storage.users=$userCS.allUsers().copy(kShared)
-	// 					end
-	// 					end
-	// 				Else 
-	// 					user=This.all().query("email = :1";session.storage.currentUser.ID).first()
-	// 					end
+	return This:C1470.get(Session:C1714.storage.payLoad.UUID)
 	
 exposed Function getEmployees()->$employees : cs:C1710.EmployeesSelection
 	$employees:=This:C1470.all()

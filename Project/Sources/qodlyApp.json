@@ -1,1 +1,8 @@
-{}
+{
+	"webforms.renderer.indexPage": "Home",
+	"webforms.display-mode": "neutral",
+	"webforms.i18n": {
+		"supported": [],
+		"primary": ""
+	}
+}
