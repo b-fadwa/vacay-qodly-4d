@@ -1,0 +1,55 @@
+{
+  "applicationName": "Vacay Manager",
+  "description": "Demo showing the different implementation of the qodly custom components and events.",
+  "details": "This template gathers the usage of many features for the Qodly studio components in one location. Introducing our app for managing vacation time: Your one-stop shop for flawless employee vacation and break scheduling.",
+  "note": "NB: In order to use the mailing feature, you'll have to create an account with your email with a mailing api (eg: sendgrid.. ), store your credentials in the env.json file in the credentials folder located in the Shared folder",
+  "visuals": [
+    {
+      "description": "Dahsboard page",
+      "path": "/$shared/visuals/Dashboard.png",
+      "image": "/$shared/visuals/Dashboard.png"
+    },
+    {
+      "description": "Requests page",
+      "path": "/$shared/visuals/requests.png",
+      "image": "/$shared/visuals/requests.png"
+    },
+    {
+      "description": "Calendar",
+      "path": "/$shared/visuals/Calendar.png",
+      "image": "/$shared/visuals/Calendar.png"
+    },
+    {
+      "description": "Holidays",
+      "path": "/$shared/visuals/holidays.png",
+      "image": "/$shared/visuals/holidays.png"
+    },
+    {
+      "description": "Break types",
+      "path": "/$shared/visuals/leaveTypes.png",
+      "image": "/$shared/visuals/leaveTypes.png"
+    },
+    {
+      "description": "Dialog example",
+      "path": "/$shared/visuals/modal.png",
+      "image": "/$shared/visuals/modal.png"
+    },
+    {
+      "description": "Request details",
+      "path": "/$shared/visuals/requestsDetails.png",
+      "image": "/$shared/visuals/requestsDetails.png"
+    }
+  ],
+  "logo": {
+    "small": "logo_small_path",
+    "large": "/$shared/logos/Q-2.svg"
+  },
+  "qodlyVersion": "all",
+  "author": {
+    "name": "Qodly",
+    "url": "https://qodly.com/"
+  },
+  "category": "Qodly starters",
+  "language": "English",
+  "version": "1.1.0"
+}

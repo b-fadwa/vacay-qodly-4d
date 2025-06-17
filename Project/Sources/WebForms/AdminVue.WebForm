@@ -860,7 +860,8 @@
 					"height": "100px",
 					"objectFit": "cover"
 				},
-				"imgSrc": "/$shared/assets/images/Vacay.png"
+				"imgSrc": "/$shared/assets/images/Vacay.png",
+				"defaultImgSrc": "/$shared/assets/images/Vacay.png"
 			},
 			"displayName": "Image",
 			"custom": {},

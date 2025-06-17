@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><preferences stamp="4">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="20">
 	<com.4d>
 		<database>
-			<data_storage data_path="Data/data.4DD"/>
+			<data_storage data_path="Project/Data.4DD"/>
 		</database>
 		<general last_opening_mode="0"/>
 	</com.4d>
 	<internal_prefs_4d>
 		<explorer default_page="3"/>
 		<windows>
-			<window name="main" left="48" top="148" width="600" height="450"/>
+			<window name="main" left="8" top="108" width="600" height="450"/>
 		</windows>
 	</internal_prefs_4d>
 </preferences>

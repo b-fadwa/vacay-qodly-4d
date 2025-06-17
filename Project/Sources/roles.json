@@ -1,27 +1,302 @@
 {
-	"privileges": [
-		{
-			"privilege": "none",
-			"includes": []
-		}
-	],
-	
-	"roles": [],
-	
+	"forceLogin": true,
 	"permissions": {
 		"allowed": [
 			{
-				"applyTo":"ds",
+				"applyTo": "ds.authentify",
+				"type": "method",
+				"execute": [
+					"guest"
+				],
+				"promote": [
+					"login"
+				]
+			},
+			{
+				"applyTo": "Employees",
+				"type": "dataclass",
+				"read": [
+					"guest",
+					"login"
+				],
+				"execute": [
+					"guest"
+				]
+			},
+			{
+				"applyTo": "Comments",
+				"type": "dataclass",
+				"create": [
+					"manageComments"
+				],
+				"update": [
+					"manageComments"
+				],
+				"drop": [
+					"manageComments"
+				],
+				"execute": [
+					"manageComments"
+				]
+			},
+			{
+				"applyTo": "Comments.create",
+				"type": "method",
+				"execute": [
+					"manageComments"
+				]
+			},
+			{
+				"applyTo": "Leaves.comments",
+				"type": "attribute",
+				"read": [
+					"manageComments"
+				],
+				"create": [
+					"manageComments"
+				],
+				"update": [
+					"manageComments"
+				]
+			},
+			{
+				"applyTo": "LeaveActions.add",
+				"type": "method",
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "Leaves.filtering",
+				"type": "method",
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "Leaves.getRangeDate",
+				"type": "method",
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "Holidays.getRangeDate",
+				"type": "method",
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "Leaves.add",
+				"type": "method",
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "Leaves",
+				"type": "dataclass",
+				"read": [
+					"manageLeaves"
+				],
+				"create": [
+					"manageLeaves"
+				],
+				"update": [
+					"manageLeaves"
+				],
+				"drop": [
+					"manageLeaves"
+				],
+				"execute": [
+					"manageLeaves"
+				]
+			},
+			{
+				"applyTo": "ds",
 				"type": "datastore",
-				"read": ["none"],
-				"create": ["none"],
-				"update": ["none"],
-				"drop": ["none"],
-				"execute": ["none"],
-				"promote": ["none"]
+				"execute": [
+					"manageDataStore",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "ds.navbar",
+				"type": "method",
+				"execute": [
+					"manageDataStore",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "ds.Login",
+				"type": "method",
+				"execute": [
+					"manageEmployees",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "Employees.getBalanceChart",
+				"type": "method",
+				"execute": [
+					"manageEmployees"
+				]
+			},
+			{
+				"applyTo": "Employees.getCurrentUser",
+				"type": "method",
+				"execute": [
+					"manageEmployees",
+					"administrate"
+				]
+			},
+			{
+				"applyTo": "Employees.leaves",
+				"type": "attribute",
+				"read": [
+					"administrate",
+					"employ",
+					"manage"
+				],
+				"create": [
+					"administrate",
+					"employ",
+					"manage"
+				],
+				"update": [
+					"administrate",
+					"employ",
+					"manage"
+				],
+				"drop": [
+					"administrate",
+					"employ",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "Leaves.changeStatus",
+				"type": "method",
+				"execute": [
+					"administrate",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "Employees.editBalance",
+				"type": "method",
+				"execute": [
+					"administrate",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "Employees.getBalance",
+				"type": "method",
+				"execute": [
+					"administrate",
+					"manage"
+				]
+			},
+			{
+				"applyTo": "Holidays.update",
+				"type": "method",
+				"execute": [
+					"administrate"
+				]
+			},
+			{
+				"applyTo": "Holidays.add",
+				"type": "method",
+				"execute": [
+					"administrate"
+				]
 			}
 		]
 	},
-
-	"forceLogin": true
+	"privileges": [
+		{
+			"id": "roBmVTe5mTJNkhnppMqpwp",
+			"privilege": "login",
+			"includes": []
+		},
+		{
+			"id": "dj1j44RzeBL9MtTTPy2dmL",
+			"privilege": "manageComments",
+			"includes": []
+		},
+		{
+			"id": "8z2KeTeBXHdMEwVnGf57fh",
+			"privilege": "manageLeaves",
+			"includes": []
+		},
+		{
+			"id": "fDTyrSNLug552S2zDYBKNw",
+			"privilege": "manageDataStore",
+			"includes": []
+		},
+		{
+			"id": "oDxasAfk8GmPWGrU9Kgg6r",
+			"privilege": "manageEmployees",
+			"includes": []
+		},
+		{
+			"id": "u3cFLzyTevpF4pmAfYhCTM",
+			"privilege": "manage",
+			"includes": [
+				"manageEmployees",
+				"manageDataStore",
+				"manageLeaves",
+				"manageComments"
+			]
+		},
+		{
+			"id": "gNTSApYw7pDSPsBt3YGYev",
+			"privilege": "employ",
+			"includes": [
+				"manageEmployees",
+				"manageDataStore",
+				"manageLeaves",
+				"manageComments"
+			]
+		},
+		{
+			"id": "q4pLbZSJneeqe76M3sBCuq",
+			"privilege": "administrate",
+			"includes": [
+				"manageEmployees",
+				"manageDataStore",
+				"manageLeaves",
+				"manageComments"
+			]
+		}
+	],
+	"roles": [
+		{
+			"id": "r1yDEEfH6xvN6t9d3eFCA2",
+			"role": "Admin",
+			"privileges": [
+				"guest",
+				"administrate"
+			]
+		},
+		{
+			"id": "2XAQxJCZHUvcEDHYfbeVN5",
+			"role": "Employee",
+			"privileges": [
+				"employ",
+				"guest"
+			]
+		},
+		{
+			"id": "treEhW8frcMZoXU5sa6KPs",
+			"role": "Manager",
+			"privileges": [
+				"manage",
+				"guest"
+			]
+		}
+	]
 }

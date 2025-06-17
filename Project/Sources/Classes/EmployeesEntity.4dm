@@ -1,41 +1,7 @@
 Class extends Entity
 
-// local Function aws()->$result : Object
-// 	$result:=Null:C1517
-// 	If (Session:C1714.storage.users=Null:C1517)
-// 		ds:C1482.Employees.getCurrentUser()
-// 		end if
-// 		If (Session:C1714.storage.users!=Null:C1517)
-// 			$result=Session:C1714.storage.users.query("email = :1", this.email).at(0)
-// 			end if
-
 exposed Function get fullName()->$fullName : Text
 	$fullName:=(This:C1470.firstName && This:C1470.lastName) ? (This:C1470.firstName+" "+Uppercase:C13(This:C1470.lastName; *)) : (Uppercase:C13(This:C1470.lastName; *) || This:C1470.firstName) || ""
-	
-	// exposed Function get firstName()->firstname : string
-	// 	var aws : Object
-	// 	firstname=""
-	// 	aws=This:C1470.aws()
-	// 	If (aws !=Null:C1517)
-	// 		firstname=aws.firstname
-	// 		end
-	
-	// exposed Function get lastName()->lastname : string
-	// 	var aws : Object
-	// 	lastname=""
-	// 	aws=This:C1470.aws()
-	// 	If (aws !=Null:C1517)
-	// 		lastname=aws.lastname
-	// 		end
-	
-	// exposed Function get role()->role : string
-	// 	var aws : Object
-	// 	role=""
-	// 	aws=This:C1470.aws()
-	// 	If (aws !=Null:C1517)
-	// 		role=aws.role
-	// 		end
-	
 	
 exposed Function get toValidateBalance()->$toValidateBalance : Integer
 	$toValidateBalance:=This:C1470.leaves.query("status == 'to be approved'").length

@@ -1,1 +1,83 @@
-{}
+{
+	"UI": [
+		{
+			"id": "page",
+			"type": "scalar",
+			"namespace": "UI",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "detailLeave",
+			"type": "scalar",
+			"namespace": "UI",
+			"dataType": "string",
+			"initialValue": ""
+		},
+		{
+			"id": "breadchrumbs",
+			"type": "scalar",
+			"namespace": "UI",
+			"dataType": "string",
+			"initialValue": "Home/Dashboard"
+		}
+	],
+	"Shared": [
+		{
+			"id": "currentUser",
+			"type": "entity",
+			"dataclass": "Employees",
+			"namespace": "Shared",
+			"initialValue": "",
+			"depth": null
+		},
+		{
+			"id": "leaves",
+			"type": "entitysel",
+			"dataclass": "Leaves",
+			"namespace": "Shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedLeave",
+			"type": "entity",
+			"dataclass": "Leaves",
+			"from": "leaves",
+			"namespace": "Shared",
+			"initialValue": "first",
+			"depth": null
+		},
+		{
+			"id": "currentUserLeaveBalances",
+			"type": "entitysel",
+			"dataclass": "LeaveBalances",
+			"from": "currentUser.leaveBalances",
+			"namespace": "Shared",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		},
+		{
+			"id": "selectedLeaveBalance",
+			"type": "entity",
+			"dataclass": "LeaveBalances",
+			"from": "currentUserLeaveBalances",
+			"namespace": "Shared",
+			"initialValue": "",
+			"depth": null
+		}
+	],
+	"Calendar": [
+		{
+			"id": "leaves",
+			"type": "entitysel",
+			"dataclass": "Leaves",
+			"namespace": "Calendar",
+			"initialValue": "all",
+			"depth": null,
+			"pageSize": 100
+		}
+	]
+}

@@ -1,0 +1,71 @@
+[
+	{
+		"codeDescriptorWatches": [
+			{
+				"path": "[class]/DataStore/authentify",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "ds:C1482.Employees"
+					},
+					{
+						"type": 66,
+						"formula": "ds:C1482.Employees.all()"
+					}
+				]
+			},
+			{
+				"path": "[class]/DataStore/Login",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "$user"
+					},
+					{
+						"type": 66,
+						"formula": "ds:C1482.Employees.getCurrentUser()"
+					}
+				]
+			},
+			{
+				"path": "[class]/Employees/getCurrentUser",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "Session:C1714.storage.payLoad.UUID"
+					},
+					{
+						"type": 66,
+						"formula": "This:C1470.get(Session:C1714.storage.payLoad.UUID)"
+					},
+					{
+						"type": 66,
+						"formula": "ds:C1482.Employees.query(\"ID = :1 \"; 62)"
+					}
+				]
+			},
+			{
+				"path": "[class]/GenerateData/linkToTeam",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "$teams.at(Random:C100%($teams.length))"
+					},
+					{
+						"type": 66,
+						"formula": "$employee.team"
+					},
+					{
+						"type": 66,
+						"formula": "$employee.save()"
+					},
+					{
+						"type": 66,
+						"formula": "$employee",
+						"expanded": true
+					}
+				]
+			}
+		]
+	}
+]
