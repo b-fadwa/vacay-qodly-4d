@@ -2,6 +2,23 @@
 	{
 		"codeDescriptorWatches": [
 			{
+				"path": "[class]//getCurrentUser",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "Session:C1714.storage.payLoad.UUID"
+					},
+					{
+						"type": 66,
+						"formula": "This:C1470.get(Session:C1714.storage.payLoad.UUID)"
+					},
+					{
+						"type": 66,
+						"formula": "ds:C1482.Employees.query(\"ID = :1 \"; 62)"
+					}
+				]
+			},
+			{
 				"path": "[class]/DataStore/authentify",
 				"watches": [
 					{
@@ -28,23 +45,6 @@
 				]
 			},
 			{
-				"path": "[class]/Employees/getCurrentUser",
-				"watches": [
-					{
-						"type": 66,
-						"formula": "Session:C1714.storage.payLoad.UUID"
-					},
-					{
-						"type": 66,
-						"formula": "This:C1470.get(Session:C1714.storage.payLoad.UUID)"
-					},
-					{
-						"type": 66,
-						"formula": "ds:C1482.Employees.query(\"ID = :1 \"; 62)"
-					}
-				]
-			},
-			{
 				"path": "[class]/GenerateData/linkToTeam",
 				"watches": [
 					{
@@ -63,6 +63,15 @@
 						"type": 66,
 						"formula": "$employee",
 						"expanded": true
+					}
+				]
+			},
+			{
+				"path": "[class]/Leave/add",
+				"watches": [
+					{
+						"type": 66,
+						"formula": "$newLeave.rangeLength"
 					}
 				]
 			}

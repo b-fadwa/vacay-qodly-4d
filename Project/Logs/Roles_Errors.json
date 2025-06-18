@@ -1,0 +1,74 @@
+[
+	{
+		"message": "Cannot find dataclass \"Comments\".",
+		"path": "permissions.allowed[2].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Comments.create\".",
+		"path": "permissions.allowed[3].applyTo"
+	},
+	{
+		"message": "Cannot find dataclass \"Employees\".",
+		"path": "permissions.allowed[1].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Employees.editBalance\".",
+		"path": "permissions.allowed[18].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Employees.getBalance\".",
+		"path": "permissions.allowed[19].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Employees.getBalanceChart\".",
+		"path": "permissions.allowed[14].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Employees.getCurrentUser\".",
+		"path": "permissions.allowed[15].applyTo"
+	},
+	{
+		"message": "Cannot find attribute \"Employees.leaves\".",
+		"path": "permissions.allowed[16].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Holidays.add\".",
+		"path": "permissions.allowed[21].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Holidays.getRangeDate\".",
+		"path": "permissions.allowed[8].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Holidays.update\".",
+		"path": "permissions.allowed[20].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"LeaveActions.add\".",
+		"path": "permissions.allowed[5].applyTo"
+	},
+	{
+		"message": "Cannot find dataclass \"Leaves\".",
+		"path": "permissions.allowed[10].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Leaves.add\".",
+		"path": "permissions.allowed[9].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Leaves.changeStatus\".",
+		"path": "permissions.allowed[17].applyTo"
+	},
+	{
+		"message": "Cannot find attribute \"Leaves.comments\".",
+		"path": "permissions.allowed[4].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Leaves.filtering\".",
+		"path": "permissions.allowed[6].applyTo"
+	},
+	{
+		"message": "Cannot find member function \"Leaves.getRangeDate\".",
+		"path": "permissions.allowed[7].applyTo"
+	}
+]

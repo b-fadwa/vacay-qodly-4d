@@ -26,7 +26,7 @@
 		{
 			"id": "currentUser",
 			"type": "entity",
-			"dataclass": "Employees",
+			"dataclass": "Employee",
 			"namespace": "Shared",
 			"initialValue": "",
 			"depth": null
@@ -34,7 +34,7 @@
 		{
 			"id": "leaves",
 			"type": "entitysel",
-			"dataclass": "Leaves",
+			"dataclass": "Leave",
 			"namespace": "Shared",
 			"initialValue": "all",
 			"depth": null,
@@ -43,7 +43,7 @@
 		{
 			"id": "selectedLeave",
 			"type": "entity",
-			"dataclass": "Leaves",
+			"dataclass": "Leave",
 			"from": "leaves",
 			"namespace": "Shared",
 			"initialValue": "first",
@@ -52,7 +52,7 @@
 		{
 			"id": "currentUserLeaveBalances",
 			"type": "entitysel",
-			"dataclass": "LeaveBalances",
+			"dataclass": "LeaveBalance",
 			"from": "currentUser.leaveBalances",
 			"namespace": "Shared",
 			"initialValue": "all",
@@ -62,7 +62,7 @@
 		{
 			"id": "selectedLeaveBalance",
 			"type": "entity",
-			"dataclass": "LeaveBalances",
+			"dataclass": "LeaveBalance",
 			"from": "currentUserLeaveBalances",
 			"namespace": "Shared",
 			"initialValue": "",
@@ -73,7 +73,7 @@
 		{
 			"id": "leaves",
 			"type": "entitysel",
-			"dataclass": "Leaves",
+			"dataclass": "Leave",
 			"namespace": "Calendar",
 			"initialValue": "all",
 			"depth": null,

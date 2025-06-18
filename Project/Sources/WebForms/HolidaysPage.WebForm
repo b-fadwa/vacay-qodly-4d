@@ -1,1500 +1,1500 @@
 {
-  "metadata": {
-    "v": "1.0",
-    "datasources": [
-      {
-        "id": "search",
-        "type": "scalar",
-        "namespace": "",
-        "dataType": "string",
-        "initialValue": ""
-      },
-      {
-        "id": "holidays",
-        "type": "entitysel",
-        "dataclass": "Holidays",
-        "initialValue": "all",
-        "depth": null,
-        "pageSize": 100
-      },
-      {
-        "id": "holiday",
-        "type": "entity",
-        "dataclass": "Holidays",
-        "from": "holidays",
-        "namespace": "",
-        "initialValue": "first",
-        "depth": null
-      },
-      {
-        "id": "name",
-        "type": "scalar",
-        "namespace": "",
-        "dataType": "string",
-        "initialValue": ""
-      },
-      {
-        "id": "rangeDate",
-        "type": "scalar",
-        "namespace": "",
-        "dataType": "array",
-        "initialValue": []
-      },
-      {
-        "id": "selectedRangeDate",
-        "type": "scalar",
-        "namespace": "",
-        "dataType": "array",
-        "initialValue": []
-      },
-      {
-        "id": "emptyArray",
-        "type": "scalar",
-        "namespace": "",
-        "dataType": "array",
-        "initialValue": []
-      },
-      {
-        "id": "newHoliday",
-        "type": "entity",
-        "dataclass": "Holidays",
-        "initialValue": "",
-        "depth": null
-      }
-    ],
-    "styles": []
-  },
-  "components": {
-    "ROOT": {
-      "type": {
-        "resolvedName": "Container"
-      },
-      "isCanvas": true,
-      "props": {
-        "classNames": [],
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "HolidaysEntity",
-            "events": [
-              "onload"
-            ],
-            "id": "x4eeE9TMM739PCyzCezueP",
-            "method": "holiday.getRangeDate",
-            "params": [],
-            "namespace": "",
-            "datasource": "",
-            "returns": {
-              "name": "rangeDate",
-              "type": "collection",
-              "datasource": "selectedRangeDate"
-            }
-          },
-          {
-            "type": "method",
-            "dataclass": "DataStore",
-            "events": [
-              "onload"
-            ],
-            "id": "bnnB417DFzyaqCwrmJRyRz",
-            "method": "ds.displayToRole",
-            "params": [
-              {
-                "name": "currentUser",
-                "type": "cs.EmployeesEntity",
-                "datasource": "Shared:currentUser",
-                "id": "r1SmcqX5Q2vh21YFXYx2gx"
-              }
-            ],
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "Variable"
-            }
-          }
-        ],
-        "airyMode": false,
-        "className": "bg-white h-full w-full px-6",
-        "style": {
-          "backgroundColor": "transparent",
-          "paddingRight": "0px",
-          "paddingBottom": "0px",
-          "paddingTop": "0px",
-          "paddingLeft": "0px",
-          "display": "flex",
-          "flexDirection": "column",
-          "width": "100%",
-          "height": "100%"
-        }
-      },
-      "displayName": "Page",
-      "custom": {},
-      "parent": "",
-      "hidden": false,
-      "nodes": [
-        "YiNdE3pPvU",
-        "7Xioet_yr2",
-        "d6Wccne30h",
-        "VRVaJfpOUJ"
-      ],
-      "linkedNodes": {}
-    },
-    "YiNdE3pPvU": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "display": "flex",
-          "justifyContent": "space-between",
-          "width": "100%",
-          "alignItems": "center"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "ROOT",
-      "hidden": false,
-      "nodes": [
-        "pBD11hpnSI",
-        "omMl6LGIK8"
-      ],
-      "linkedNodes": {}
-    },
-    "7Xioet_yr2": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "display": "flex",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingBottom": "0px",
-          "paddingTop": "0px",
-          "backgroundColor": "transparent",
-          "height": "100%"
-        },
-        "classNames": [
-          "flexGrow1"
-        ],
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "ROOT",
-      "hidden": false,
-      "nodes": [
-        "7ApHMNDcY6",
-        "W5WGLTUAGW"
-      ],
-      "linkedNodes": {}
-    },
-    "o2VMrk7R9D": {
-      "type": {
-        "resolvedName": "DataTable"
-      },
-      "isCanvas": false,
-      "props": {
-        "iterable": true,
-        "classNames": [
-          "dataTableCss",
-          "shadow"
-        ],
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "HolidaysEntity",
-            "events": [
-              "onselect"
-            ],
-            "id": "ay817vqbs6gb5ARZwkNZsT",
-            "method": "holiday.getRangeDate",
-            "params": [],
-            "namespace": "",
-            "datasource": "",
-            "returns": {
-              "name": "rangeDate",
-              "type": "collection",
-              "datasource": "selectedRangeDate"
-            },
-            "disabled": false
-          }
-        ],
-        "style": {
-          "width": "100%",
-          "height": "100%",
-          "backgroundColor": "#FFF"
-        },
-        "headerHeight": 55,
-        "rowHeight": 50,
-        "datasource": "holidays",
-        "currentElement": "holiday",
-        "columns": [
-          {
-            "title": "Name",
-            "source": "name",
-            "format": "",
-            "width": "33%",
-            "sorting": false,
-            "dataType": "string",
-            "id": "tDveUMJAdiRb4xsC6mzGAi"
-          },
-          {
-            "title": "Start Date",
-            "source": "startDate",
-            "format": "Date long",
-            "width": "33%",
-            "sorting": false,
-            "dataType": "date",
-            "id": "rkLXwV1Gq4MaVeensJeTYw"
-          },
-          {
-            "title": "End Date",
-            "source": "endDate",
-            "format": "Date long",
-            "width": "34%",
-            "sorting": false,
-            "dataType": "date",
-            "id": "gLFUr65WjQjd8TvkCa8wFF"
-          }
-        ],
-        "showBorders": false,
-        "iterableChild": true
-      },
-      "displayName": "DataTable",
-      "custom": {},
-      "parent": "7ApHMNDcY6",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "FIQYi3bwsj": {
-      "type": {
-        "resolvedName": "TextInput"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "placeholder": "placeholder",
-        "label": "label",
-        "labelPosition": "hidden",
-        "style": {
-          "backgroundColor": "#FFF"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Text Input",
-      "custom": {},
-      "parent": "omMl6LGIK8",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "label": "qT8Y4Rbo1R",
-        "input": "J40WHfikdQ"
-      }
-    },
-    "qT8Y4Rbo1R": {
-      "type": {
-        "resolvedName": "Label"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "moveable": false,
-        "deletable": true,
-        "text": "Label"
-      },
-      "displayName": "Label",
-      "custom": {},
-      "parent": "FIQYi3bwsj",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "J40WHfikdQ": {
-      "type": {
-        "resolvedName": "Input"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "Holidays",
-            "events": [
-              "onchange"
-            ],
-            "id": "p2Nq2J93PBtpNxgYHnBSHu",
-            "method": "ds.Holidays.searchByName",
-            "params": [
-              {
-                "name": "search",
-                "type": "string",
-                "datasource": "search",
-                "id": "pWrQfsxrHHKs68KQwhAEyD"
-              }
-            ],
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "cs.HolidaysSelection",
-              "datasource": "holidays"
-            }
-          }
-        ],
-        "deletable": false,
-        "className": "fd-input w-full bg-transparent",
-        "type": "text",
-        "placeholder": "Search",
-        "style": {
-          "borderRadius": "6px",
-          "paddingLeft": "8px",
-          "paddingRight": "8px",
-          "paddingTop": "8px",
-          "paddingBottom": "8px",
-          "borderWidth": "1px",
-          "borderColor": "#E7E7E7EE",
-          "width": "250px"
-        },
-        "datasource": "search",
-        "dataType": "string",
-        "moveable": false,
-        "readonly": false,
-        "revealPassword": true,
-        "eyePosition": "right"
-      },
-      "displayName": "Input",
-      "custom": {},
-      "parent": "FIQYi3bwsj",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "WZ0ydqvRXO": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "Add a new public holiday",
-        "classNames": [],
-        "events": [
-          {
-            "type": "dialog",
-            "id": "jcJPAfE7E6UPAVHsWNY7YX",
-            "events": [
-              "onclick"
-            ],
-            "actionType": "open",
-            "targetDialog": "addHoliday"
-          }
-        ],
-        "iconPosition": "left",
-        "style": {
-          "display": "flex",
-          "height": "40px",
-          "paddingLeft": "8px",
-          "paddingRight": "8px",
-          "paddingBottom": "8px",
-          "paddingTop": "8px",
-          "backgroundColor": "#30BCAF",
-          "minWidth": "fit-content"
-        },
-        "serverSideRef": "addHolidayButton"
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "omMl6LGIK8",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "LVtZAyCPT-"
-      }
-    },
-    "LVtZAyCPT-": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-solid fa-plus"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "WZ0ydqvRXO",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "d6Wccne30h": {
-      "type": {
-        "resolvedName": "Dialog"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [
-          {
-            "type": "simple-action",
-            "id": "poC3Y62Hr61Lmunk6cG7XH",
-            "events": [
-              "oninit"
-            ],
-            "action": "create",
-            "actionType": "datasource",
-            "datasource": {
-              "name": "newHoliday",
-              "type": "entity",
-              "namespace": ""
-            }
-          },
-          {
-            "type": "simple-action",
-            "id": "pJHY4CBNxSpGEhVrU4YMYm",
-            "events": [
-              "oninit"
-            ],
-            "action": "copy",
-            "actionType": "datasource",
-            "datasource": {
-              "name": "emptyArray",
-              "from": "",
-              "type": "scalar",
-              "namespace": "",
-              "dataType": "array",
-              "target": "rangeDate",
-              "targetNamespace": "",
-              "targetType": "array"
-            }
-          }
-        ],
-        "overlay": true,
-        "serverSideRef": "addHoliday",
-        "closable": true,
-        "animated": true,
-        "draggable": false,
-        "style": {
-          "borderRadius": "6px"
-        }
-      },
-      "displayName": "Dialog",
-      "custom": {},
-      "parent": "ROOT",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "Dialog": "aToeJ6kg16",
-        "close": "SKQhHMOfxU",
-        "drag": "pIIZOl_D4s"
-      }
-    },
-    "aToeJ6kg16": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "className": "h-full",
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "d6Wccne30h",
-      "hidden": false,
-      "nodes": [
-        "DGrhmJGIAM",
-        "gpymQ6XNXV"
-      ],
-      "linkedNodes": {}
-    },
-    "SKQhHMOfxU": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-times"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "d6Wccne30h",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "pIIZOl_D4s": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-grip-vertical"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "d6Wccne30h",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "DGrhmJGIAM": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "space-between",
-          "gap": "10px",
-          "alignItems": "center"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "aToeJ6kg16",
-      "hidden": false,
-      "nodes": [
-        "Ea8iBf48ik",
-        "8O_bdAug7G"
-      ],
-      "linkedNodes": {}
-    },
-    "gpymQ6XNXV": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "paddingLeft": "12px",
-          "paddingRight": "12px",
-          "paddingBottom": "0px",
-          "paddingTop": "0px",
-          "display": "flex",
-          "justifyContent": "flex-end"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "aToeJ6kg16",
-      "hidden": false,
-      "nodes": [
-        "FHub-ICme-"
-      ],
-      "linkedNodes": {}
-    },
-    "Ea8iBf48ik": {
-      "type": {
-        "resolvedName": "TextInput"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "placeholder": "placeholder",
-        "label": "label",
-        "labelPosition": "hidden",
-        "style": {
-          "width": "100%"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Text Input",
-      "custom": {},
-      "parent": "DGrhmJGIAM",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "label": "hLqjoD8wo8",
-        "input": "bozQ150_7N"
-      }
-    },
-    "hLqjoD8wo8": {
-      "type": {
-        "resolvedName": "Label"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "moveable": false,
-        "text": "Name",
-        "deletable": true
-      },
-      "displayName": "Label",
-      "custom": {},
-      "parent": "Ea8iBf48ik",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "bozQ150_7N": {
-      "type": {
-        "resolvedName": "Input"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "deletable": false,
-        "className": "fd-input w-full bg-transparent",
-        "type": "text",
-        "placeholder": "Label",
-        "datasource": "newHoliday.name",
-        "style": {
-          "paddingLeft": "8px",
-          "paddingRight": "8px",
-          "paddingBottom": "8px",
-          "paddingTop": "8px",
-          "borderRadius": "6px"
-        },
-        "moveable": false,
-        "readonly": false,
-        "dataType": "string",
-        "revealPassword": true,
-        "eyePosition": "right",
-        "intervals": []
-      },
-      "displayName": "Input",
-      "custom": {},
-      "parent": "Ea8iBf48ik",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "FHub-ICme-": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "Add",
-        "classNames": [],
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "HolidaysEntity",
-            "events": [
-              "onclick"
-            ],
-            "id": "8ZXgd2P9pTvirUEgybewLS",
-            "method": "newHoliday.add",
-            "params": [
-              {
-                "name": "rangeDate",
-                "type": "collection",
-                "datasource": "rangeDate",
-                "id": "9ZJ8t6jgjx7wUqtdZN8Wbb"
-              }
-            ],
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "Variable"
-            },
-            "feedback": true,
-            "disabled": false,
-            "namespace": ""
-          },
-          {
-            "type": "simple-action",
-            "id": "jREz6PqrZAyLzyE7rGyz4K",
-            "events": [
-              "onclick"
-            ],
-            "action": "all",
-            "datasource": {
-              "name": "holidays",
-              "from": "",
-              "namespace": "",
-              "type": "entitysel"
-            },
-            "actionType": "datasource"
-          }
-        ],
-        "iconPosition": "hidden",
-        "style": {
-          "display": "flex",
-          "backgroundColor": "#30BCAF",
-          "height": "42px"
-        }
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "gpymQ6XNXV",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "RxK42I6ijk"
-      }
-    },
-    "RxK42I6ijk": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "FHub-ICme-",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "omMl6LGIK8": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "width": "fit-content",
-          "display": "flex",
-          "alignItems": "center",
-          "gap": "2%",
-          "paddingRight": "0px",
-          "justifyContent": "flex-end",
-          "paddingTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "YiNdE3pPvU",
-      "hidden": false,
-      "nodes": [
-        "FIQYi3bwsj",
-        "WZ0ydqvRXO"
-      ],
-      "linkedNodes": {}
-    },
-    "pBD11hpnSI": {
-      "type": {
-        "resolvedName": "Text"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "doc": [
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "Public holidays",
-                "bold": false,
-                "italic": false,
-                "underlined": false,
-                "strikethrough": false
-              }
-            ]
-          }
-        ],
-        "datasource": "",
-        "style": {
-          "width": "fit-content",
-          "fontSize": "1.95vw",
-          "fontWeight": "500",
-          "color": "#2D3748"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Text",
-      "custom": {},
-      "parent": "YiNdE3pPvU",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "7ApHMNDcY6": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "width": "60%",
-          "paddingTop": "0px",
-          "display": "block"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "7Xioet_yr2",
-      "hidden": false,
-      "nodes": [
-        "o2VMrk7R9D"
-      ],
-      "linkedNodes": {}
-    },
-    "W5WGLTUAGW": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "width": "40%",
-          "display": "flex",
-          "flexDirection": "column",
-          "alignItems": "center",
-          "height": "fit-content",
-          "gap": "25px",
-          "backgroundColor": "#FFFFFF",
-          "borderRadius": "6px"
-        },
-        "classNames": [
-          "shadow"
-        ],
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "7Xioet_yr2",
-      "hidden": false,
-      "nodes": [
-        "uqAbUgwsn_",
-        "k9vQ3hI65S",
-        "MC6-9Uh10C"
-      ],
-      "linkedNodes": {}
-    },
-    "k9vQ3hI65S": {
-      "type": {
-        "resolvedName": "DatePicker"
-      },
-      "isCanvas": false,
-      "props": {
-        "name": "",
-        "classNames": [],
-        "events": [],
-        "readOnly": false,
-        "style": {
-          "height": "fit-content",
-          "width": "100%",
-          "borderRadius": "4px",
-          "padding": "8px",
-          "backgroundColor": "white"
-        },
-        "selectedDateColor": "#30BCAF",
-        "selectedRangeColor": "#C3F2EE",
-        "selectedDateRaduis": "",
-        "language": "en",
-        "selectionModes": "range",
-        "datasource": "selectedRangeDate"
-      },
-      "displayName": "DatePicker",
-      "custom": {},
-      "parent": "W5WGLTUAGW",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "MC6-9Uh10C": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "paddingRight": "0px",
-          "paddingBottom": "0px",
-          "paddingTop": "0px",
-          "paddingLeft": "0px",
-          "display": "flex",
-          "alignItems": "end",
-          "justifyContent": "flex-end",
-          "gap": "12px"
-        },
-        "serverSideRef": "editHolidayButton",
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "W5WGLTUAGW",
-      "hidden": false,
-      "nodes": [
-        "c28H61jbwf",
-        "4dRKoadXcq"
-      ],
-      "linkedNodes": {}
-    },
-    "c28H61jbwf": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "Delete",
-        "classNames": [],
-        "events": [
-          {
-            "type": "dialog",
-            "id": "rK7Q831r8xMHBYQdB384xn",
-            "events": [
-              "onclick"
-            ],
-            "actionType": "open",
-            "targetDialog": "deleteHoliday"
-          }
-        ],
-        "iconPosition": "hidden",
-        "style": {
-          "display": "flex",
-          "height": "40px",
-          "backgroundColor": "#ffffffff",
-          "color": "#e73351ff",
-          "borderWidth": "1px",
-          "borderColor": "#e73351ff",
-          "width": "110px"
-        }
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "MC6-9Uh10C",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "lNf2SRMg3R"
-      }
-    },
-    "lNf2SRMg3R": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "c28H61jbwf",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "uqAbUgwsn_": {
-      "type": {
-        "resolvedName": "TextInput"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "placeholder": "placeholder",
-        "label": "label",
-        "labelPosition": "left",
-        "style": {
-          "width": "100%"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Text Input",
-      "custom": {},
-      "parent": "W5WGLTUAGW",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "label": "ZZ7D2wNY-q",
-        "input": "OBykdSxEn_"
-      }
-    },
-    "ZZ7D2wNY-q": {
-      "type": {
-        "resolvedName": "Label"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "moveable": false,
-        "style": {
-          "display": "none"
-        },
-        "deletable": true,
-        "text": "Label"
-      },
-      "displayName": "Label",
-      "custom": {},
-      "parent": "uqAbUgwsn_",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "OBykdSxEn_": {
-      "type": {
-        "resolvedName": "Input"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "deletable": false,
-        "className": "fd-input w-full bg-transparent",
-        "type": "text",
-        "placeholder": "Labor day",
-        "style": {
-          "borderStyle": "none",
-          "fontWeight": "500",
-          "fontSize": "20px",
-          "textAlign": "center"
-        },
-        "datasource": "holiday.name",
-        "moveable": false,
-        "readonly": false,
-        "revealPassword": true,
-        "eyePosition": "right"
-      },
-      "displayName": "Input",
-      "custom": {},
-      "parent": "uqAbUgwsn_",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "8O_bdAug7G": {
-      "type": {
-        "resolvedName": "DatePicker"
-      },
-      "isCanvas": false,
-      "props": {
-        "name": "",
-        "classNames": [
-          "shadow"
-        ],
-        "events": [],
-        "readOnly": false,
-        "style": {
-          "height": "fit-content",
-          "width": "100%",
-          "borderRadius": "4px",
-          "boxShadow": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-          "padding": "8px",
-          "backgroundColor": "white"
-        },
-        "selectedDateColor": "#30BCAF",
-        "selectedRangeColor": "#C3F2EE",
-        "selectedDateRaduis": "",
-        "language": "en",
-        "selectionModes": "range",
-        "datasource": "rangeDate"
-      },
-      "displayName": "DatePicker",
-      "custom": {},
-      "parent": "DGrhmJGIAM",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "QeQZzqW6ZL": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "wt2gFt999U",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "4dRKoadXcq": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "Edit",
-        "classNames": [],
-        "events": [
-          {
-            "type": "method",
-            "dataclass": "HolidaysEntity",
-            "events": [
-              "onclick"
-            ],
-            "id": "d1EkPtUGFbhFUsg7dXajyH",
-            "method": "holiday.update",
-            "params": [
-              {
-                "name": "rangeDate",
-                "type": "collection",
-                "datasource": "selectedRangeDate",
-                "id": "xhoPNGZB8d659qxcF7w2V1"
-              }
-            ],
-            "namespace": "",
-            "datasource": "",
-            "returns": {
-              "name": "result",
-              "type": "Variable"
-            },
-            "feedback": true
-          },
-          {
-            "type": "simple-action",
-            "id": "jREz6PqrZAyLzyE7rGyz4K",
-            "events": [
-              "onclick"
-            ],
-            "action": "refresh",
-            "datasource": {
-              "name": "holidays",
-              "from": "",
-              "namespace": "",
-              "type": "entitysel"
-            },
-            "actionType": "datasource"
-          }
-        ],
-        "iconPosition": "hidden",
-        "style": {
-          "display": "flex",
-          "height": "40px",
-          "backgroundColor": "#30BCAF",
-          "width": "110px"
-        }
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "MC6-9Uh10C",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "YW4FWP9hl_"
-      }
-    },
-    "YW4FWP9hl_": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "4dRKoadXcq",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "VRVaJfpOUJ": {
-      "type": {
-        "resolvedName": "Dialog"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "overlay": true,
-        "serverSideRef": "deleteHoliday",
-        "closable": true
-      },
-      "displayName": "Dialog",
-      "custom": {},
-      "parent": "ROOT",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "Dialog": "IPz9x0YE4M",
-        "close": "mGUu5mwmqe"
-      }
-    },
-    "IPz9x0YE4M": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "className": "h-full",
-        "style": {
-          "display": "flex",
-          "flexDirection": "column",
-          "gap": "12px"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "VRVaJfpOUJ",
-      "hidden": false,
-      "nodes": [
-        "zjVF9Iob5V",
-        "B05N4LlHVi"
-      ],
-      "linkedNodes": {}
-    },
-    "zjVF9Iob5V": {
-      "type": {
-        "resolvedName": "Text"
-      },
-      "isCanvas": false,
-      "props": {
-        "events": [],
-        "doc": [
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "Are you sure you want to delete the ",
-                "bold": false,
-                "italic": false,
-                "underlined": false,
-                "strikethrough": false
-              },
-              {
-                "type": "datasource",
-                "datasource": "holiday.name",
-                "children": [
-                  {
-                    "bold": true,
-                    "italic": false,
-                    "underlined": false,
-                    "strikethrough": false,
-                    "text": "holiday"
-                  }
-                ],
-                "dsType": "string",
-                "format": ""
-              },
-              {
-                "text": " day?"
-              }
-            ]
-          }
-        ],
-        "datasource": "holiday.name",
-        "style": {
-          "fontSize": "18px",
-          "textAlign": "center"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Text",
-      "custom": {},
-      "parent": "IPz9x0YE4M",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "B05N4LlHVi": {
-      "type": {
-        "resolvedName": "StyleBox"
-      },
-      "isCanvas": true,
-      "props": {
-        "events": [],
-        "style": {
-          "display": "flex",
-          "gap": "20px",
-          "justifyContent": "center"
-        },
-        "iterableChild": true
-      },
-      "displayName": "Stylebox",
-      "custom": {},
-      "parent": "IPz9x0YE4M",
-      "hidden": false,
-      "nodes": [
-        "tAI1FOGsZJ",
-        "_lulT_r2Hq"
-      ],
-      "linkedNodes": {}
-    },
-    "tAI1FOGsZJ": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "Yes",
-        "classNames": [],
-        "events": [
-          {
-            "type": "simple-action",
-            "id": "bV3tYhTgSiLMRhMz4PebeA",
-            "events": [
-              "onclick"
-            ],
-            "action": "remove",
-            "actionType": "datasource",
-            "datasource": {
-              "name": "holiday",
-              "from": "holidays",
-              "type": "entity",
-              "namespace": ""
-            },
-            "feedback": {
-              "enabled": true,
-              "messages": {
-                "onSuccess": "Public holiday removed successfully!",
-                "onFail": "Error while deletion!"
-              }
-            }
-          },
-          {
-            "type": "simple-action",
-            "id": "aYGMuLVnB3cqCsc18zLQWw",
-            "events": [
-              "onclick"
-            ],
-            "action": "all",
-            "actionType": "datasource",
-            "datasource": {
-              "name": "holidays",
-              "from": "",
-              "namespace": "",
-              "type": "entitysel"
-            }
-          },
-          {
-            "type": "dialog",
-            "id": "p6aD1tXXhYUgoMQpTVW3Lj",
-            "events": [
-              "onclick"
-            ],
-            "actionType": "close",
-            "targetDialog": "deleteHoliday"
-          }
-        ],
-        "iconPosition": "hidden",
-        "style": {
-          "display": "flex",
-          "width": "75px",
-          "backgroundColor": "#30BCAF"
-        }
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "B05N4LlHVi",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "L7_wIDgKX0"
-      }
-    },
-    "L7_wIDgKX0": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "tAI1FOGsZJ",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "_lulT_r2Hq": {
-      "type": {
-        "resolvedName": "Button"
-      },
-      "isCanvas": false,
-      "props": {
-        "text": "No",
-        "classNames": [],
-        "events": [
-          {
-            "type": "dialog",
-            "id": "uZVnUayxyqaqVSERBrFZK4",
-            "events": [
-              "onclick"
-            ],
-            "actionType": "close",
-            "targetDialog": "deleteHoliday"
-          }
-        ],
-        "iconPosition": "hidden",
-        "style": {
-          "display": "flex",
-          "width": "75px",
-          "color": "#30BCAF",
-          "backgroundColor": "#ffffffff",
-          "borderWidth": "2px",
-          "borderColor": "#30BCAF"
-        }
-      },
-      "displayName": "Button",
-      "custom": {},
-      "parent": "B05N4LlHVi",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {
-        "icon": "lelsGWzyW3"
-      }
-    },
-    "lelsGWzyW3": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-regular fa-star"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "_lulT_r2Hq",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    },
-    "mGUu5mwmqe": {
-      "type": {
-        "resolvedName": "Icon"
-      },
-      "isCanvas": false,
-      "props": {
-        "classNames": [],
-        "events": [],
-        "icon": "fa-times"
-      },
-      "displayName": "Icon",
-      "custom": {},
-      "parent": "VRVaJfpOUJ",
-      "hidden": false,
-      "nodes": [],
-      "linkedNodes": {}
-    }
-  }
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "search",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "string",
+				"initialValue": ""
+			},
+			{
+				"id": "holidays",
+				"type": "entitysel",
+				"dataclass": "Holiday",
+				"initialValue": "all",
+				"depth": null,
+				"pageSize": 100
+			},
+			{
+				"id": "holiday",
+				"type": "entity",
+				"dataclass": "Holiday",
+				"from": "holidays",
+				"namespace": "",
+				"initialValue": "first",
+				"depth": null
+			},
+			{
+				"id": "name",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "string",
+				"initialValue": ""
+			},
+			{
+				"id": "rangeDate",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "array",
+				"initialValue": []
+			},
+			{
+				"id": "selectedRangeDate",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "array",
+				"initialValue": []
+			},
+			{
+				"id": "emptyArray",
+				"type": "scalar",
+				"namespace": "",
+				"dataType": "array",
+				"initialValue": []
+			},
+			{
+				"id": "newHoliday",
+				"type": "entity",
+				"dataclass": "Holiday",
+				"initialValue": "",
+				"depth": null
+			}
+		],
+		"styles": []
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "HolidayEntity",
+						"events": [
+							"onload"
+						],
+						"id": "x4eeE9TMM739PCyzCezueP",
+						"method": "holiday.getRangeDate",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "rangeDate",
+							"type": "collection",
+							"datasource": "selectedRangeDate"
+						}
+					},
+					{
+						"type": "method",
+						"dataclass": "DataStore",
+						"events": [
+							"onload"
+						],
+						"id": "bnnB417DFzyaqCwrmJRyRz",
+						"method": "ds.displayToRole",
+						"params": [
+							{
+								"name": "currentUser",
+								"type": "cs.EmployeeEntity",
+								"datasource": "Shared:currentUser",
+								"id": "r1SmcqX5Q2vh21YFXYx2gx"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						}
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white h-full w-full px-6",
+				"style": {
+					"backgroundColor": "transparent",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"display": "flex",
+					"flexDirection": "column",
+					"width": "100%",
+					"height": "100%"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"YiNdE3pPvU",
+				"7Xioet_yr2",
+				"d6Wccne30h",
+				"VRVaJfpOUJ"
+			],
+			"linkedNodes": {}
+		},
+		"YiNdE3pPvU": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"justifyContent": "space-between",
+					"width": "100%",
+					"alignItems": "center"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"pBD11hpnSI",
+				"omMl6LGIK8"
+			],
+			"linkedNodes": {}
+		},
+		"7Xioet_yr2": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"paddingLeft": "0px",
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"backgroundColor": "transparent",
+					"height": "100%"
+				},
+				"classNames": [
+					"flexGrow1"
+				],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"7ApHMNDcY6",
+				"W5WGLTUAGW"
+			],
+			"linkedNodes": {}
+		},
+		"o2VMrk7R9D": {
+			"type": {
+				"resolvedName": "DataTable"
+			},
+			"isCanvas": false,
+			"props": {
+				"iterable": true,
+				"classNames": [
+					"dataTableCss",
+					"shadow"
+				],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "HolidayEntity",
+						"events": [
+							"onselect"
+						],
+						"id": "ay817vqbs6gb5ARZwkNZsT",
+						"method": "holiday.getRangeDate",
+						"params": [],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "rangeDate",
+							"type": "collection",
+							"datasource": "selectedRangeDate"
+						},
+						"disabled": false
+					}
+				],
+				"style": {
+					"width": "100%",
+					"height": "100%",
+					"backgroundColor": "#FFF"
+				},
+				"headerHeight": 55,
+				"rowHeight": 50,
+				"datasource": "holidays",
+				"currentElement": "holiday",
+				"columns": [
+					{
+						"title": "Name",
+						"source": "name",
+						"format": "",
+						"width": "33%",
+						"sorting": false,
+						"dataType": "string",
+						"id": "tDveUMJAdiRb4xsC6mzGAi"
+					},
+					{
+						"title": "Start Date",
+						"source": "startDate",
+						"format": "Date long",
+						"width": "33%",
+						"sorting": false,
+						"dataType": "date",
+						"id": "rkLXwV1Gq4MaVeensJeTYw"
+					},
+					{
+						"title": "End Date",
+						"source": "endDate",
+						"format": "Date long",
+						"width": "34%",
+						"sorting": false,
+						"dataType": "date",
+						"id": "gLFUr65WjQjd8TvkCa8wFF"
+					}
+				],
+				"showBorders": false,
+				"iterableChild": true
+			},
+			"displayName": "DataTable",
+			"custom": {},
+			"parent": "7ApHMNDcY6",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"FIQYi3bwsj": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "placeholder",
+				"label": "label",
+				"labelPosition": "hidden",
+				"style": {
+					"backgroundColor": "#FFF"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "omMl6LGIK8",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "qT8Y4Rbo1R",
+				"input": "J40WHfikdQ"
+			}
+		},
+		"qT8Y4Rbo1R": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"moveable": false,
+				"deletable": true,
+				"text": "Label"
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "FIQYi3bwsj",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"J40WHfikdQ": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "Holiday",
+						"events": [
+							"onchange"
+						],
+						"id": "p2Nq2J93PBtpNxgYHnBSHu",
+						"method": "ds.Holiday.searchByName",
+						"params": [
+							{
+								"name": "search",
+								"type": "string",
+								"datasource": "search",
+								"id": "pWrQfsxrHHKs68KQwhAEyD"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "cs.HolidaySelection",
+							"datasource": "holidays"
+						}
+					}
+				],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "text",
+				"placeholder": "Search",
+				"style": {
+					"borderRadius": "6px",
+					"paddingLeft": "8px",
+					"paddingRight": "8px",
+					"paddingTop": "8px",
+					"paddingBottom": "8px",
+					"borderWidth": "1px",
+					"borderColor": "#E7E7E7EE",
+					"width": "250px"
+				},
+				"datasource": "search",
+				"dataType": "string",
+				"moveable": false,
+				"readonly": false,
+				"revealPassword": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "FIQYi3bwsj",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"WZ0ydqvRXO": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Add a new public holiday",
+				"classNames": [],
+				"events": [
+					{
+						"type": "dialog",
+						"id": "jcJPAfE7E6UPAVHsWNY7YX",
+						"events": [
+							"onclick"
+						],
+						"actionType": "open",
+						"targetDialog": "addHoliday"
+					}
+				],
+				"iconPosition": "left",
+				"style": {
+					"display": "flex",
+					"height": "40px",
+					"paddingLeft": "8px",
+					"paddingRight": "8px",
+					"paddingBottom": "8px",
+					"paddingTop": "8px",
+					"backgroundColor": "#30BCAF",
+					"minWidth": "fit-content"
+				},
+				"serverSideRef": "addHolidayButton"
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "omMl6LGIK8",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "LVtZAyCPT-"
+			}
+		},
+		"LVtZAyCPT-": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-solid fa-plus"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "WZ0ydqvRXO",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"d6Wccne30h": {
+			"type": {
+				"resolvedName": "Dialog"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "poC3Y62Hr61Lmunk6cG7XH",
+						"events": [
+							"oninit"
+						],
+						"action": "create",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "newHoliday",
+							"type": "entity",
+							"namespace": ""
+						}
+					},
+					{
+						"type": "simple-action",
+						"id": "pJHY4CBNxSpGEhVrU4YMYm",
+						"events": [
+							"oninit"
+						],
+						"action": "copy",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "emptyArray",
+							"from": "",
+							"type": "scalar",
+							"namespace": "",
+							"dataType": "array",
+							"target": "rangeDate",
+							"targetNamespace": "",
+							"targetType": "array"
+						}
+					}
+				],
+				"overlay": true,
+				"serverSideRef": "addHoliday",
+				"closable": true,
+				"animated": true,
+				"draggable": false,
+				"style": {
+					"borderRadius": "6px"
+				}
+			},
+			"displayName": "Dialog",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"Dialog": "aToeJ6kg16",
+				"close": "SKQhHMOfxU",
+				"drag": "pIIZOl_D4s"
+			}
+		},
+		"aToeJ6kg16": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"className": "h-full",
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "d6Wccne30h",
+			"hidden": false,
+			"nodes": [
+				"DGrhmJGIAM",
+				"gpymQ6XNXV"
+			],
+			"linkedNodes": {}
+		},
+		"SKQhHMOfxU": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-times"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "d6Wccne30h",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"pIIZOl_D4s": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-grip-vertical"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "d6Wccne30h",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"DGrhmJGIAM": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"justifyContent": "space-between",
+					"gap": "10px",
+					"alignItems": "center"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "aToeJ6kg16",
+			"hidden": false,
+			"nodes": [
+				"Ea8iBf48ik",
+				"8O_bdAug7G"
+			],
+			"linkedNodes": {}
+		},
+		"gpymQ6XNXV": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"paddingLeft": "12px",
+					"paddingRight": "12px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"display": "flex",
+					"justifyContent": "flex-end"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "aToeJ6kg16",
+			"hidden": false,
+			"nodes": [
+				"FHub-ICme-"
+			],
+			"linkedNodes": {}
+		},
+		"Ea8iBf48ik": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "placeholder",
+				"label": "label",
+				"labelPosition": "hidden",
+				"style": {
+					"width": "100%"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "DGrhmJGIAM",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "hLqjoD8wo8",
+				"input": "bozQ150_7N"
+			}
+		},
+		"hLqjoD8wo8": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"moveable": false,
+				"text": "Name",
+				"deletable": true
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "Ea8iBf48ik",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"bozQ150_7N": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "text",
+				"placeholder": "Label",
+				"datasource": "newHoliday.name",
+				"style": {
+					"paddingLeft": "8px",
+					"paddingRight": "8px",
+					"paddingBottom": "8px",
+					"paddingTop": "8px",
+					"borderRadius": "6px"
+				},
+				"moveable": false,
+				"readonly": false,
+				"dataType": "string",
+				"revealPassword": true,
+				"eyePosition": "right",
+				"intervals": []
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "Ea8iBf48ik",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"FHub-ICme-": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Add",
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "HolidayEntity",
+						"events": [
+							"onclick"
+						],
+						"id": "8ZXgd2P9pTvirUEgybewLS",
+						"method": "newHoliday.add",
+						"params": [
+							{
+								"name": "rangeDate",
+								"type": "collection",
+								"datasource": "rangeDate",
+								"id": "9ZJ8t6jgjx7wUqtdZN8Wbb"
+							}
+						],
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						},
+						"feedback": true,
+						"disabled": false,
+						"namespace": ""
+					},
+					{
+						"type": "simple-action",
+						"id": "jREz6PqrZAyLzyE7rGyz4K",
+						"events": [
+							"onclick"
+						],
+						"action": "all",
+						"datasource": {
+							"name": "holidays",
+							"from": "",
+							"namespace": "",
+							"type": "entitysel"
+						},
+						"actionType": "datasource"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex",
+					"backgroundColor": "#30BCAF",
+					"height": "42px"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "gpymQ6XNXV",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "RxK42I6ijk"
+			}
+		},
+		"RxK42I6ijk": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "FHub-ICme-",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"omMl6LGIK8": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "fit-content",
+					"display": "flex",
+					"alignItems": "center",
+					"gap": "2%",
+					"paddingRight": "0px",
+					"justifyContent": "flex-end",
+					"paddingTop": "0px",
+					"paddingBottom": "0px",
+					"paddingLeft": "0px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "YiNdE3pPvU",
+			"hidden": false,
+			"nodes": [
+				"FIQYi3bwsj",
+				"WZ0ydqvRXO"
+			],
+			"linkedNodes": {}
+		},
+		"pBD11hpnSI": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Public holidays",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							}
+						]
+					}
+				],
+				"datasource": "",
+				"style": {
+					"width": "fit-content",
+					"fontSize": "1.95vw",
+					"fontWeight": "500",
+					"color": "#2D3748"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "YiNdE3pPvU",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"7ApHMNDcY6": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "60%",
+					"paddingTop": "0px",
+					"display": "block"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7Xioet_yr2",
+			"hidden": false,
+			"nodes": [
+				"o2VMrk7R9D"
+			],
+			"linkedNodes": {}
+		},
+		"W5WGLTUAGW": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"width": "40%",
+					"display": "flex",
+					"flexDirection": "column",
+					"alignItems": "center",
+					"height": "fit-content",
+					"gap": "25px",
+					"backgroundColor": "#FFFFFF",
+					"borderRadius": "6px"
+				},
+				"classNames": [
+					"shadow"
+				],
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "7Xioet_yr2",
+			"hidden": false,
+			"nodes": [
+				"uqAbUgwsn_",
+				"k9vQ3hI65S",
+				"MC6-9Uh10C"
+			],
+			"linkedNodes": {}
+		},
+		"k9vQ3hI65S": {
+			"type": {
+				"resolvedName": "DatePicker"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [],
+				"events": [],
+				"readOnly": false,
+				"style": {
+					"height": "fit-content",
+					"width": "100%",
+					"borderRadius": "4px",
+					"padding": "8px",
+					"backgroundColor": "white"
+				},
+				"selectedDateColor": "#30BCAF",
+				"selectedRangeColor": "#C3F2EE",
+				"selectedDateRaduis": "",
+				"language": "en",
+				"selectionModes": "range",
+				"datasource": "selectedRangeDate"
+			},
+			"displayName": "DatePicker",
+			"custom": {},
+			"parent": "W5WGLTUAGW",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"MC6-9Uh10C": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"paddingRight": "0px",
+					"paddingBottom": "0px",
+					"paddingTop": "0px",
+					"paddingLeft": "0px",
+					"display": "flex",
+					"alignItems": "end",
+					"justifyContent": "flex-end",
+					"gap": "12px"
+				},
+				"serverSideRef": "editHolidayButton",
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "W5WGLTUAGW",
+			"hidden": false,
+			"nodes": [
+				"c28H61jbwf",
+				"4dRKoadXcq"
+			],
+			"linkedNodes": {}
+		},
+		"c28H61jbwf": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Delete",
+				"classNames": [],
+				"events": [
+					{
+						"type": "dialog",
+						"id": "rK7Q831r8xMHBYQdB384xn",
+						"events": [
+							"onclick"
+						],
+						"actionType": "open",
+						"targetDialog": "deleteHoliday"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex",
+					"height": "40px",
+					"backgroundColor": "#ffffffff",
+					"color": "#e73351ff",
+					"borderWidth": "1px",
+					"borderColor": "#e73351ff",
+					"width": "110px"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "MC6-9Uh10C",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "lNf2SRMg3R"
+			}
+		},
+		"lNf2SRMg3R": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "c28H61jbwf",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"uqAbUgwsn_": {
+			"type": {
+				"resolvedName": "TextInput"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"placeholder": "placeholder",
+				"label": "label",
+				"labelPosition": "left",
+				"style": {
+					"width": "100%"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text Input",
+			"custom": {},
+			"parent": "W5WGLTUAGW",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"label": "ZZ7D2wNY-q",
+				"input": "OBykdSxEn_"
+			}
+		},
+		"ZZ7D2wNY-q": {
+			"type": {
+				"resolvedName": "Label"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"moveable": false,
+				"style": {
+					"display": "none"
+				},
+				"deletable": true,
+				"text": "Label"
+			},
+			"displayName": "Label",
+			"custom": {},
+			"parent": "uqAbUgwsn_",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"OBykdSxEn_": {
+			"type": {
+				"resolvedName": "Input"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"deletable": false,
+				"className": "fd-input w-full bg-transparent",
+				"type": "text",
+				"placeholder": "Labor day",
+				"style": {
+					"borderStyle": "none",
+					"fontWeight": "500",
+					"fontSize": "20px",
+					"textAlign": "center"
+				},
+				"datasource": "holiday.name",
+				"moveable": false,
+				"readonly": false,
+				"revealPassword": true,
+				"eyePosition": "right"
+			},
+			"displayName": "Input",
+			"custom": {},
+			"parent": "uqAbUgwsn_",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"8O_bdAug7G": {
+			"type": {
+				"resolvedName": "DatePicker"
+			},
+			"isCanvas": false,
+			"props": {
+				"name": "",
+				"classNames": [
+					"shadow"
+				],
+				"events": [],
+				"readOnly": false,
+				"style": {
+					"height": "fit-content",
+					"width": "100%",
+					"borderRadius": "4px",
+					"boxShadow": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+					"padding": "8px",
+					"backgroundColor": "white"
+				},
+				"selectedDateColor": "#30BCAF",
+				"selectedRangeColor": "#C3F2EE",
+				"selectedDateRaduis": "",
+				"language": "en",
+				"selectionModes": "range",
+				"datasource": "rangeDate"
+			},
+			"displayName": "DatePicker",
+			"custom": {},
+			"parent": "DGrhmJGIAM",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"QeQZzqW6ZL": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "wt2gFt999U",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"4dRKoadXcq": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Edit",
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "HolidayEntity",
+						"events": [
+							"onclick"
+						],
+						"id": "d1EkPtUGFbhFUsg7dXajyH",
+						"method": "holiday.update",
+						"params": [
+							{
+								"name": "rangeDate",
+								"type": "collection",
+								"datasource": "selectedRangeDate",
+								"id": "xhoPNGZB8d659qxcF7w2V1"
+							}
+						],
+						"namespace": "",
+						"datasource": "",
+						"returns": {
+							"name": "result",
+							"type": "Variable"
+						},
+						"feedback": true
+					},
+					{
+						"type": "simple-action",
+						"id": "jREz6PqrZAyLzyE7rGyz4K",
+						"events": [
+							"onclick"
+						],
+						"action": "refresh",
+						"datasource": {
+							"name": "holidays",
+							"from": "",
+							"namespace": "",
+							"type": "entitysel"
+						},
+						"actionType": "datasource"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex",
+					"height": "40px",
+					"backgroundColor": "#30BCAF",
+					"width": "110px"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "MC6-9Uh10C",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "YW4FWP9hl_"
+			}
+		},
+		"YW4FWP9hl_": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "4dRKoadXcq",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"VRVaJfpOUJ": {
+			"type": {
+				"resolvedName": "Dialog"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"overlay": true,
+				"serverSideRef": "deleteHoliday",
+				"closable": true
+			},
+			"displayName": "Dialog",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"Dialog": "IPz9x0YE4M",
+				"close": "mGUu5mwmqe"
+			}
+		},
+		"IPz9x0YE4M": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"className": "h-full",
+				"style": {
+					"display": "flex",
+					"flexDirection": "column",
+					"gap": "12px"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "VRVaJfpOUJ",
+			"hidden": false,
+			"nodes": [
+				"zjVF9Iob5V",
+				"B05N4LlHVi"
+			],
+			"linkedNodes": {}
+		},
+		"zjVF9Iob5V": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Are you sure you want to delete the ",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							},
+							{
+								"type": "datasource",
+								"datasource": "holiday.name",
+								"children": [
+									{
+										"bold": true,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false,
+										"text": "holiday"
+									}
+								],
+								"dsType": "string",
+								"format": ""
+							},
+							{
+								"text": " day?"
+							}
+						]
+					}
+				],
+				"datasource": "holiday.name",
+				"style": {
+					"fontSize": "18px",
+					"textAlign": "center"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Text",
+			"custom": {},
+			"parent": "IPz9x0YE4M",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"B05N4LlHVi": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"style": {
+					"display": "flex",
+					"gap": "20px",
+					"justifyContent": "center"
+				},
+				"iterableChild": true
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "IPz9x0YE4M",
+			"hidden": false,
+			"nodes": [
+				"tAI1FOGsZJ",
+				"_lulT_r2Hq"
+			],
+			"linkedNodes": {}
+		},
+		"tAI1FOGsZJ": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "Yes",
+				"classNames": [],
+				"events": [
+					{
+						"type": "simple-action",
+						"id": "bV3tYhTgSiLMRhMz4PebeA",
+						"events": [
+							"onclick"
+						],
+						"action": "remove",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "holiday",
+							"from": "holidays",
+							"type": "entity",
+							"namespace": ""
+						},
+						"feedback": {
+							"enabled": true,
+							"messages": {
+								"onSuccess": "Public holiday removed successfully!",
+								"onFail": "Error while deletion!"
+							}
+						}
+					},
+					{
+						"type": "simple-action",
+						"id": "aYGMuLVnB3cqCsc18zLQWw",
+						"events": [
+							"onclick"
+						],
+						"action": "all",
+						"actionType": "datasource",
+						"datasource": {
+							"name": "holidays",
+							"from": "",
+							"namespace": "",
+							"type": "entitysel"
+						}
+					},
+					{
+						"type": "dialog",
+						"id": "p6aD1tXXhYUgoMQpTVW3Lj",
+						"events": [
+							"onclick"
+						],
+						"actionType": "close",
+						"targetDialog": "deleteHoliday"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex",
+					"width": "75px",
+					"backgroundColor": "#30BCAF"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "B05N4LlHVi",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "L7_wIDgKX0"
+			}
+		},
+		"L7_wIDgKX0": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "tAI1FOGsZJ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"_lulT_r2Hq": {
+			"type": {
+				"resolvedName": "Button"
+			},
+			"isCanvas": false,
+			"props": {
+				"text": "No",
+				"classNames": [],
+				"events": [
+					{
+						"type": "dialog",
+						"id": "uZVnUayxyqaqVSERBrFZK4",
+						"events": [
+							"onclick"
+						],
+						"actionType": "close",
+						"targetDialog": "deleteHoliday"
+					}
+				],
+				"iconPosition": "hidden",
+				"style": {
+					"display": "flex",
+					"width": "75px",
+					"color": "#30BCAF",
+					"backgroundColor": "#ffffffff",
+					"borderWidth": "2px",
+					"borderColor": "#30BCAF"
+				}
+			},
+			"displayName": "Button",
+			"custom": {},
+			"parent": "B05N4LlHVi",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {
+				"icon": "lelsGWzyW3"
+			}
+		},
+		"lelsGWzyW3": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-regular fa-star"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "_lulT_r2Hq",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"mGUu5mwmqe": {
+			"type": {
+				"resolvedName": "Icon"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"icon": "fa-times"
+			},
+			"displayName": "Icon",
+			"custom": {},
+			"parent": "VRVaJfpOUJ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
 }

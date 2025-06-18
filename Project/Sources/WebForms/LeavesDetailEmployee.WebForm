@@ -5,7 +5,7 @@
 			{
 				"id": "newComment",
 				"type": "entity",
-				"dataclass": "Comments",
+				"dataclass": "Comment",
 				"initialValue": "",
 				"depth": null
 			}
@@ -595,7 +595,6 @@
 										"strikethrough": false
 									}
 								],
-								"dsType": "string",
 								"format": ""
 							},
 							{
@@ -675,7 +674,7 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "LeavesEntity",
+						"dataclass": "LeaveEntity",
 						"events": [
 							"onclick"
 						],
@@ -686,7 +685,7 @@
 						"datasource": "",
 						"returns": {
 							"name": "result",
-							"type": "cs.LeavesEntity",
+							"type": "cs.LeaveEntity",
 							"datasource": "Shared:selectedLeave"
 						},
 						"feedback": true
@@ -1696,7 +1695,7 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "CommentsEntity",
+						"dataclass": "CommentEntity",
 						"events": [
 							"onclick"
 						],
@@ -1705,7 +1704,7 @@
 						"params": [
 							{
 								"name": "newLeave",
-								"type": "cs.LeavesEntity",
+								"type": "cs.LeaveEntity",
 								"datasource": "Shared:selectedLeave",
 								"id": "ss4uPXB6Dddr9Hq7L6ZFqx"
 							}
@@ -1940,7 +1939,7 @@
 			"props": {
 				"classNames": [],
 				"events": [],
-				"componentName": "PdfViewer",
+				"componentName": "Fallback",
 				"name": "",
 				"style": {
 					"height": "500px"

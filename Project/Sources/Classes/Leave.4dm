@@ -1,14 +1,15 @@
 Class extends DataClass
 
 
-exposed Function add($employee : cs:C1710.EmployeesEntity; $leaveBalance : cs:C1710.LeaveBalancesEntity; $rangeDate : Collection; $newLeave : cs:C1710.LeavesEntity; $initialLength : Integer) : cs:C1710.LeavesEntity
+exposed Function add($employee : cs:C1710.EmployeeEntity; $leaveBalance : cs:C1710.LeaveBalanceEntity; $rangeDate : Collection; $newLeave : cs:C1710.LeaveEntity; $initialLength : Variant) : cs:C1710.LeaveEntity
+	TRACE:C157
 	var $info : Object
 	var $action : Text
 	var $receiver : Text:=String:C10($employee.email)+";"+String:C10($employee.team.manager.email)
 	
 	var $isAlreadyDeclared : Integer
 	If ($rangeDate.length#0)
-		$isAlreadyDeclared=This:C1470.query("employee.ID = :1 and startDate >= :2 and endDate <= :3"; $employee.ID; Date:C102($rangeDate[0]); Date:C102($rangeDate.length=1 ? $rangeDate[0] : $rangeDate[1])).length
+		$isAlreadyDeclared:=This:C1470.query("employee.ID = :1 and startDate >= :2 and endDate <= :3"; $employee.ID; Date:C102($rangeDate[0]); Date:C102($rangeDate.length=1 ? $rangeDate[0] : $rangeDate[1])).length
 	End if 
 	Case of 
 		: ($newLeave.rangeLength=0)
@@ -24,10 +25,10 @@ exposed Function add($employee : cs:C1710.EmployeesEntity; $leaveBalance : cs:C1
 		: (Date:C102($rangeDate[0])<Current date:C33())
 			Web Form:C1735.setError("You must select a valid date.")
 		: (($rangeDate.length=2) && ($leaveBalance.balance<$newLeave.rangeLength))
-			Web Form:C1735.setError("Type limit surpassed by "+String:C10(((Date:C102($rangeDate[1])-Date:C102($rangeDate[0]))+1)-leaveBalance.balance)+" days")
+			Web Form:C1735.setError("Type limit surpassed by "+String:C10(((Date:C102($rangeDate[1])-Date:C102($rangeDate[0]))+1)-$leaveBalance.balance)+" days")
 		: ($employee=Null:C1517)
 			Web Form:C1735.setError("Check your connection!")
-		: ((($newLeave.rangeLength>initialLength) || ($newLeave.rangeLength<initialLength)) && (Abs:C99($newLeave.rangeLength-initialLength)#0.5))
+		: ((($newLeave.rangeLength>$initialLength) || ($newLeave.rangeLength<$initialLength)) && (Abs:C99($newLeave.rangeLength-$initialLength)#0.5))
 			Web Form:C1735.setError(("The number of days selected is illogical!"))
 		Else 
 			$newLeave.employee:=$employee
@@ -51,16 +52,16 @@ exposed Function add($employee : cs:C1710.EmployeesEntity; $leaveBalance : cs:C1
 	return $newLeave
 	
 	
-exposed Function teamLeaves($employee : cs:C1710.EmployeesEntity)->$leaves : cs:C1710.LeavesSelection
+exposed Function teamLeaves($employee : cs:C1710.EmployeeEntity)->$leaves : cs:C1710.LeaveSelection
 	If ($employee.teamsManage.length>0)
 		$leaves:=$employee.team.employees.leaves
 	End if 
 	
-exposed Function allLeaves()->$leaves : cs:C1710.LeavesSelection
+exposed Function allLeaves()->$leaves : cs:C1710.LeaveSelection
 	$leaves:=ds:C1482.Leaves.all()
 	
-exposed Function filtering($selectedType : cs:C1710.LeaveTypesEntity; $employee : cs:C1710.EmployeesEntity; $status : Variant) : cs:C1710.LeavesSelection
-	var $currentUser : cs:C1710.EmployeesEntity:=ds:C1482.Employees.getCurrentUser()
+exposed Function filtering($selectedType : cs:C1710.LeaveTypeEntity; $employee : cs:C1710.EmployeeEntity; $status : Variant) : cs:C1710.LeaveSelection
+	var $currentUser : cs:C1710.EmployeeEntity:=ds:C1482.Employee.getCurrentUser()
 	If ($currentUser.role="employee")
 		$employee:=$currentUser
 	End if 
@@ -83,7 +84,7 @@ exposed Function filtering($selectedType : cs:C1710.LeaveTypesEntity; $employee 
 			return This:C1470.all()
 	End case 
 	
-exposed Function update($employee : cs:C1710.EmployeesEntity; $rangeDate : Collection; $selectedLeave : cs:C1710.LeavesEntity; $status : Text)
+exposed Function update($employee : cs:C1710.EmployeeEntity; $rangeDate : Collection; $selectedLeave : cs:C1710.LeaveEntity; $status : Text)
 	var $info : Object
 	Case of 
 		: ($rangeDate.length#2)
@@ -100,9 +101,9 @@ exposed Function update($employee : cs:C1710.EmployeesEntity; $rangeDate : Colle
 			End if 
 	End case 
 	
-exposed Function getLeavesByRole($currentUser : cs:C1710.EmployeesEntity) : cs:C1710.LeavesSelection
-	var $managerLeaves : cs:C1710.LeavesSelection
-	var $teamLeaves : cs:C1710.LeavesSelection
+exposed Function getLeavesByRole($currentUser : cs:C1710.EmployeeEntity) : cs:C1710.LeaveSelection
+	var $managerLeaves : cs:C1710.LeaveSelection
+	var $teamLeaves : cs:C1710.LeaveSelection
 	Case of 
 		: ($currentUser.role="Admin")
 			return This:C1470.all()
@@ -135,8 +136,8 @@ exposed Function getRangeLength($dateRange : Collection) : Integer
 	return $colLength
 	
 	
-exposed Function filterInCalendar($selectedEmployee : cs:C1710.EmployeesEntity; $leaveType : Variant; $currentUser : cs:C1710.EmployeesEntity) : cs:C1710.LeavesSelection
-	var $leaves : cs:C1710.LeavesSelection:=This:C1470.getLeavesByRole($currentUser)
+exposed Function filterInCalendar($selectedEmployee : cs:C1710.EmployeeEntity; $leaveType : Variant; $currentUser : cs:C1710.EmployeeEntity) : cs:C1710.LeaveSelection
+	var $leaves : cs:C1710.LeaveSelection:=This:C1470.getLeavesByRole($currentUser)
 	Case of 
 		: (($selectedEmployee#Null:C1517) && ($leaveType#Null:C1517))
 			return $leaves.query("status = 'approved' and leaveType.name = :1 and employee.ID = :2"; $leaveType.name; $selectedEmployee.ID)
