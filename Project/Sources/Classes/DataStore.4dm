@@ -2,7 +2,7 @@ Class extends DataStoreImplementation
 
 
 exposed Function authentify($email : Text; $password : Text) : Boolean
-	$employee:=ds:C1482.Employees.query("email = :1"; $email).first()
+	$employee:=ds:C1482.Employee.query("email = :1"; $email).first()
 	If ($employee#Null:C1517)
 		If (Verify password hash:C1534($password; $employee.password))
 			Use (Session:C1714.storage)
@@ -46,7 +46,7 @@ exposed Function removeCss($serverRef : Text; $cssClass : Text)
 	$component.removeCSSClass($cssClass)
 	
 exposed Function Login() : Text
-	var $user : cs:C1710.EmployeesEntity:=ds:C1482.Employees.getCurrentUser()
+	var $user : cs:C1710.EmployeeEntity:=ds:C1482.Employee.getCurrentUser()
 	var $page : Text
 	Case of 
 		: ($user.role="Admin")
@@ -94,7 +94,7 @@ exposed Function navbar($serverRef : Text)
 exposed Function breadcrumbs($path : Text) : Text
 	return "Home/"+$path
 	
-exposed Function displayToRole($currentUser : cs:C1710.EmployeesEntity)
+exposed Function displayToRole($currentUser : cs:C1710.EmployeeEntity)
 	Case of 
 		: ($currentUser.role="Employee")
 			Web Form:C1735["addHolidayButton"].hide()
@@ -121,7 +121,7 @@ exposed Function displayToRole($currentUser : cs:C1710.EmployeesEntity)
 			Web Form:C1735["updateLeaveTypeButton"].hide()
 	End case 
 	
-exposed Function landingDetailPage($currentUser : cs:C1710.EmployeesEntity) : Text
+exposed Function landingDetailPage($currentUser : cs:C1710.EmployeeEntity) : Text
 	If ($currentUser.role="Employee")
 		return "LeavesDetailEmployee"
 	Else 

@@ -15,10 +15,10 @@ exposed Function get nonValideBalance()->$nonValideBalance : Integer
 exposed Function get balance()->$balance : Integer
 	$balance:=This:C1470.leaveBalances.sum("balance")
 	
-exposed Function addBalanceToNew($team : cs:C1710.TeamsEntity)
-	var $leaveTypes : cs:C1710.LeaveTypesSelection:=ds:C1482.LeaveTypes.all()
-	var $leaveCongeAnnuel : cs:C1710.LeaveTypesEntity:=$leaveTypes.query("name = :1"; "Annual paid leave").first()
-	var $leaveBalance : cs:C1710.LeaveBalancesEntity
+exposed Function addBalanceToNew($team : cs:C1710.TeamEntity)
+	var $leaveTypes : cs:C1710.LeaveTypeSelection:=ds:C1482.LeaveTypes.all()
+	var $leaveCongeAnnuel : cs:C1710.LeaveTypeEntity:=$leaveTypes.query("name = :1"; "Annual paid leave").first()
+	var $leaveBalance : cs:C1710.LeaveBalanceEntity
 	var $remainingDays : Integer
 	$remainingDays:=(12-Month of:C24(Current date:C33()))*1.5
 	If (This:C1470.team=Null:C1517)
@@ -35,13 +35,13 @@ exposed Function addBalanceToNew($team : cs:C1710.TeamsEntity)
 	End if 
 	
 exposed Function getBalanceChart()->$pieChart : Collection
-	var $balance : cs:C1710.LeaveBalancesSelection
+	var $balance : cs:C1710.LeaveBalanceSelection
 	$balance:=This:C1470.leaveBalances
 	$pieChart:=$balance.extract("balance"; "value"; "leaveType.name"; "label"; "leaveType.color"; "color")
 	
 	
-exposed Function getBalance($leaveType : cs:C1710.LeaveTypesEntity) : cs:C1710.LeaveBalancesEntity
-	var $leave : cs:C1710.LeaveTypesEntity
+exposed Function getBalance($leaveType : cs:C1710.LeaveTypeEntity) : cs:C1710.LeaveBalanceEntity
+	var $leave : cs:C1710.LeaveTypeEntity
 	If ($leaveType !=Null:C1517)
 		$leave:=This:C1470.leaveBalances.leaveType.query("name = :1"; $leaveType.name).first()
 		If ($leave#Null:C1517)
@@ -52,9 +52,9 @@ exposed Function getBalance($leaveType : cs:C1710.LeaveTypesEntity) : cs:C1710.L
 		End if 
 	End if 
 	
-exposed Function editBalance($leaveType : cs:C1710.LeaveTypesEntity; $balance : Integer)
-	var $leaveT : cs:C1710.LeaveTypesEntity:=This:C1470.leaveBalances.leaveType.query("name = :1"; leaveType.name).first()
-	var $leaveBalance : cs:C1710.LeaveBalancesEntity
+exposed Function editBalance($leaveType : cs:C1710.LeaveTypeEntity; $balance : Integer)
+	var $leaveT : cs:C1710.LeaveTypeEntity:=This:C1470.leaveBalances.leaveType.query("name = :1"; leaveType.name).first()
+	var $leaveBalance : cs:C1710.LeaveBalanceEntity
 	If ($leaveT#Null:C1517)
 		$leaveBalance:=$leaveT.leaveBalances.query("employee.ID = :1"; This:C1470.ID).first()
 		$leaveBalance.balance:=$balance
@@ -79,7 +79,7 @@ exposed Function removeTeam()
 		Web Form:C1735.setError("Error!")
 	End if 
 	
-exposed Function setTeam($selectedTeam : cs:C1710.TeamsEntity)
+exposed Function setTeam($selectedTeam : cs:C1710.TeamEntity)
 	var $saved : Object
 	This:C1470.team:=$selectedTeam
 	$saved:=This:C1470.save()

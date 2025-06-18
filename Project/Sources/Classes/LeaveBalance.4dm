@@ -9,8 +9,8 @@ Function createDateArray($startdate : Date; $enddate : Date)->$arrayDate : Colle
 		$startdate+=1
 	End while 
 	
-exposed Function decrementBalance($leave : cs:C1710.LeavesEntity)
-	var $leaveBalance : cs:C1710.LeaveBalancesEntity
+exposed Function decrementBalance($leave : cs:C1710.LeaveEntity)
+	var $leaveBalance : cs:C1710.LeaveBalanceEntity
 	var $counter : Integer:=0
 	var $inDate : Date
 	var $isSaved : Object
@@ -26,9 +26,9 @@ exposed Function decrementBalance($leave : cs:C1710.LeavesEntity)
 	
 	
 exposed Function newYearBalance()
-	var $employees : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
-	var $employee : cs:C1710.EmployeesEntity
-	var $congeAnnuel : cs:C1710.LeaveBalancesEntity
+	var $employees : cs:C1710.EmployeeSelection:=ds:C1482.Employee.all()
+	var $employee : cs:C1710.EmployeeEntity
+	var $congeAnnuel : cs:C1710.LeaveBalanceEntity
 	If (Current date:C33()=Date:C102("01/01/"+String:C10(Year of:C25(Current date:C33()))))
 		For each ($employee; $employees)
 			$congeAnnuel:=This:C1470.query("leaveType.name=:1 and employee.ID=:2 "; "Annual paid leave"; $employee.ID).first()

@@ -32,12 +32,12 @@
 					},
 					{
 						"type": "method",
-						"dataclass": "LeaveBalances",
+						"dataclass": "LeaveBalance",
 						"events": [
 							"onload"
 						],
 						"id": "eSEuZAkdR1MiBNbMER8ETo",
-						"method": "ds.LeaveBalances.newYearBalance",
+						"method": "ds.LeaveBalance.newYearBalance",
 						"params": [],
 						"datasource": "",
 						"returns": {

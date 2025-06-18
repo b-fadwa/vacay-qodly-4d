@@ -2,14 +2,14 @@
 	"Sources/Classes/GenerateData.4dm": {
 		"left": 0,
 		"top": 78,
-		"width": 1280,
-		"height": 571
+		"width": 1281,
+		"height": 572
 	},
 	"Sources/Classes/DataStore.4dm": {
 		"left": 0,
 		"top": 78,
-		"width": 1280,
-		"height": 571
+		"width": 1281,
+		"height": 572
 	},
 	"Sources/Methods/Method1.4dm": {
 		"left": 7,
@@ -24,9 +24,93 @@
 		"height": 571
 	},
 	"Sources/Classes/EmployeesEntity.4dm": {
-		"left": -22293,
+		"left": -22798,
 		"top": -21284,
 		"width": 1280,
 		"height": 571
+	},
+	"Sources/Classes/CommentEntity.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/Employee.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/EmployeeEntity.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/Holiday.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/HolidayEntity.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/Leave.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/LeaveAction.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/LeaveBalance.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/LeaveEntity.4dm": {
+		"left": 0,
+		"top": 78,
+		"width": 1264,
+		"height": 555
+	},
+	"Sources/Classes/LeaveSelection.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/LeaveType.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/LeaveTypeEntity.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/Mailing.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
+	},
+	"Sources/Classes/TeamEntity.4dm": {
+		"left": 0,
+		"top": 108,
+		"width": 1281,
+		"height": 572
 	}
 }

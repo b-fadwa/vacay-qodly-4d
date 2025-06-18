@@ -1,6 +1,6 @@
 {
 	"tables": {
-		"Teams": {
+		"Team": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -15,7 +15,7 @@
 			},
 			"displayable_fields_count": 5
 		},
-		"LeaveTypes": {
+		"LeaveType": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -30,7 +30,7 @@
 			},
 			"displayable_fields_count": 6
 		},
-		"Leaves": {
+		"Leave": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -41,11 +41,11 @@
 				"left": 0,
 				"top": 300,
 				"width": 240,
-				"height": 235.33203125
+				"height": 263.33203125
 			},
-			"displayable_fields_count": 9
+			"displayable_fields_count": 10
 		},
-		"LeaveNotifications": {
+		"LeaveNotification": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -75,7 +75,7 @@
 			},
 			"displayable_fields_count": 11
 		},
-		"LeaveBalances": {
+		"LeaveBalance": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -90,7 +90,7 @@
 			},
 			"displayable_fields_count": 6
 		},
-		"LeaveActions": {
+		"LeaveAction": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -105,7 +105,7 @@
 			},
 			"displayable_fields_count": 11
 		},
-		"Holidays": {
+		"Holiday": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -120,7 +120,7 @@
 			},
 			"displayable_fields_count": 6
 		},
-		"Employees": {
+		"Employee": {
 			"color": {
 				"red": 255,
 				"green": 255,
@@ -135,7 +135,7 @@
 			},
 			"displayable_fields_count": 8
 		},
-		"Comments": {
+		"Comment": {
 			"color": {
 				"red": 255,
 				"green": 255,

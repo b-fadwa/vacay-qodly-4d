@@ -1,6 +1,6 @@
 Class extends Entity
 
-exposed Function addTeam($name : Text; $manager : cs:C1710.EmployeesEntity)
+exposed Function addTeam($name : Text; $manager : cs:C1710.EmployeeEntity)
 	var $info : Object
 	If ($name="")
 		Web Form:C1735.setError("You must assign a team's label !")

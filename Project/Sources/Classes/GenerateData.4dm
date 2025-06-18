@@ -6,10 +6,10 @@ Class constructor
 Function dropData()
 	var $trash : Object
 	
-	$trash:=ds:C1482.Employees.all().drop()
-	$trash:=ds:C1482.LeaveTypes.all().drop()
-	$trash:=ds:C1482.Holidays.all().drop()
-	$trash:=ds:C1482.Teams.all().drop()
+	$trash:=ds:C1482.Employee.all().drop()
+	$trash:=ds:C1482.LeaveType.all().drop()
+	$trash:=ds:C1482.Holiday.all().drop()
+	$trash:=ds:C1482.Team.all().drop()
 	$trash:=ds:C1482.LeaveBalances.all().drop()
 	$trash:=ds:C1482.Leaves.all().drop()
 	$trash:=ds:C1482.Comments.all().drop()
@@ -32,7 +32,7 @@ Function createData()
 	
 Function generateUsers()
 	
-	var $newUser : cs:C1710.EmployeesEntity
+	var $newUser : cs:C1710.EmployeeEntity
 	
 	var $users : Collection:=[\
 		{firstName: "John"; lastName: "Smith"; password: "a1b2c3"; email: "john.smith@example.com"; role: "Admin"}; \
@@ -60,7 +60,7 @@ Function generateUsers()
 	var $user : Object
 	
 	For each ($user; $users)
-		$employee:=ds:C1482.Employees.new()
+		$employee:=ds:C1482.Employee.new()
 		$employee.firstName:=$user.firstName
 		$employee.lastName:=$user.lastName
 		$employee.password:=Generate password hash:C1533($user.password)
@@ -74,7 +74,7 @@ Function generateUsers()
 Function generateLeavesTypes()
 	var $types : Collection
 	var $item : Object
-	var $LeaveType : cs:C1710.LeaveTypesEntity
+	var $LeaveType : cs:C1710.LeaveTypeEntity
 	$types:=[\
 		{name: "Annual paid leave"; color: "#30BCAF"; descritpion: "Annual paid leave is a period of time granted to an employee by his or her employer;during which the employee is authorized not to work while receiving remuneration. This type of leave is generally provided for by law or company policy;and is design"+"ed to enable employees to take regular breaks to rest;recharge and enjoy their free time."}; \
 		{name: "Recovery"; color: "#7B61FF"; descritpion: "Recuperation is a type of leave granted to an employee to compensate for overtime or days worked beyond regular hours. It is common practice in many organizations to recognize and reward employees' extra efforts."}; \
@@ -87,7 +87,7 @@ Function generateLeavesTypes()
 		{name: "Unpaid leave"; color: "#EAEBED"; descritpion: "Unpaid leave is a period of leave during which an employee takes an extended break from work without receiving pay. These leaves are generally taken for personal or family reasons that are not covered by regular paid leave or other types of paid leave"+". They often need to be approved by the employer;and may have implications for the employee's benefits and employment status during the period of absence."}]
 	
 	For each ($item; $types)
-		$LeaveType:=ds:C1482.LeaveTypes.new()
+		$LeaveType:=ds:C1482.LeaveType.new()
 		$LeaveType.name:=$item.name
 		$LeaveType.description:=$item.descritpion
 		$LeaveType.color:=$item.color
@@ -97,7 +97,7 @@ Function generateLeavesTypes()
 Function generateHolidays()
 	var $holidays : Collection
 	var $item : Object
-	var $holiday : cs:C1710.HolidaysEntity
+	var $holiday : cs:C1710.HolidayEntity
 	$holidays:=[\
 		{name: "New year"; startDate: "01/01/2024"}; \
 		{name: "Labor day"; startDate: "05/01/2024"}; \
@@ -111,7 +111,7 @@ Function generateHolidays()
 		{name: "Anniversary of the revolution of the king and the people"; startDate: "08/20/2024"}]
 	
 	For each ($item; $holidays)
-		$holiday:=ds:C1482.Holidays.new()
+		$holiday:=ds:C1482.Holiday.new()
 		$holiday.name:=$item.name
 		$holiday.startDate:=Date:C102($item.startDate)
 		$holiday.endDate:=($item.endDate#Null:C1517) ? Date:C102($item.endDate) : Date:C102($item.startDate)
@@ -121,10 +121,10 @@ Function generateHolidays()
 Function generateTeams()
 	var $teams : Collection
 	var $item : Text
-	var $team : cs:C1710.TeamsEntity
+	var $team : cs:C1710.TeamEntity
 	$teams:=["4D Product-QA"; "4D Product Customer Support"; "SI 4D"; "PS 4D"; "Administration service"; "4D Product RD - Web Studio"; "Cloud"]
-	var $managers : cs:C1710.EmployeesSelection:=ds:C1482.Employees.query("role == 'Manager'")
-	$managers:=managers.length#0 ? $managers : ds:C1482.Employees.query("role = 'Admin")
+	var $managers : cs:C1710.EmployeeSelection:=ds:C1482.Employee.query("role == 'Manager'")
+	$managers:=managers.length#0 ? $managers : ds:C1482.Employee.query("role = 'Admin")
 	For each ($item; $teams)
 		$team:=ds:C1482.Teams.new()
 		$team.name:=$item
@@ -133,11 +133,11 @@ Function generateTeams()
 	End for each 
 	
 Function generateLeaveBalances()
-	var $users : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
-	var $user : cs:C1710.EmployeesEntity
-	var $LeaveTypes : cs:C1710.LeaveTypesSelection:=ds:C1482.LeaveTypes.all()
+	var $users : cs:C1710.EmployeeSelection:=ds:C1482.Employee.all()
+	var $user : cs:C1710.EmployeeEntity
+	var $LeaveTypes : cs:C1710.LeaveTypeSelection:=ds:C1482.LeaveType.all()
 	var $LeaveType
-	var $leaveBalance : cs:C1710.LeaveBalancesEntity
+	var $leaveBalance : cs:C1710.LeaveBalanceEntity
 	
 	For each ($user; $users)
 		For each ($LeaveType; $LeaveTypes)
@@ -150,13 +150,13 @@ Function generateLeaveBalances()
 	End for each 
 	
 Function generateLeaves()
-	var $users : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
-	var $user : cs:C1710.EmployeesEntity
-	var $LeaveTypes : cs:C1710.LeaveTypesSelection:=ds:C1482.LeaveTypes.all()
-	var $leave : cs:C1710.LeavesEntity
+	var $users : cs:C1710.EmployeeSelection:=ds:C1482.Employee.all()
+	var $user : cs:C1710.EmployeeEntity
+	var $LeaveTypes : cs:C1710.LeaveTypeSelection:=ds:C1482.LeaveType.all()
+	var $leave : cs:C1710.LeaveEntity
 	
 	For each ($user; $users)
-		$leave:=ds:C1482.Leaves.new()
+		$leave:=ds:C1482.Leave.new()
 		$leave.employee:=$user
 		$leave.requestDate:=Current date:C33()
 		$leave.startDate:=Current date:C33()+10
@@ -170,9 +170,9 @@ Function generateLeaves()
 	
 	
 Function linkToTeam()
-	var $employees : cs:C1710.EmployeesSelection:=ds:C1482.Employees.all()
-	var $teams : cs:C1710.TeamsSelection:=ds:C1482.Teams.all()
-	var $employee : cs:C1710.EmployeesEntity
+	var $employees : cs:C1710.EmployeeSelection:=ds:C1482.Employee.all()
+	var $teams : cs:C1710.TeamSelection:=ds:C1482.Team.all()
+	var $employee : cs:C1710.EmployeeEntity
 	For each ($employee; $employees)
 		$employee.team:=$teams.at(Random:C100%($teams.length))
 		$employee.save()

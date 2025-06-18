@@ -2,15 +2,24 @@
 	"editors": [
 		{
 			"type": "method",
-			"id": 2147483624,
+			"id": 2147483580,
 			"codeDescriptor": {
 				"type": 12,
-				"className": "EmployeesEntity",
-				"methodPath": "/SOURCES/Classes/EmployeesEntity.4dm"
+				"className": "LeaveEntity",
+				"methodPath": "/SOURCES/Classes/LeaveEntity.4dm"
 			}
 		},
 		{
 			"type": "explorer"
+		},
+		{
+			"type": "method",
+			"id": 2147483589,
+			"codeDescriptor": {
+				"type": 12,
+				"className": "Leave",
+				"methodPath": "/SOURCES/Classes/Leave.4dm"
+			}
 		},
 		{
 			"type": "structure"

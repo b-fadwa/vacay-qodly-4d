@@ -1,21 +1,21 @@
 {
 	"Sources/Classes/GenerateData.4dm": {
-		"startSelection": 0,
-		"endSelection": 0,
-		"firstSelectedLine": 176,
-		"lastSelectedLine": 176,
+		"startSelection": 27,
+		"endSelection": 27,
+		"firstSelectedLine": 174,
+		"lastSelectedLine": 174,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2025-06-17T10:55:57.123Z"
+		"stamp": "2025-06-17T14:16:46.179Z"
 	},
 	"Sources/Classes/DataStore.4dm": {
-		"startSelection": 16,
-		"endSelection": 16,
-		"firstSelectedLine": 49,
-		"lastSelectedLine": 49,
+		"startSelection": 61,
+		"endSelection": 61,
+		"firstSelectedLine": 123,
+		"lastSelectedLine": 123,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2025-06-17T13:02:42.723Z"
+		"stamp": "2025-06-17T14:10:21.867Z"
 	},
 	"Sources/Methods/Method1.4dm": {
 		"startSelection": 17,
@@ -38,10 +38,136 @@
 	"Sources/Classes/EmployeesEntity.4dm": {
 		"startSelection": 0,
 		"endSelection": 0,
-		"firstSelectedLine": 5,
-		"lastSelectedLine": 5,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2025-06-17T13:04:02.417Z"
+		"stamp": "2025-06-17T13:50:27.322Z"
+	},
+	"Sources/Classes/CommentEntity.4dm": {
+		"startSelection": 20,
+		"endSelection": 20,
+		"firstSelectedLine": 9,
+		"lastSelectedLine": 9,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:09:06.553Z"
+	},
+	"Sources/Classes/Employee.4dm": {
+		"startSelection": 100,
+		"endSelection": 100,
+		"firstSelectedLine": 26,
+		"lastSelectedLine": 26,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:11:03.808Z"
+	},
+	"Sources/Classes/EmployeeEntity.4dm": {
+		"startSelection": 48,
+		"endSelection": 48,
+		"firstSelectedLine": 81,
+		"lastSelectedLine": 81,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:13:56.798Z"
+	},
+	"Sources/Classes/Holiday.4dm": {
+		"startSelection": 58,
+		"endSelection": 58,
+		"firstSelectedLine": 2,
+		"lastSelectedLine": 2,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:17:03.418Z"
+	},
+	"Sources/Classes/HolidayEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T08:41:04.148Z"
+	},
+	"Sources/Classes/Leave.4dm": {
+		"startSelection": 3,
+		"endSelection": 3,
+		"firstSelectedLine": 30,
+		"lastSelectedLine": 30,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T15:38:29.001Z"
+	},
+	"Sources/Classes/LeaveAction.4dm": {
+		"startSelection": 23,
+		"endSelection": 23,
+		"firstSelectedLine": 6,
+		"lastSelectedLine": 6,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:22:11.170Z"
+	},
+	"Sources/Classes/LeaveBalance.4dm": {
+		"startSelection": 50,
+		"endSelection": 50,
+		"firstSelectedLine": 28,
+		"lastSelectedLine": 28,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T16:09:59.557Z"
+	},
+	"Sources/Classes/LeaveEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 10,
+		"lastSelectedLine": 10,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T16:11:13.866Z"
+	},
+	"Sources/Classes/LeaveSelection.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 18,
+		"lastSelectedLine": 18,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:24:37.236Z"
+	},
+	"Sources/Classes/LeaveType.4dm": {
+		"startSelection": 60,
+		"endSelection": 60,
+		"firstSelectedLine": 2,
+		"lastSelectedLine": 2,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:24:48.237Z"
+	},
+	"Sources/Classes/LeaveTypeEntity.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 27,
+		"lastSelectedLine": 27,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:25:02.558Z"
+	},
+	"Sources/Classes/Mailing.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T08:41:04.153Z"
+	},
+	"Sources/Classes/TeamEntity.4dm": {
+		"startSelection": 61,
+		"endSelection": 61,
+		"firstSelectedLine": 2,
+		"lastSelectedLine": 2,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2025-06-17T14:25:41.775Z"
 	}
 }

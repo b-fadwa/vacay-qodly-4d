@@ -10,8 +10,8 @@ exposed Function addLeaveType()
 	End if 
 	
 exposed Function deleteLeaveType()
-	var $leavesStatus : cs:C1710.LeavesSelection
-	var $balanceStatus : cs:C1710.LeaveBalancesSelection
+	var $leavesStatus : cs:C1710.LeaveSelection
+	var $balanceStatus : cs:C1710.LeaveBalanceSelection
 	var $result : Object
 	$leavesStatus:=This:C1470.leaves.drop()
 	$balanceStatus:=This:C1470.leaveBalances.drop()

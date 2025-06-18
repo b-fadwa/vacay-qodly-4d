@@ -5,7 +5,7 @@
 			{
 				"id": "leavesType",
 				"type": "entitysel",
-				"dataclass": "LeaveTypes",
+				"dataclass": "LeaveType",
 				"initialValue": "all",
 				"depth": null,
 				"pageSize": 100
@@ -13,7 +13,7 @@
 			{
 				"id": "leaves",
 				"type": "entitysel",
-				"dataclass": "Leaves",
+				"dataclass": "Leave",
 				"initialValue": "",
 				"depth": null,
 				"pageSize": 100
@@ -21,7 +21,7 @@
 			{
 				"id": "selectedLeaveType",
 				"type": "entity",
-				"dataclass": "LeaveTypes",
+				"dataclass": "LeaveType",
 				"from": "leavesType",
 				"namespace": "",
 				"initialValue": "",
@@ -31,7 +31,7 @@
 			{
 				"id": "newLeave",
 				"type": "entity",
-				"dataclass": "Leaves",
+				"dataclass": "Leave",
 				"initialValue": "",
 				"depth": null
 			},
@@ -44,12 +44,12 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "Leaves",
+						"dataclass": "Leave",
 						"events": [
 							"onChange"
 						],
 						"id": "9vstLJT1KMe27gJBW91iZE",
-						"method": "ds.Leaves.getRangeLength",
+						"method": "ds.Leave.getRangeLength",
 						"params": [
 							{
 								"name": "dateRange",
@@ -88,7 +88,7 @@
 			{
 				"id": "newComment",
 				"type": "entity",
-				"dataclass": "Comments",
+				"dataclass": "Comment",
 				"initialValue": "",
 				"depth": null
 			},
@@ -102,7 +102,7 @@
 			{
 				"id": "employees",
 				"type": "entitysel",
-				"dataclass": "Employees",
+				"dataclass": "Employee",
 				"initialValue": "all",
 				"depth": null,
 				"pageSize": 100
@@ -110,7 +110,7 @@
 			{
 				"id": "selectedEmployee",
 				"type": "entity",
-				"dataclass": "Employees",
+				"dataclass": "Employee",
 				"from": "employees",
 				"namespace": "",
 				"initialValue": "",
@@ -155,7 +155,7 @@
 						"params": [
 							{
 								"name": "currentUser",
-								"type": "cs.EmployeesEntity",
+								"type": "cs.EmployeeEntity",
 								"datasource": "Shared:currentUser",
 								"id": "3k6XAmHk6NxoNj9SJ3VCsx"
 							}
@@ -168,16 +168,16 @@
 					},
 					{
 						"type": "method",
-						"dataclass": "Leaves",
+						"dataclass": "Leave",
 						"events": [
 							"oninit"
 						],
 						"id": "qo34XnXq7heuiJMaQEfamw",
-						"method": "ds.Leaves.filterInCalendar",
+						"method": "ds.Leave.filterInCalendar",
 						"params": [
 							{
 								"name": "selectedEmployee",
-								"type": "cs.EmployeesEntity",
+								"type": "cs.EmployeeEntity",
 								"datasource": "selectedEmployee",
 								"id": "tncFoeLGKHwm81m7oQGR7r"
 							},
@@ -189,7 +189,7 @@
 							},
 							{
 								"name": "currentUser",
-								"type": "cs.EmployeesEntity",
+								"type": "cs.EmployeeEntity",
 								"datasource": "Shared:currentUser",
 								"id": "iJwdacv1AzDSUQsJW4JSMB"
 							}
@@ -197,7 +197,7 @@
 						"datasource": "",
 						"returns": {
 							"name": "result",
-							"type": "cs.LeavesSelection",
+							"type": "cs.LeaveSelection",
 							"datasource": "Calendar:leaves"
 						}
 					}
@@ -587,17 +587,17 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "Leaves",
+						"dataclass": "Leave",
 						"events": [
 							"onselect",
 							"onclear"
 						],
 						"id": "vGLx3kVGA2znYiPppQVg9n",
-						"method": "ds.Leaves.filterInCalendar",
+						"method": "ds.Leave.filterInCalendar",
 						"params": [
 							{
 								"name": "selectedEmployee",
-								"type": "cs.EmployeesEntity",
+								"type": "cs.EmployeeEntity",
 								"datasource": "selectedEmployee",
 								"id": "2y4gMhD56y5chJW5cjxu4P"
 							},
@@ -609,7 +609,7 @@
 							},
 							{
 								"name": "currentUser",
-								"type": "cs.EmployeesEntity",
+								"type": "cs.EmployeeEntity",
 								"datasource": "Shared:currentUser",
 								"id": "5n3APHkeej33LuS4v1PBdz"
 							}
@@ -617,7 +617,7 @@
 						"datasource": "",
 						"returns": {
 							"name": "result",
-							"type": "cs.LeavesSelection",
+							"type": "cs.LeaveSelection",
 							"datasource": "Calendar:leaves"
 						},
 						"disabled": false
@@ -667,7 +667,7 @@
 			},
 			"displayName": "Stylebox",
 			"custom": {
-				"contentHeight": 42
+				"contentHeight": 41
 			},
 			"parent": "ks93lqnI-e",
 			"hidden": false,
@@ -1054,7 +1054,7 @@
 								"datasource": "Shared:$This.leaveType.name",
 								"children": [
 									{
-										"text": "leaveTypes",
+										"text": "leaveType",
 										"bold": false,
 										"italic": false,
 										"underlined": false,
@@ -1350,12 +1350,12 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "Leaves",
+						"dataclass": "Leave",
 						"events": [
 							"onclick"
 						],
 						"id": "sfjfWu8xQWkkbL9yaR2uC4",
-						"method": "ds.Leaves.add",
+						"method": "ds.Leave.add",
 						"params": [
 							{
 								"name": "employee",
@@ -1377,7 +1377,7 @@
 							},
 							{
 								"name": "newLeave",
-								"type": "cs.LeavesEntity",
+								"type": "cs.LeaveEntity",
 								"datasource": "newLeave",
 								"id": "t8cV1h47AZycbfsQdffiFB"
 							},
@@ -1391,7 +1391,7 @@
 						"datasource": "",
 						"returns": {
 							"name": "result",
-							"type": "cs.LeavesEntity",
+							"type": "cs.LeaveEntity",
 							"datasource": "newLeave"
 						},
 						"feedback": true
@@ -1434,7 +1434,7 @@
 					},
 					{
 						"type": "method",
-						"dataclass": "CommentsEntity",
+						"dataclass": "CommentEntity",
 						"events": [
 							"onclick"
 						],
@@ -1443,7 +1443,7 @@
 						"params": [
 							{
 								"name": "leave",
-								"type": "cs.LeavesEntity",
+								"type": "cs.LeaveEntity",
 								"datasource": "newLeave",
 								"id": "jVEESKCxXMFamQP3vmqcts"
 							}
@@ -1696,13 +1696,13 @@
 				"events": [
 					{
 						"type": "method",
-						"dataclass": "Leaves",
+						"dataclass": "Leave",
 						"events": [
 							"onselect",
 							"onclear"
 						],
 						"id": "drr2r6XT9bdpaQf6CFU8az",
-						"method": "ds.Leaves.filterInCalendar",
+						"method": "ds.Leave.filterInCalendar",
 						"params": [
 							{
 								"name": "selectedEmployee",
@@ -1726,7 +1726,7 @@
 						"datasource": "",
 						"returns": {
 							"name": "result",
-							"type": "cs.LeavesSelection",
+							"type": "cs.LeaveSelection",
 							"datasource": "Calendar:leaves"
 						}
 					}
@@ -1774,7 +1774,7 @@
 			},
 			"displayName": "Stylebox",
 			"custom": {
-				"contentHeight": 42
+				"contentHeight": 41
 			},
 			"parent": "mhitVdtUK2",
 			"hidden": false,
@@ -1830,14 +1830,13 @@
 		},
 		"KlspOQmVlw": {
 			"type": {
-				"resolvedName": "Fallback"
+				"resolvedName": "DatePicker"
 			},
 			"isCanvas": false,
 			"props": {
+				"name": "",
 				"classNames": [],
 				"events": [],
-				"componentName": "Fallback",
-				"name": "",
 				"readOnly": false,
 				"style": {
 					"height": "376px",
@@ -1863,10 +1862,9 @@
 				"selectedDateRaduis": "",
 				"language": "en",
 				"selectionModes": "range",
-				"datasource": "rangeDate",
-				"text": "Some Text"
+				"datasource": "rangeDate"
 			},
-			"displayName": "Fallback",
+			"displayName": "DatePicker",
 			"custom": {},
 			"parent": "fS_qHCD1vt",
 			"hidden": false,

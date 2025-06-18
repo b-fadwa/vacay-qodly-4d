@@ -1,7 +1,7 @@
 Class extends EntitySelection
 
 exposed Function leavesCollections()->$leavesCollection : Collection
-	var $leave : cs:C1710.LeavesEntity
+	var $leave : cs:C1710.LeaveEntity
 	var $item : Object
 	$leavesCollection:=New collection:C1472()
 	For each ($leave; This:C1470)
